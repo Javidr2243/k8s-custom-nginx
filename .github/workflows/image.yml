@@ -2,7 +2,7 @@ name: Build and Push Docker Image
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/k8s-custom-nginx
+  IMAGE_NAME: ghcr.io/javidr2243/k8s-custom-nginx
 
 permissions:
   contents: read
