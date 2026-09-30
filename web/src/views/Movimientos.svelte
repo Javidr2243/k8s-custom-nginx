@@ -21,9 +21,24 @@
     ['alerta', 'Calificación de deuda'],
   ];
   const lista = $derived(movs?.filter((x) => (mun === 'todos' || x.municipio === mun) && (tipo === 'todos' || x.tipo === tipo)) ?? []);
+  /** Headline: what kinds of changes the list contains, in counts. */
+  const resumen = $derived.by(() => {
+    const n = (t: Movimiento['tipo']) => lista.filter((x) => x.tipo === t).length;
+    const partes = [
+      [n('contrato'), 'contrato grande', 'contratos grandes'],
+      [n('modificacion'), 'cambio al presupuesto', 'cambios al presupuesto'],
+      [n('periodo'), 'reporte nuevo', 'reportes nuevos'],
+      [n('deuda') + n('alerta'), 'dato de deuda', 'datos de deuda'],
+    ] as const;
+    return partes
+      .filter(([k]) => k > 0)
+      .map(([k, uno, varios]) => `${k} ${k === 1 ? uno : varios}`)
+      .join(', ');
+  });
 </script>
 
 <section aria-labelledby="h-movs">
+  <p class="eyebrow">Qué cambió</p>
   <h1 id="h-movs">Movimientos recientes</h1>
   <p class="muted lead">
     Lo más importante del último trimestre publicado, comparado con el periodo anterior: cuánto se gastó, qué áreas
@@ -47,10 +62,13 @@
   </div>
   <Estado {error} cargando={!movs && !error} />
   {#if movs}
-    <p class="small muted" aria-live="polite">{lista.length} movimientos</p>
-    <ul class="card lista">
+    <p class="titular" aria-live="polite">
+      <span><strong class="num">{lista.length}</strong> movimientos{mun !== 'todos' ? ` en ${NOMBRE_CORTO[mun]}` : ''}.</span>
+      {#if resumen}<span class="suave">{resumen.charAt(0).toUpperCase() + resumen.slice(1)}.</span>{/if}
+    </p>
+    <ul class="lista banda">
       {#each lista as mv, i (i)}
-        <MovimientoItem movimiento={mv} />
+        <MovimientoItem movimiento={mv} compacto />
       {:else}
         <li class="muted">No hay movimientos con estos filtros.</li>
       {/each}
@@ -81,6 +99,9 @@
   .lista {
     list-style: none;
     margin: 0;
-    padding: 0.25rem 1.1rem;
+    padding-inline: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+    column-gap: 3rem;
   }
 </style>

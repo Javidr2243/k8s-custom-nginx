@@ -2,6 +2,7 @@
   import { api, MUNICIPIOS, NOMBRE, type Egresos, type Fuente, type Meta, type MunicipioId } from '../lib/data';
   import { acumulado, fecha, trimestre } from '../lib/format';
   import { link } from '../lib/router.svelte';
+  import Seccion from '../components/Seccion.svelte';
 
   let fuentes = $state<Record<string, Fuente> | null>(null);
   let meta = $state<Meta | null>(null);
@@ -12,11 +13,11 @@
 
 </script>
 
-<section aria-labelledby="h-acerca" class="stack">
+<section aria-labelledby="h-acerca">
+  <p class="eyebrow">Método y límites</p>
   <h1 id="h-acerca">Acerca de los datos</h1>
 
-  <article class="card">
-    <h2>Qué es este sitio</h2>
+  <Seccion id="h-q" titular="Qué es este sitio">
     <p>
       <strong>¿A dónde va tu dinero? MTY</strong> es un sitio <strong>independiente y no oficial</strong> que explica
       cómo obtienen y gastan su dinero los gobiernos municipales de Monterrey, San Pedro Garza García y Santa Catarina.
@@ -28,10 +29,9 @@
         {trimestre(meta.periodo_mas_reciente)} ({acumulado(meta.periodo_mas_reciente)}).
       </p>
     {/if}
-  </article>
+  </Seccion>
 
-  <article class="card">
-    <h2>Cómo se hacen los números</h2>
+  <Seccion id="h-c" banda titular="Cómo se hacen los números">
     <ul>
       <li>Todas las cifras se copian de documentos oficiales publicados en formato abierto (Excel, CSV o JSON). Un programa los descarga, revisa que las sumas cuadren con los totales del propio documento y los convierte para este sitio.</li>
       <li><strong>Nunca se inventan, estiman ni rellenan cifras.</strong> Si un dato no existe o el documento no es confiable, se marca como faltante y se explica por qué.</li>
@@ -40,10 +40,9 @@
       <li>Para comparar municipios se usan los datos anuales del INEGI (mismo formato para todos) divididos entre la población del Censo 2020.</li>
       <li>Cuando un documento oficial tiene inconsistencias internas (por ejemplo, un "modificado" que no cuadra), se publica tal cual y se registra en el reporte de validación.</li>
     </ul>
-  </article>
+  </Seccion>
 
-  <article class="card">
-    <h2>Límites de los datos</h2>
+  <Seccion id="h-l" titular="Límites de los datos">
     <ul>
       <li>San Pedro y Santa Catarina publican el gasto por dependencia y los ingresos trimestrales solo en PDF escaneado; aquí se muestra su gasto por tipo (capítulo) y sus ingresos anuales del INEGI.</li>
       <li>Los organismos paramunicipales y los fideicomisos no aparecen en los reportes principales de los municipios.</li>
@@ -62,10 +61,9 @@
         <p><strong>{NOMBRE[m]}:</strong> sin periodos faltantes desde 2023.</p>
       {/if}
     {/each}
-  </article>
+  </Seccion>
 
-  <article class="card">
-    <h2>Privacidad</h2>
+  <Seccion id="h-p" banda titular="Privacidad">
     <p>
       Este sitio no usa cookies, no tiene analítica ni rastreadores y no carga recursos de terceros. No recopila datos
       personales. El único dato que se guarda en tu navegador es tu preferencia de modo claro u oscuro.
@@ -74,25 +72,23 @@
       En los contratos solo se muestra el RFC de empresas; el de personas físicas se oculta. No se publican domicilios ni
       listas de beneficiarios de apoyos.
     </p>
-  </article>
+  </Seccion>
 
-  <article class="card">
-    <h2>Fuentes</h2>
+  <Seccion id="h-f" titular="Fuentes">
     <p>
       Los {fuentes ? Object.keys(fuentes).length : ''} documentos oficiales, con enlace al original, copia archivada del
       archivo exacto que se usó, fechas y huella SHA-256, además de los resultados de todas las verificaciones
       automáticas, están en <a href="/fuentes" use:link>Fuentes y verificación</a>.
     </p>
-  </article>
+  </Seccion>
 
-  <article class="card">
-    <h2>Código abierto y errores</h2>
+  <Seccion id="h-e" banda titular="Código abierto y errores">
     <p>
       El código y los datos procesados son abiertos. Si encuentras un número distinto al documento oficial, repórtalo
       con el enlace al documento en
       <a href="https://github.com/javidr2243/k8s-custom-nginx/issues" rel="noopener noreferrer">GitHub</a>.
     </p>
-  </article>
+  </Seccion>
 </section>
 
 <style>

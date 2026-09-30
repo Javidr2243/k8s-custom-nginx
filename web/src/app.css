@@ -240,10 +240,56 @@ p {
   text-transform: uppercase;
   color: var(--ink-2);
 }
+/* Page headline statement: one plain sentence with the key number, context in muted ink after it. */
+.titular {
+  font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  max-width: 44ch;
+  margin: 1.25rem 0 1.75rem;
+  text-wrap: pretty;
+}
+.titular strong {
+  font-weight: 750;
+}
 /* Two-tone statement: the key fact in ink, the context right after it in muted ink. */
 .suave {
   color: var(--ink-3);
 }
+/* Key figures: an open row separated by thin rules (no boxes). Wraps on narrow screens; the left rule of each
+   row's first item is clipped so text lines up with the page edge. */
+.cifras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  margin: 0 0 0 -1.25rem;
+  border-top: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+  clip-path: inset(0 0 0 calc(1.25rem + 1px));
+}
+.cifras > * {
+  min-width: 0;
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  border-left: 1px solid var(--grid);
+  box-shadow: 0 -1px 0 var(--grid);
+}
+/* Two sections side by side inside a band; one column on narrow screens. */
+.dos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 3.5rem;
+}
+.dos > * {
+  min-width: 0;
+  padding-block: 0;
+}
+@media (max-width: 900px) {
+  .dos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* Full-width tinted band that separates sections without boxes (no horizontal overflow). */
 .banda {
   background: var(--surface);

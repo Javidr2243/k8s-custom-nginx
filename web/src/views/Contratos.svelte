@@ -10,6 +10,7 @@
   import Fuente from '../components/Fuente.svelte';
   import Termino from '../components/Termino.svelte';
   import Estado from '../components/Estado.svelte';
+  import Seccion from '../components/Seccion.svelte';
 
   let d = $state<Contratos | null>(null);
   let error = $state<string | null>(null);
@@ -55,6 +56,9 @@
     modificatorio: 'convenio-modificatorio',
   };
 
+  const cats = $derived(r ? Object.entries(r.por_categoria).sort((a, b) => b[1].monto - a[1].monto) : []);
+  const topProv = $derived(r?.proveedores_top[0]);
+
   function exportar() {
     descargar(
       `contratos-${m}.csv`,
@@ -67,16 +71,30 @@
 </script>
 
 <section aria-labelledby="h-contratos">
-  <h1 id="h-contratos">Contratos y proveedores de {NOMBRE[m]}</h1>
-  <p class="muted lead">
-    A quién le compra el municipio, cuánto y cómo eligió al proveedor. Útil para ciudadanos y para empresas que quieren
-    venderle al gobierno.
-  </p>
-  <Filtros mostrarPeriodo={false} />
+  <header>
+    <p class="eyebrow">Compras del gobierno</p>
+    <h1 id="h-contratos">Contratos y proveedores de {NOMBRE[m]}</h1>
+    <p class="muted lead">
+      A quién le compra el municipio, cuánto y cómo eligió al proveedor. Útil para ciudadanos y para empresas que quieren
+      venderle al gobierno.
+    </p>
+    <Filtros mostrarPeriodo={false} />
+  </header>
   <Estado {error} cargando={!d && !error} />
 
   {#if d && r}
-    <div class="grid tiles">
+    <p class="titular">
+      <span>
+        {NOMBRE[m]} publicó <strong class="num">{entero(r.contratos)} contratos</strong> por
+        <strong class="num">{pesos(r.monto_total)}</strong>.
+      </span>
+      <span class="suave">
+        {porcentaje(directa)} del dinero se asignó sin concurso abierto y los 10 proveedores más grandes recibieron
+        {porcentaje(r.concentracion_top10)}{r.fechas[0] ? ` (del ${fecha(r.fechas[0])} al ${fecha(r.fechas[1])})` : ''}.
+      </span>
+    </p>
+
+    <div class="cifras">
       <StatTile
         label="Contratos publicados"
         value={entero(r.contratos)}
@@ -105,52 +123,64 @@
       </StatTile>
     </div>
 
-    <div class="grid grid-2 mt">
-      <article class="card">
-        <h2>¿Cómo se eligió al proveedor?</h2>
-        <BarList
-          barras={Object.entries(r.por_categoria)
-            .sort((a, b) => b[1].monto - a[1].monto)
-            .map(([k, v]) => ({ id: k, etiqueta: v.nombre, valor: v.monto, detalle: `${entero(v.n)} contratos` }))}
-          formato={pesos}
-          titulo="Monto contratado por tipo de procedimiento"
-          valorEtiqueta="Monto"
-          seleccionado={cat === 'todas' ? null : cat}
-          onelegir={(id) => {
-            cat = cat === id ? 'todas' : id;
-            pagina = 0;
-          }}
-        />
-        <p class="small muted">
-          Toca un tipo para filtrar la tabla. Glosario:
-          <Termino id="licitacion">licitación</Termino>, <Termino id="invitacion-restringida">invitación</Termino>,
-          <Termino id="adjudicacion-directa">adjudicación directa</Termino>.
-        </p>
-      </article>
-      <article class="card">
-        <h2>Proveedores con más dinero</h2>
-        <BarList
-          barras={r.proveedores_top.slice(0, 10).map((p, i) => ({
-            id: String(i),
-            etiqueta: p.proveedor,
-            valor: p.monto,
-            detalle: `${entero(p.n)} contrato${p.n === 1 ? '' : 's'} · ${porcentaje(p.porcentaje, 1)} del total${p.rfc ? ` · RFC ${p.rfc}` : ''}`,
-          }))}
-          formato={pesos}
-          titulo="Diez proveedores con mayor monto contratado"
-          valorEtiqueta="Monto"
-        />
-        {#if r.reservados}
-          <p class="small notice">
-            En {entero(r.reservados)} contratos el municipio no publicó el nombre del proveedor
-            (<Termino id="reservada">información reservada</Termino>); no se cuentan aquí.
+    <div class="banda">
+      <div class="dos">
+        <Seccion
+          id="h-proc"
+          pregunta="¿Cómo se eligió al proveedor?"
+          titular={`${porcentaje(directa)} del dinero se asignó sin concurso abierto`}
+          detalle={cats[0] ? `${cats[0][1].nombre} es el procedimiento con más dinero: ${pesos(cats[0][1].monto)} en ${entero(cats[0][1].n)} contratos.` : null}
+        >
+          <BarList
+            barras={cats.map(([k, v]) => ({ id: k, etiqueta: v.nombre, valor: v.monto, detalle: `${entero(v.n)} contratos` }))}
+            formato={pesos}
+            titulo="Monto contratado por tipo de procedimiento"
+            valorEtiqueta="Monto"
+            seleccionado={cat === 'todas' ? null : cat}
+            onelegir={(id) => {
+              cat = cat === id ? 'todas' : id;
+              pagina = 0;
+            }}
+          />
+          <p class="small muted">
+            Toca un tipo para filtrar la tabla. Glosario:
+            <Termino id="licitacion">licitación</Termino>, <Termino id="invitacion-restringida">invitación</Termino>,
+            <Termino id="adjudicacion-directa">adjudicación directa</Termino>.
           </p>
-        {/if}
-      </article>
+        </Seccion>
+        <Seccion
+          id="h-prov"
+          pregunta="Proveedores con más dinero"
+          titular={topProv ? `${topProv.proveedor} recibió ${porcentaje(topProv.porcentaje, 1)} del total` : 'Proveedores con más dinero'}
+          detalle={`Los 10 mayores de ${entero(r.proveedores)} proveedores recibieron ${porcentaje(r.concentracion_top10)} del monto.`}
+        >
+          <BarList
+            barras={r.proveedores_top.slice(0, 10).map((p, i) => ({
+              id: String(i),
+              etiqueta: p.proveedor,
+              valor: p.monto,
+              detalle: `${entero(p.n)} contrato${p.n === 1 ? '' : 's'} · ${porcentaje(p.porcentaje, 1)} del total${p.rfc ? ` · RFC ${p.rfc}` : ''}`,
+            }))}
+            formato={pesos}
+            titulo="Diez proveedores con mayor monto contratado"
+            valorEtiqueta="Monto"
+          />
+          {#if r.reservados}
+            <p class="small notice">
+              En {entero(r.reservados)} contratos el municipio no publicó el nombre del proveedor
+              (<Termino id="reservada">información reservada</Termino>); no se cuentan aquí.
+            </p>
+          {/if}
+        </Seccion>
+      </div>
     </div>
 
-    <article class="card mt">
-      <h2>Todos los contratos</h2>
+    <Seccion
+      id="h-todos"
+      pregunta="Todos los contratos"
+      titular={`${entero(r.contratos)} contratos para buscar y descargar`}
+      detalle="Filtra por proveedor, objeto, área o RFC; la descarga en CSV incluye la fuente de cada contrato."
+    >
       <div class="controles">
         <label class="buscar">
           <span class="sr-only">Buscar en contratos</span>
@@ -210,19 +240,17 @@
       {/if}
       {#each d.notas as n, i (i)}<p class="small muted">{n}</p>{/each}
       <Fuente ids={d.fuentes.length > 3 ? [d.fuentes[0], d.fuentes.at(-1)] : d.fuentes} etiqueta={d.fuentes.length > 3 ? `Fuentes (${d.fuentes.length} archivos; primero y último)` : 'Fuente'} />
-    </article>
+    </Seccion>
   {/if}
 </section>
 
 <style>
   .lead {
     max-width: 70ch;
+    margin-bottom: 1.25rem;
   }
-  .tiles {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  }
-  .mt {
-    margin-top: 1rem;
+  .cifras {
+    margin-bottom: 2.5rem;
   }
   .controles {
     display: flex;

@@ -9,6 +9,7 @@
   import Fuente from '../components/Fuente.svelte';
   import Termino from '../components/Termino.svelte';
   import Estado from '../components/Estado.svelte';
+  import Seccion from '../components/Seccion.svelte';
 
   let todas = $state<Record<MunicipioId, Deuda> | null>(null);
   let muns = $state<Municipio[]>([]);
@@ -44,18 +45,66 @@
       valor: x.v,
     }));
   });
+
+  // Findings used as section headlines (actual values, no subjective words).
+  const cambio12 = $derived(saldo && haceUnAnio?.total ? (saldo.total - haceUnAnio.total) / haceUnAnio.total : null);
+  const sinDeuda = $derived(!!d && d.saldos.every((s) => s.total === 0));
+  const tSaldo = $derived.by(() => {
+    if (sinDeuda) return 'No tiene deuda registrada desde 2023';
+    if (cambio12 === null) return `Deuda al ${fecha(saldo?.fecha)}: ${pesos(saldo?.total)}`;
+    return `La deuda ${cambio12 < 0 ? 'bajó' : cambio12 > 0 ? 'subió' : 'no cambió'}${cambio12 !== 0 ? ` ${porcentaje(Math.abs(cambio12))}` : ''} en un año`;
+  });
+  const dSaldo = $derived(
+    haceUnAnio && saldo && !sinDeuda
+      ? `De ${pesos(haceUnAnio.total)} al ${fecha(haceUnAnio.fecha)} a ${pesos(saldo.total)} al ${fecha(saldo.fecha)}.`
+      : null,
+  );
+  const ultimoPagoCompleto = $derived([...pagosAnuales].reverse().find((x) => !x.etiqueta.includes('hasta')));
+  const anioActual = $derived(Number(saldo?.periodo.slice(0, 4) ?? 0));
+  const detalleCompleto = $derived(d?.anual_detalle.filter((x) => x.anio < anioActual).at(-1));
+  const bancos = $derived(new Set(d?.creditos.map((c) => c.acreedor) ?? []).size);
+  const porHab = $derived(
+    todas
+      ? MUNICIPIOS.map((x) => {
+          const s = todas![x].saldos.at(-1);
+          return { id: x, valor: s && pob(x) ? s.total / (pob(x) ?? 1) : null };
+        })
+      : [],
+  );
+  const tComparacion = $derived.by(() => {
+    const propio = porHab.find((x) => x.id === m)?.valor;
+    if (!propio) return `${NOMBRE_CORTO[m]} no tiene deuda registrada`;
+    const orden = porHab.filter((x) => x.valor).sort((a, b) => (b.valor ?? 0) - (a.valor ?? 0));
+    const lugar = orden.findIndex((x) => x.id === m) + 1;
+    const txt = lugar === 1 ? 'la más alta' : lugar === orden.length ? 'la más baja' : `la ${lugar}ª`;
+    return `${NOMBRE_CORTO[m]} debe ${pesos(propio)} por habitante, ${txt} de los ${orden.length} con deuda`;
+  });
 </script>
 
 <section aria-labelledby="h-deuda">
-  <h1 id="h-deuda">Deuda de {NOMBRE[m]}</h1>
-  <p class="muted lead">
-    Cuánto debe el municipio a los bancos, cuánto paga y qué tan manejable es su deuda según la Secretaría de Hacienda.
-  </p>
-  <Filtros mostrarPeriodo={false} />
+  <header>
+    <p class="eyebrow">Deuda pública</p>
+    <h1 id="h-deuda">Deuda de {NOMBRE[m]}</h1>
+    <p class="muted lead">
+      Cuánto debe el municipio a los bancos, cuánto paga y qué tan manejable es su deuda según la Secretaría de Hacienda.
+    </p>
+    <Filtros mostrarPeriodo={false} />
+  </header>
   <Estado {error} cargando={!todas && !error} />
 
   {#if d && todas}
-    <div class="grid tiles">
+    <p class="titular">
+      {#if sinDeuda}
+        <span>{NOMBRE_CORTO[m]} no tiene deuda con bancos inscrita en el registro de Hacienda.</span>
+      {:else}
+        <span>{NOMBRE_CORTO[m]} debe <strong class="num">{pesos(saldo?.total)}</strong> a los bancos.</span>
+        <span class="suave">
+          Saldo al {fecha(saldo?.fecha)}{cambio12 !== null ? `, ${porcentaje(Math.abs(cambio12))} ${cambio12 < 0 ? 'menos' : 'más'} que un año antes` : ''}{alerta?.etiqueta ? `. Hacienda lo califica como «${alerta.etiqueta.toLowerCase()}»` : ''}.
+        </span>
+      {/if}
+    </p>
+
+    <div class="cifras">
       <StatTile
         value={saldo ? pesos(saldo.total) : 'Sin dato'}
         sub={saldo ? `Al ${fecha(saldo.fecha)}` : ''}
@@ -64,7 +113,7 @@
         {#snippet label()}<Termino id="saldo">Deuda registrada</Termino>{/snippet}
       </StatTile>
       <StatTile
-        value={saldo && haceUnAnio ? cambio(haceUnAnio.total ? (saldo.total - haceUnAnio.total) / haceUnAnio.total : null) : 'Sin dato'}
+        value={saldo && haceUnAnio ? cambio(cambio12) : 'Sin dato'}
         sub={haceUnAnio ? `vs. ${fecha(haceUnAnio.fecha)} (${pesos(haceUnAnio.total)})` : ''}
         tone={saldo && haceUnAnio && saldo.total < haceUnAnio.total ? 'good' : 'neutral'}
         label="Cambio en 12 meses"
@@ -78,47 +127,59 @@
         {#snippet label()}Por <Termino id="por-habitante">habitante</Termino>{/snippet}
       </StatTile>
       <StatTile
-        value={alerta?.etiqueta ?? 'Sin evaluación'}
+        value={alerta?.resultado ? `Nivel ${alerta.resultado} de 3` : 'Sin evaluación'}
         sub={alerta?.evaluacion ?? ''}
         origen={{ calculo: 'Resultado publicado por Hacienda en el Sistema de Alertas para municipios (1 = sostenible, 2 = en observación, 3 = elevado).', fuentes: [alerta?.fuente] }}
       >
         {#snippet label()}<Termino id="alertas">Calificación de Hacienda</Termino>{/snippet}
         {#if alerta?.resultado}
-          <p class="status s{alerta.resultado}"><span aria-hidden="true">{ICONO[alerta.resultado]}</span> Nivel {alerta.resultado} de 3</p>
+          <p class="status s{alerta.resultado}"><span aria-hidden="true">{ICONO[alerta.resultado]}</span> {alerta.etiqueta}</p>
         {/if}
       </StatTile>
     </div>
 
-    <div class="grid grid-2 mt">
-      <article class="card">
-        <h2>Saldo de la deuda por trimestre</h2>
-        {#if d.saldos.every((s) => s.total === 0)}
-          <p>{NOMBRE[m]} no tiene deuda inscrita en el <Termino id="rpu">Registro Público Único</Termino> en ningún trimestre desde 2023.</p>
-        {:else}
-          <LineChart
-            series={[{ id: m, etiqueta: NOMBRE_CORTO[m], color: m, puntos: d.saldos.map((s) => ({ x: s.periodo, v: s.total })) }]}
-            formato={pesos}
-            formatoEje={pesosCorto}
-            etiquetaX={(p) => `${p.slice(-1)}T ${p.slice(2, 4)}`}
-            titulo={`Saldo de la deuda de ${NOMBRE[m]} por trimestre`}
-          />
-        {/if}
-        <Fuente ids={[d.saldos.at(-1)?.fuente]} etiqueta="Fuente (último trimestre)" />
-      </article>
-      <article class="card">
-        <h2>Pagos de deuda por año</h2>
-        <p class="small muted">{d.nota_pagos}</p>
-        <BarList barras={pagosAnuales} formato={pesos} titulo={`Pagos de deuda de ${NOMBRE[m]} por año`} valorEtiqueta="Pagado (devengado)" />
-        <Fuente ids={[d.pagos_capitulo_9000.at(-1)?.fuente]} etiqueta="Fuente (último periodo)" />
-      </article>
+    <div class="banda">
+      <div class="dos">
+        <Seccion id="h-saldo" pregunta="Saldo de la deuda por trimestre" titular={tSaldo} detalle={dSaldo}>
+          {#if !sinDeuda}
+            <LineChart
+              series={[{ id: m, etiqueta: NOMBRE_CORTO[m], color: m, puntos: d.saldos.map((s) => ({ x: s.periodo, v: s.total })) }]}
+              formato={pesos}
+              formatoEje={pesosCorto}
+              etiquetaX={(p) => `${p.slice(-1)}T ${p.slice(2, 4)}`}
+              titulo={`Saldo de la deuda de ${NOMBRE[m]} por trimestre`}
+            />
+          {:else}
+            <p>Sin saldo en el <Termino id="rpu">Registro Público Único</Termino> en ningún trimestre.</p>
+          {/if}
+          <Fuente ids={[d.saldos.at(-1)?.fuente]} compacto />
+        </Seccion>
+        <Seccion
+          id="h-pagos"
+          pregunta="Pagos de deuda por año"
+          titular={ultimoPagoCompleto && ultimoPagoCompleto.valor ? `En ${ultimoPagoCompleto.id} pagó ${pesos(ultimoPagoCompleto.valor)} de deuda` : 'Pagos de deuda por año'}
+          detalle={d.nota_pagos}
+        >
+          <BarList barras={pagosAnuales} formato={pesos} titulo={`Pagos de deuda de ${NOMBRE[m]} por año`} valorEtiqueta="Pagado (devengado)" />
+          <Fuente ids={[d.pagos_capitulo_9000.at(-1)?.fuente]} compacto />
+        </Seccion>
+      </div>
     </div>
 
     {#if d.anual_detalle.length}
-      <article class="card mt">
-        <h2>Intereses y pago de capital de Monterrey</h2>
+      <Seccion
+        id="h-intereses"
+        pregunta="Intereses y pago de capital"
+        titular={detalleCompleto
+          ? `En ${detalleCompleto.anio} pagó ${pesos(detalleCompleto.intereses)} de intereses y ${pesos(detalleCompleto.amortizacion)} de capital`
+          : 'Intereses y pago de capital'}
+        detalle={detalleCompleto && detalleCompleto.amortizacion
+          ? `Por cada peso que bajó la deuda, pagó $${(detalleCompleto.intereses / detalleCompleto.amortizacion).toFixed(2)} de intereses. El último año es parcial.`
+          : 'El último año es parcial.'}
+      >
         <p class="small muted">
-          <Termino id="intereses">Intereses</Termino> (el costo del préstamo) frente a
-          <Termino id="amortizacion">amortización</Termino> (lo que reduce la deuda). El último año es parcial.
+          <Termino id="intereses">Intereses</Termino>: el costo del préstamo. <Termino id="amortizacion">Amortización</Termino>:
+          lo que reduce la deuda.
         </p>
         <LineChart
           series={[
@@ -127,14 +188,21 @@
           ]}
           formato={pesos}
           formatoEje={pesosCorto}
-          titulo="Intereses y amortización de la deuda de Monterrey por año"
+          titulo={`Intereses y amortización de la deuda de ${NOMBRE[m]} por año`}
         />
-        <Fuente ids={[d.fuente_anual_detalle]} />
-      </article>
+        <Fuente ids={[d.fuente_anual_detalle]} compacto />
+      </Seccion>
     {/if}
 
-    <article class="card mt">
-      <h2>Créditos vigentes</h2>
+    <Seccion
+      id="h-creditos"
+      banda
+      pregunta="Créditos vigentes"
+      titular={d.creditos.length
+        ? `${d.creditos.length} ${d.creditos.length === 1 ? 'crédito' : 'créditos'} con ${bancos} ${bancos === 1 ? 'banco' : 'bancos'}`
+        : `${NOMBRE_CORTO[m]} no tiene créditos inscritos`}
+      detalle={d.creditos.length ? `${d.nota_creditos} Saldos al ${fecha(d.creditos[0]?.saldo_fecha)}.` : null}
+    >
       {#if d.creditos.length}
         <div class="table-wrap">
           <table class="data">
@@ -160,15 +228,17 @@
             </tbody>
           </table>
         </div>
-        <p class="small muted">{d.nota_creditos} Saldos al {fecha(d.creditos[0]?.saldo_fecha)}. <Termino id="tiie">¿Qué es la TIIE?</Termino></p>
-      {:else}
-        <p>No hay créditos inscritos a nombre de {NOMBRE[m]}.</p>
+        <p class="small muted"><Termino id="tiie">¿Qué es la TIIE?</Termino></p>
       {/if}
-      <Fuente ids={[d.fuente_creditos]} />
-    </article>
+      <Fuente ids={[d.fuente_creditos]} compacto />
+    </Seccion>
 
-    <article class="card mt">
-      <h2>Historial de la calificación de Hacienda</h2>
+    <Seccion
+      id="h-alertas"
+      pregunta="Calificación de Hacienda"
+      titular={alerta?.resultado ? `Nivel ${alerta.resultado} de 3: ${alerta.etiqueta?.toLowerCase()}` : 'Sin evaluación reciente'}
+      detalle={d.nota_alertas}
+    >
       <div class="table-wrap">
         <table class="data">
           <caption class="sr-only">Resultados del Sistema de Alertas</caption>
@@ -185,34 +255,28 @@
           </tbody>
         </table>
       </div>
-      <p class="small muted">{d.nota_alertas}</p>
-      <Fuente ids={[d.alertas.at(-1)?.fuente]} etiqueta="Fuente (última evaluación)" />
-    </article>
+      <Fuente ids={[d.alertas.at(-1)?.fuente]} compacto />
+    </Seccion>
 
-    <article class="card mt">
-      <h2>Comparación: deuda por habitante</h2>
+    <Seccion id="h-comp" banda pregunta="Comparación: deuda por habitante" titular={tComparacion}>
       <BarList
-        barras={MUNICIPIOS.map((x) => {
-          const s = todas![x].saldos.at(-1);
-          return { id: x, etiqueta: NOMBRE[x], valor: s && pob(x) ? s.total / (pob(x) ?? 1) : null, color: x };
-        })}
+        barras={porHab.map((x) => ({ id: x.id, etiqueta: NOMBRE[x.id], valor: x.valor, color: x.id }))}
         formato={pesos}
         titulo="Deuda por habitante de los tres municipios"
         valorEtiqueta="Deuda por habitante"
       />
-    </article>
+      <Fuente ids={[...MUNICIPIOS.map((x) => todas![x].saldos.at(-1)?.fuente), 'inegi-mgem-19']} compacto />
+    </Seccion>
   {/if}
 </section>
 
 <style>
   .lead {
     max-width: 70ch;
+    margin-bottom: 1.25rem;
   }
-  .tiles {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  }
-  .mt {
-    margin-top: 1rem;
+  .cifras {
+    margin-bottom: 2.5rem;
   }
   .status {
     display: inline-flex;

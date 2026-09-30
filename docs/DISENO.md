@@ -11,7 +11,10 @@ layout, color, gráficas, escritura y accesibilidad).
   titular con **el hallazgo en cifras** → una línea de detalle → la gráfica → una línea de fuente.
 - El titular dice lo que la gráfica muestra, con valores reales y sin adjetivos subjetivos («Dos rubros se llevan $54 de
   cada $100», no «el gasto está muy concentrado»). Se calcula de los mismos datos que la gráfica.
-- Al inicio, **una oración con un número** y su contexto en gris (`.suave`), y como máximo **tres cifras clave**.
+- Al inicio, **una oración con un número** y su contexto en gris (`.titular` + `.suave`), y una fila abierta de cifras
+  clave (`.cifras`, con `StatTile` dentro).
+- Componente `Seccion` (`pregunta`, `titular`, `detalle`, `banda`) para no repetir la estructura en cada vista; `.dos`
+  pone dos secciones lado a lado dentro de una banda.
 
 ## 2. Espacio en lugar de cajas
 

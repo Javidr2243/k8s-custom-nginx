@@ -7,6 +7,7 @@
   import Fuente from '../components/Fuente.svelte';
   import Termino from '../components/Termino.svelte';
   import Estado from '../components/Estado.svelte';
+  import Seccion from '../components/Seccion.svelte';
 
   let datos = $state<{ comp: Comparativo; egr: Record<MunicipioId, Egresos>; muns: Municipio[] } | null>(null);
   let error = $state<string | null>(null);
@@ -63,54 +64,116 @@
       return { id: m, etiqueta: NOMBRE_CORTO[m], valor: escala(m, v), color: m };
     });
   }
+  /** Highest and lowest of a set of bars (null values skipped). */
+  function extremos(bs: { id: MunicipioId; valor: number | null }[]) {
+    const v = bs.filter((b) => b.valor !== null && b.valor > 0).sort((a, b) => (b.valor ?? 0) - (a.valor ?? 0));
+    return v.length > 1 ? { alto: v[0]!, bajo: v.at(-1)!, veces: (v[0]!.valor ?? 0) / (v.at(-1)!.valor || 1) } : null;
+  }
+  const unidad = $derived(porHab ? ' por habitante' : '');
+  const xTrim = $derived(extremos(barrasTrim));
+  const tTrim = $derived(
+    xTrim
+      ? `${NOMBRE_CORTO[xTrim.alto.id]} gastó ${xTrim.veces.toFixed(1)} veces lo de ${NOMBRE_CORTO[xTrim.bajo.id]}${unidad}`
+      : 'Gasto de los tres municipios',
+  );
+  const anual = $derived(
+    datos && ultimoAnio
+      ? MUNICIPIOS.map((m) => {
+          const a = datos!.comp.municipios[m].anual.find((x) => x.anio === ultimoAnio);
+          return { id: m, valor: a ? (porHab ? a.gasto_por_habitante : a.gasto_total) : null };
+        })
+      : [],
+  );
+  const xAnual = $derived(extremos(anual));
+  /** Spending type where the three differ the most (ratio highest ÷ lowest). */
+  const mayorDif = $derived.by(() => {
+    let mejor: { c: string; x: NonNullable<ReturnType<typeof extremos>> } | null = null;
+    for (const c of caps) {
+      const x = extremos(barrasCap(c));
+      if (x && (!mejor || x.veces > mejor.x.veces)) mejor = { c, x };
+    }
+    return mejor;
+  });
 </script>
 
 <section aria-labelledby="h-comp">
-  <h1 id="h-comp">Comparar municipios</h1>
-  <p class="muted lead">
-    Monterrey tiene casi nueve veces la población de San Pedro, así que comparar totales engaña. Por eso aquí se
-    compara, de entrada, el gasto <Termino id="por-habitante">por habitante</Termino>.
-  </p>
-  <div class="seg modo" role="radiogroup" aria-label="Unidad">
-    <button type="button" class="btn" role="radio" aria-checked={porHab} onclick={() => (porHab = true)}>Por habitante</button>
-    <button type="button" class="btn" role="radio" aria-checked={!porHab} onclick={() => (porHab = false)}>Total</button>
-  </div>
+  <header>
+    <p class="eyebrow">Los tres municipios</p>
+    <h1 id="h-comp">Comparar municipios</h1>
+    <p class="muted lead">
+      Monterrey tiene casi nueve veces la población de San Pedro, así que comparar totales engaña. Por eso aquí se
+      compara, de entrada, el gasto <Termino id="por-habitante">por habitante</Termino>.
+    </p>
+    <div class="seg modo" role="radiogroup" aria-label="Unidad">
+      <button type="button" class="btn" role="radio" aria-checked={porHab} onclick={() => (porHab = true)}>Por habitante</button>
+      <button type="button" class="btn" role="radio" aria-checked={!porHab} onclick={() => (porHab = false)}>Total</button>
+    </div>
+  </header>
   <Estado {error} cargando={!datos && !error} />
 
   {#if datos}
-    <div class="grid grid-2">
-      {#if comun}
-        <article class="card">
-          <h2>Gasto {porHab ? 'por habitante' : 'total'}, {acumulado(comun)}</h2>
-          <p class="small muted">Último periodo con datos de los tres municipios (reportes trimestrales, gasto devengado).</p>
-          <BarList barras={barrasTrim} formato={fmt} titulo={`Gasto ${porHab ? 'por habitante' : 'total'} ${acumulado(comun)}`} valorEtiqueta="Gastado" />
-          <Fuente ids={MUNICIPIOS.map((m) => datos!.egr[m].periodos.find((p) => p.periodo === comun)?.fuente)} />
-        </article>
-      {/if}
-      <article class="card">
-        <h2>Gasto anual {porHab ? 'por habitante' : 'total'}, 2018–{ultimoAnio}</h2>
-        <p class="small muted">
-          Datos del INEGI (<Termino id="efipem">EFIPEM</Termino>) en el mismo formato para los tres.
-          {#if estatusUltimo.includes('Preliminar')}Las cifras de {ultimoAnio} son preliminares.{/if}
-          <Termino id="nominales">Pesos nominales</Termino>.
-        </p>
-        <LineChart {series} formato={fmt} formatoEje={pesosCorto} titulo={`Gasto anual ${porHab ? 'por habitante' : 'total'} por municipio`} />
-        <Fuente ids={[datos.comp.fuente, datos.comp.fuente_poblacion]} />
-      </article>
+    {#if xTrim && comun}
+      <p class="titular">
+        <span>
+          De {acumulado(comun)}, {NOMBRE_CORTO[xTrim.alto.id]} gastó <strong class="num">{fmt(xTrim.alto.valor)}</strong>{unidad}.
+        </span>
+        <span class="suave">
+          Es {xTrim.veces.toFixed(1)} veces lo de {NOMBRE_CORTO[xTrim.bajo.id]} ({fmt(xTrim.bajo.valor)}){porHab ? '; así se compara sin que pese el tamaño de cada municipio' : ''}.
+        </span>
+      </p>
+    {/if}
+
+    <div class="banda">
+      <div class="dos">
+        {#if comun}
+          <Seccion
+            id="h-trim"
+            pregunta={`Gasto${unidad}, ${acumulado(comun)}`}
+            titular={tTrim}
+            detalle="Último periodo con datos de los tres municipios (reportes trimestrales, gasto devengado)."
+          >
+            <BarList barras={barrasTrim} formato={fmt} titulo={`Gasto${unidad} ${acumulado(comun)}`} valorEtiqueta="Gastado" />
+            <Fuente ids={MUNICIPIOS.map((m) => datos!.egr[m].periodos.find((p) => p.periodo === comun)?.fuente)} compacto />
+          </Seccion>
+        {/if}
+        <Seccion
+          id="h-anual"
+          pregunta={`Gasto anual${unidad}, 2018–${ultimoAnio}`}
+          titular={xAnual
+            ? `En ${ultimoAnio}: ${NOMBRE_CORTO[xAnual.alto.id]} ${fmt(xAnual.alto.valor)}, ${NOMBRE_CORTO[xAnual.bajo.id]} ${fmt(xAnual.bajo.valor)}`
+            : `Gasto anual, 2018–${ultimoAnio}`}
+          detalle={`Datos del INEGI en el mismo formato para los tres${estatusUltimo.includes('Preliminar') ? `; las cifras de ${ultimoAnio} son preliminares` : ''}. Pesos nominales.`}
+        >
+          <p class="small muted">
+            Fuente: <Termino id="efipem">EFIPEM</Termino> · <Termino id="nominales">¿Qué son pesos nominales?</Termino>
+          </p>
+          <LineChart {series} formato={fmt} formatoEje={pesosCorto} titulo={`Gasto anual${unidad} por municipio`} />
+          <Fuente ids={[datos.comp.fuente, datos.comp.fuente_poblacion]} compacto />
+        </Seccion>
+      </div>
     </div>
 
-    <h2 class="mt">¿En qué gasta cada uno? ({ultimoAnio}{porHab ? ', por habitante' : ''})</h2>
-    <p class="muted small">Por <Termino id="capitulo">capítulo del gasto</Termino>. Cada tarjeta compara los tres municipios en un mismo tipo de gasto.</p>
-    <div class="grid grid-3">
-      {#each caps as c (c)}
-        <article class="card">
-          <h3>{CAPITULOS[c]?.sencillo} <span class="small muted">(<Termino id={CAPITULOS[c]?.glosario ?? 'capitulo'}>{c}</Termino>)</span></h3>
-          <BarList barras={barrasCap(c)} formato={fmt} titulo={`${CAPITULOS[c]?.sencillo} ${ultimoAnio}`} valorEtiqueta={porHab ? 'Por habitante' : 'Total'} />
-        </article>
-      {/each}
-    </div>
-    <p class="small muted mt">{datos.comp.metodo}</p>
-    <Fuente ids={[datos.comp.fuente, datos.comp.fuente_poblacion]} />
+    <Seccion
+      id="h-caps"
+      pregunta={`¿En qué gasta cada uno? (${ultimoAnio}${unidad})`}
+      titular={mayorDif
+        ? `La mayor diferencia está en ${CAPITULOS[mayorDif.c]?.sencillo.toLowerCase()}: ${mayorDif.x.veces.toFixed(1)} veces`
+        : '¿En qué gasta cada uno?'}
+      detalle={mayorDif
+        ? `${NOMBRE_CORTO[mayorDif.x.alto.id]} ${fmt(mayorDif.x.alto.valor)} frente a ${NOMBRE_CORTO[mayorDif.x.bajo.id]} ${fmt(mayorDif.x.bajo.valor)}${unidad}. Cada bloque compara los tres municipios en un mismo tipo de gasto.`
+        : null}
+    >
+      <div class="caps">
+        {#each caps as c (c)}
+          <div>
+            <h3>{CAPITULOS[c]?.sencillo} <span class="small muted">(<Termino id={CAPITULOS[c]?.glosario ?? 'capitulo'}>{c}</Termino>)</span></h3>
+            <BarList barras={barrasCap(c)} formato={fmt} titulo={`${CAPITULOS[c]?.sencillo} ${ultimoAnio}`} valorEtiqueta={porHab ? 'Por habitante' : 'Total'} />
+          </div>
+        {/each}
+      </div>
+      <p class="small muted">{datos.comp.metodo}</p>
+      <Fuente ids={[datos.comp.fuente, datos.comp.fuente_poblacion]} compacto />
+    </Seccion>
   {/if}
 </section>
 
@@ -119,9 +182,18 @@
     max-width: 70ch;
   }
   .modo {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
-  .mt {
-    margin-top: 1.5rem;
+  /* Small multiples: one block per spending type, separated by thin rules instead of cards. */
+  .caps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 0 2.5rem;
+    margin: 0.75rem 0 1rem;
+  }
+  .caps > div {
+    min-width: 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--grid);
   }
 </style>

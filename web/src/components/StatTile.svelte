@@ -18,11 +18,17 @@
     origen?: { calculo: string; fuentes: (string | null | undefined)[] };
     children?: Snippet;
   } = $props();
+  /** "$1,457.0 millones" → the unit is set smaller so the number stays on one line. */
+  const partes = $derived.by(() => {
+    const i = value.indexOf(' millones');
+    return i > 0 ? [value.slice(0, i), ' millones'] : [value, ''];
+  });
 </script>
 
+<!-- Open figure (no box): place inside `.cifras`, which draws the separating rules. -->
 <div class="tile">
-  <div class="label">{#if typeof label === 'string'}{label}{:else}{@render label()}{/if}</div>
-  <div class="value">{value}</div>
+  <div class="eyebrow label">{#if typeof label === 'string'}{label}{:else}{@render label()}{/if}</div>
+  <div class="value num">{partes[0]}<span class="unidad">{partes[1]}</span></div>
   {#if sub}<div class="sub" class:good={tone === 'good'} class:bad={tone === 'bad'}>{sub}</div>{/if}
   {#if children}{@render children()}{/if}
   {#if origen}
@@ -36,30 +42,31 @@
 
 <style>
   .tile {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 0.9rem 1rem;
     min-width: 0;
   }
   .label {
-    color: var(--ink-2);
-    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
   }
   .value {
-    font-size: clamp(1.35rem, 3.2vw, 1.75rem);
-    font-weight: 650;
-    line-height: 1.2;
-    margin: 0.25rem 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 0 0.2rem;
     overflow-wrap: break-word;
-    hyphens: auto;
+  }
+  .unidad {
+    font-size: 0.5em;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--ink-2);
   }
   .sub {
     font-size: 0.875rem;
     color: var(--ink-2);
   }
   .origen {
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     font-size: 0.85rem;
   }
   .origen summary {

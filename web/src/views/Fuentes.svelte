@@ -61,6 +61,14 @@
   const paginas = $derived(Math.max(1, Math.ceil(lista.length / POR_PAGINA)));
   const totalRev = $derived(val ? val.chequeos.reduce((s, c) => s + c.revisados, 0) : 0);
   const totalOk = $derived(val ? val.chequeos.reduce((s, c) => s + c.aprobados, 0) : 0);
+  const tInconsistencias = $derived.by(() => {
+    if (!val) return '';
+    const n = val.advertencias.length;
+    if (!n) return 'Ninguna inconsistencia en los documentos oficiales';
+    const muns = [...new Set(val.advertencias.map((a) => a.municipio))];
+    const donde = muns.length === 1 && muns[0] ? `, todas en documentos de ${NOMBRE[muns[0]]}` : '';
+    return `${n} ${n === 1 ? 'diferencia' : 'diferencias'} dentro de los documentos oficiales${donde}`;
+  });
   const conDiferencias = $derived(val ? val.chequeos.filter((c) => c.fallas.length).length : 0);
 
   /** Short names for each automatic check (the long description stays below it). */
@@ -133,30 +141,39 @@
   <Estado {error} cargando={!fuentes && !error} />
 
   {#if fuentes && val}
-    <ul class="kpis" aria-label="Resumen">
-      <li class="card kpi">
+    <p class="titular">
+      <span>Cada cifra del sitio sale de uno de <strong class="num">{entero(conteo.todos)} documentos oficiales</strong>.</span>
+      <span class="suave">
+        {entero(totalOk)} de {entero(totalRev)} revisiones automáticas salieron correctas; las diferencias están dentro de
+        los propios documentos y se listan abajo.
+      </span>
+    </p>
+
+    <ul class="kpis cifras" aria-label="Resumen">
+      <li class="kpi">
         <span class="kpi-num num">{entero(conteo.todos)}</span>
         <span class="kpi-lbl">documentos oficiales</span>
         <span class="small muted">de 3 municipios, el INEGI y Hacienda</span>
       </li>
-      <li class="card kpi">
+      <li class="kpi">
         <span class="kpi-num num">{porcentaje(totalRev ? totalOk / totalRev : null, 1)}</span>
         <span class="kpi-lbl">revisiones correctas</span>
         <span class="small muted">{entero(totalOk)} de {entero(totalRev)} en {val.chequeos.length} tipos de revisión</span>
       </li>
-      <li class="card kpi">
+      <li class="kpi">
         <span class="kpi-num num">{entero(val.advertencias.length)}</span>
         <span class="kpi-lbl">inconsistencias en los originales</span>
         <span class="small muted">se publican tal cual, sin corregir</span>
       </li>
-      <li class="card kpi">
+      <li class="kpi">
         <span class="kpi-num kpi-fecha">{meta ? fechaCorta(meta.datos_al) : '—'}</span>
         <span class="kpi-lbl">última actualización</span>
         <span class="small muted">se revisa cada semana</span>
       </li>
     </ul>
 
-    <article class="card pasos" aria-labelledby="h-pasos">
+    <section class="banda pasos" aria-labelledby="h-pasos">
+      <p class="eyebrow">En tres pasos</p>
       <h2 id="h-pasos">Cómo comprobar cualquier número</h2>
       <ol>
         <li>
@@ -181,11 +198,12 @@
           </div>
         </li>
       </ol>
-    </article>
+    </section>
 
-    <article class="card" aria-labelledby="h-rev">
+    <section class="bloque" aria-labelledby="h-rev">
+      <p class="eyebrow">Revisiones automáticas</p>
       <div class="h-fila">
-        <h2 id="h-rev">Revisiones automáticas</h2>
+        <h2 id="h-rev">{porcentaje(totalRev ? totalOk / totalRev : null, 1)} de las revisiones salieron correctas</h2>
         <span class="pill" class:warn={conDiferencias > 0}>
           {val.chequeos.length - conDiferencias} de {val.chequeos.length} sin diferencias
         </span>
@@ -230,11 +248,12 @@
           </li>
         {/each}
       </ul>
-    </article>
+    </section>
 
-    <article class="card" aria-labelledby="h-inc">
+    <section class="banda" aria-labelledby="h-inc">
+      <p class="eyebrow">Inconsistencias en los documentos oficiales</p>
       <div class="h-fila">
-        <h2 id="h-inc">Inconsistencias en los documentos oficiales</h2>
+        <h2 id="h-inc">{tInconsistencias}</h2>
         <span class="pill warn">{val.advertencias.length}</span>
       </div>
       <p class="small muted intro">{val.nota}</p>
@@ -267,11 +286,12 @@
           {/if}
         {/each}
       </div>
-    </article>
+    </section>
 
-    <article class="card" aria-labelledby="h-docs">
+    <section class="bloque" aria-labelledby="h-docs">
+      <p class="eyebrow">Todos los documentos</p>
       <div class="h-fila">
-        <h2 id="h-docs">Todos los documentos</h2>
+        <h2 id="h-docs">{entero(conteo.todos)} documentos, cada uno con su copia y su huella</h2>
         <button type="button" class="btn" onclick={exportar}>
           <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-s"><path d="M8 2v8m-3.5-3L8 10.5 11.5 7M3 13h10" /></svg>
           Descargar lista (CSV)
@@ -340,10 +360,11 @@
           <button type="button" class="btn" disabled={pagina >= paginas - 1} onclick={() => (pagina += 1)}>Siguiente</button>
         </nav>
       {/if}
-    </article>
+    </section>
 
-    <article class="card" aria-labelledby="h-desc">
-      <h2 id="h-desc">Datos procesados para descargar</h2>
+    <section class="banda" aria-labelledby="h-desc">
+      <p class="eyebrow">Datos abiertos</p>
+      <h2 id="h-desc">Los mismos datos del sitio, listos para analizar</h2>
       <p class="small muted intro">
         Los mismos datos que usa el sitio, en JSON, para analizarlos por tu cuenta. Cada cifra incluye el identificador de
         su fuente. También está el <a href="/data/originales/manifest.json" download>manifiesto de originales</a> (URL,
@@ -369,21 +390,14 @@
           </ul>
         </div>
       </div>
-    </article>
+    </section>
   {/if}
 </section>
 
 <style>
-  section > * + * {
+  /* Vertical rhythm inside a section; bands, blocks and the heading row manage their own spacing. */
+  section > * + *:not(.banda, .bloque, .h-fila, .kpis, .titular) {
     margin-top: 1rem;
-  }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-size: 0.78rem;
-    font-weight: 650;
-    color: var(--ink-2);
-    margin: 0 0 0.35rem;
   }
   .lead {
     max-width: 72ch;
@@ -404,25 +418,15 @@
     margin: 0;
   }
 
-  /* Summary numbers */
+  /* Summary numbers (inside the shared `.cifras` row) */
   .kpis {
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    margin-bottom: 2rem;
   }
   @media (max-width: 520px) {
     .kpis {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.6rem;
-    }
-    .kpi {
-      padding: 0.8rem;
-    }
-    .kpi-num {
-      font-size: 1.6rem;
     }
   }
   .kpi {
@@ -431,13 +435,16 @@
     gap: 0.1rem;
   }
   .kpi-num {
-    font-size: clamp(1.9rem, 4.5vw, 2.5rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
     font-weight: 750;
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
   .kpi-lbl {
     font-weight: 600;
+  }
+  .bloque {
+    padding-block: clamp(1.75rem, 4vw, 2.75rem);
   }
 
   /* How to verify */
