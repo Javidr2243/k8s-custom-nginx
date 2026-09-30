@@ -87,21 +87,38 @@
     min-height: 32px;
     align-items: center;
   }
-  /* Compact: the label, the title clipped to one line, then "Detalles"; used in dense lists. */
+  /* Compact: one quiet line ("Fuente: title… Detalles"); the details open on a full-width row below. */
   .compacto {
+    display: flex;
+    gap: 0.35rem;
+    align-items: baseline;
     color: var(--ink-3);
   }
   .compacto .lbl {
     font-weight: 500;
+    flex: none;
+  }
+  .compacto ul {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+  }
+  .compacto li {
+    display: grid;
+    grid-template-columns: minmax(0, max-content) auto;
+    column-gap: 0.6rem;
+    align-items: baseline;
   }
   .compacto .tit {
-    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   .compacto .det summary {
     min-height: 28px;
+  }
+  .compacto .det[open] {
+    grid-column: 1 / -1;
   }
   dl {
     display: grid;

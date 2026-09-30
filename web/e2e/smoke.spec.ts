@@ -79,7 +79,7 @@ test('cambiar de municipio actualiza la URL y el título', async ({ page }) => {
 test('cada cifra clave explica de dónde sale y enlaza a la copia archivada', async ({ page, request }) => {
   await page.goto('/');
   await page.waitForLoadState('networkidle');
-  const origen = page.locator('.hero details.origen').first();
+  const origen = page.locator('details.origen').first();
   await origen.locator('> summary').click();
   await expect(origen).toContainText('Devengado');
   const det = origen.locator('details.det').first();
