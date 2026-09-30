@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+web/test-results/
+web/playwright-report/
+.DS_Store
+.env
+.env.*
+# Temporary pipeline work (downloads are committed under data/raw/ only once validated)
+.cache/

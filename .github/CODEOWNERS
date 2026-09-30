@@ -1,0 +1,7 @@
+# Every change to published data, sources, certificates or CI requires review from the owner.
+*                         @javidr2243
+/data/                    @javidr2243
+/pipeline/sources.yaml    @javidr2243
+/pipeline/certs/          @javidr2243
+/.github/                 @javidr2243
+/deploy/                  @javidr2243
