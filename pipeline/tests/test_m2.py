@@ -25,8 +25,11 @@ def test_rpu_saldos_reads_only_the_nuevo_leon_block() -> None:
 
 
 def test_rpu_registro_monterrey_loans() -> None:
-    creditos = [c for c in shcp.rpu_registro(_need(DATA_RAW / "shcp" / "shcp-rpu-registro.csv"))
-                if c.municipio == "monterrey"]  # fmt: skip
+    creditos = [
+        c
+        for c in shcp.rpu_registro(_need(DATA_RAW / "shcp" / "shcp-rpu-registro.csv"))
+        if c.municipio == "monterrey"
+    ]
     assert sorted(c.saldo for c in creditos) == [585_785_906.0, 871_253_473.0]
     assert all(c.fuente_pago == "Fondo General de Participaciones" for c in creditos)
     assert {c.sobretasa for c in creditos} == {0.005, 0.0064}  # rates are not rounded to cents

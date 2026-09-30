@@ -37,6 +37,34 @@ def _cmd_build(args: argparse.Namespace) -> int:
     return 1 if report.errores else 0
 
 
+def _cmd_discover(args: argparse.Namespace) -> int:
+    import json
+    from dataclasses import asdict
+
+    from gdmty.discover import descubrir
+    from gdmty.paths import CACHE_DIR
+
+    d = descubrir()
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    (CACHE_DIR / "discover-report.json").write_text(
+        json.dumps(asdict(d), ensure_ascii=False, indent=1), encoding="utf-8"
+    )
+    for x in d.nuevas:
+        print(f"nuevo        {x['id']}  {x['url']}")
+    for x in d.actualizadas:
+        print(f"actualizado  {x}")
+    for x in d.manuales:
+        print(f"manual       {x}")
+    return 0
+
+
+def _cmd_resumen(args: argparse.Namespace) -> int:
+    from gdmty.resumen import generar
+
+    print(generar(), end="")
+    return 0
+
+
 def _cmd_certs(args: argparse.Namespace) -> int:
     from gdmty.certs import check_expiry
 
@@ -57,6 +85,12 @@ def main(argv: list[str] | None = None) -> int:
     p_fetch.set_defaults(func=_cmd_fetch)
     p_build = sub.add_parser("build", help="Valida los originales y genera data/public/v1")
     p_build.set_defaults(func=_cmd_build)
+    p_disc = sub.add_parser(
+        "discover", help="Busca documentos nuevos (trimestres nuevos) y los agrega a sources.yaml"
+    )
+    p_disc.set_defaults(func=_cmd_discover)
+    p_res = sub.add_parser("resumen", help="Resumen en Markdown para el PR de actualización")
+    p_res.set_defaults(func=_cmd_resumen)
     p_certs = sub.add_parser("certs", help="Revisa la vigencia de los certificados intermedios")
     p_certs.add_argument("--days", type=int, default=30)
     p_certs.set_defaults(func=_cmd_certs)

@@ -148,15 +148,22 @@ def _registro_header(all_rows: list[tuple]) -> tuple[int, dict[str, int], date]:
             col = {}
             for j, lab in enumerate(labels):
                 for key, pref in [
-                    ("entidad", "entidad federativa"), ("deudor", "deudor u obligado"),
-                    ("acreedor", "institucion financiera"), ("tipo", "tipo de obligacion"),
-                    ("fecha_contratacion", "fecha de contratacion"), ("fecha_inscripcion", "fecha de inscripcion"),
-                    ("monto_original", "monto original contratado"), ("saldo", "saldo al"),
-                    ("tasa", "tasa de interes"), ("sobretasa", "sobretasa"),
-                    ("vencimiento", "fecha de vencimiento"), ("fuente_pago", "fuente"),
-                    ("porcentaje_afectado", "porcentaje afectado"), ("destino", "destino"),
+                    ("entidad", "entidad federativa"),
+                    ("deudor", "deudor u obligado"),
+                    ("acreedor", "institucion financiera"),
+                    ("tipo", "tipo de obligacion"),
+                    ("fecha_contratacion", "fecha de contratacion"),
+                    ("fecha_inscripcion", "fecha de inscripcion"),
+                    ("monto_original", "monto original contratado"),
+                    ("saldo", "saldo al"),
+                    ("tasa", "tasa de interes"),
+                    ("sobretasa", "sobretasa"),
+                    ("vencimiento", "fecha de vencimiento"),
+                    ("fuente_pago", "fuente"),
+                    ("porcentaje_afectado", "porcentaje afectado"),
+                    ("destino", "destino"),
                     ("plazo", "plazo pactado"),
-                ]:  # fmt: skip
+                ]:
                     if lab.startswith(pref) and key not in col:
                         col[key] = j
             m = re.search(r"saldo al (\d{1,2}) de ([a-z]+) de (\d{4})", labels[col["saldo"]])
