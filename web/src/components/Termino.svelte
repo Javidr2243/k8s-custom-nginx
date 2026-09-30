@@ -67,6 +67,8 @@
     text-decoration-thickness: 1.5px;
     color: inherit;
     font: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
   }
   .q {
     display: inline-grid;
@@ -74,8 +76,10 @@
     width: 1em;
     height: 1em;
     margin-left: 0.15em;
-    font-size: 0.7em;
+    font-size: min(0.7em, 0.75rem);
     font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
     border-radius: 50%;
     background: var(--surface-2);
     color: var(--ink-2);

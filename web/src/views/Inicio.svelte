@@ -3,13 +3,15 @@
     api,
     MUNICIPIOS,
     NOMBRE,
+    NOMBRE_CORTO,
     type Deuda,
     type Egresos,
+    type Meta,
     type Movimiento,
     type Municipio,
     type MunicipioId,
   } from '../lib/data';
-  import { acumulado, cambio, pesos, porcentaje, fecha } from '../lib/format';
+  import { acumulado, pesos, porcentaje, fecha } from '../lib/format';
   import { route, link, href } from '../lib/router.svelte';
   import { sencillo, CAPITULOS } from '../lib/capitulos';
   import Filtros from '../components/Filtros.svelte';
@@ -27,6 +29,8 @@
     muns: Municipio[];
     movs: Movimiento[];
   } | null>(null);
+  let meta = $state<Meta | null>(null);
+  api.meta().then((x) => (meta = x)).catch(() => {});
   let error = $state<string | null>(null);
 
   $effect(() => {
@@ -102,28 +106,47 @@
     return i > 0 ? [t.slice(0, i), ' millones'] : [t, ''];
   }
   const totalDev = $derived(p?.total.devengado ?? 0);
-  /** One-sentence takeaways that read each chart for the user (computed from the same figures). */
+  const comparacion = $derived(
+    cambioAnual !== null && p
+      ? ` y ${porcentaje(Math.abs(cambioAnual))} ${cambioAnual >= 0 ? 'más' : 'menos'} que en el mismo periodo de ${Number(p.periodo.slice(0, 4)) - 1}`
+      : '',
+  );
+  const mesesPasados = $derived(p ? Number(p.periodo.slice(-1)) * 3 : 0);
+  const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  /** "de enero a junio de 2026" (the figures are cumulative from January). */
+  const deEneroA = $derived(p ? `de enero a ${MESES[mesesPasados - 1]} de ${p.periodo.slice(0, 4)}` : '');
+  /** Chart headlines state the finding in actual values (HIG: summarize the main message; avoid subjective terms). */
   const lecturaCap = $derived.by(() => {
     // Same grouping and rounding as the waffle (top five + "Otros"), so the sentence matches the squares.
     const orden = [...partes].filter((x) => x.valor > 0).sort((a, b) => b.valor - a.valor);
-    if (orden.length < 2) return '';
+    if (orden.length < 2) return null;
     const grupos = orden.length <= 5 ? orden : [...orden.slice(0, 5), { valor: orden.slice(5).reduce((t, x) => t + x.valor, 0) }];
     const c = deCada100(grupos);
-    return `Dos rubros se llevan $${c[0]! + c[1]!} de cada $100: ${orden[0]!.etiqueta.toLowerCase()} y ${orden[1]!.etiqueta.toLowerCase()}.`;
+    return {
+      titular: `Dos rubros se llevan $${c[0]! + c[1]!} de cada $100`,
+      detalle: `${orden[0]!.etiqueta} ($${c[0]}) y ${orden[1]!.etiqueta.toLowerCase()} ($${c[1]}).`,
+    };
   });
   const lecturaDep = $derived.by(() => {
     const top = barras[0];
-    if (!top || top.valor === null || !totalDev) return '';
-    return `${top.etiqueta} es ${p?.dependencias ? 'la que más gasta' : 'el rubro más grande'}: ${pesos(top.valor)}, ${porcentaje(top.valor / totalDev)} del total.`;
+    if (!top || top.valor === null || !totalDev) return null;
+    return {
+      titular: `${top.etiqueta.replace(/^Secretaría de /, '')}: ${porcentaje(top.valor / totalDev)} del gasto`,
+      detalle: `${top.etiqueta} ${p?.dependencias ? 'es la dependencia que más gastó' : 'es el rubro más grande'}: ${pesos(top.valor)}.`,
+    };
   });
   const movs = $derived(datos?.movs.filter((x) => x.municipio === m).slice(0, 4) ?? []);
 </script>
 
 <section aria-labelledby="h-inicio">
-  <h1 id="h-inicio">¿A dónde va el dinero de {NOMBRE[m]}?</h1>
-  <p class="lead muted">Cómo obtiene y gasta su dinero el gobierno municipal, explicado con datos oficiales.</p>
-
-  <Filtros {periodos} />
+  <header class="cabeza">
+    <p class="eyebrow">
+      {meta?.datos_al ? `Finanzas municipales · datos al ${fecha(meta.datos_al)}` : 'Finanzas municipales'}
+    </p>
+    <h1 id="h-inicio">¿A dónde va el dinero de {NOMBRE[m]}?</h1>
+    <p class="lead muted">Cómo obtiene y gasta su dinero el gobierno municipal, con datos oficiales. Cada cifra enlaza a su documento.</p>
+    <Filtros {periodos} />
+  </header>
   <Estado {error} cargando={!datos && !error} />
 
   {#if faltante}
@@ -134,35 +157,38 @@
   {/if}
 
   {#if datos && p}
-    <p class="resumen">
-      De {acumulado(p.periodo)}, el gobierno de {NOMBRE[m]}
-      <Termino id="devengado">gastó</Termino>
-      <strong>{pesos(p.total.devengado)}</strong>
-      de un <Termino id="modificado">presupuesto</Termino> de <strong>{pesos(p.total.modificado)}</strong> para todo el
-      año{#if cambioAnual !== null}, {cambio(cambioAnual)} frente al mismo periodo del año anterior{/if}.
+    <!-- Two-tone statement: the fact in ink, its context in muted ink (one number in a plain sentence). -->
+    <p class="titular">
+      <span>
+        {NOMBRE_CORTO[m]} <Termino id="devengado">gastó</Termino> <strong class="num">{pesos(p.total.devengado)}</strong>
+        {deEneroA}.
+      </span>
+      <span class="suave">
+        Es {porcentaje(ejercido)} de su <Termino id="modificado">presupuesto</Termino> para todo el año
+        ({pesos(p.total.modificado)}){comparacion}.
+      </span>
     </p>
 
-    <!-- Key figures: an open row (no boxes), three at most, one line of context each; one shared "where from" below. -->
     <dl class="cifras">
       <div>
-        <dt>Ya se gastó del <Termino id="modificado">presupuesto del año</Termino></dt>
+        <dt class="eyebrow">Presupuesto ya gastado</dt>
         <dd class="valor num">{porcentaje(ejercido)}</dd>
-        <dd class="ctx">{pesos(p.total.devengado)} de {pesos(p.total.modificado)}; han pasado {Number(p.periodo.slice(-1)) * 3} de 12 meses</dd>
+        <dd class="ctx">Han pasado {mesesPasados} de 12 meses del año</dd>
       </div>
       <div>
-        <dt>Gasto <Termino id="por-habitante">por habitante</Termino></dt>
+        <dt class="eyebrow">Gasto <Termino id="por-habitante">por habitante</Termino></dt>
         <dd class="valor num">{propioHab ? pesos(propioHab.valor) : 'Sin dato'}</dd>
         <dd class="ctx">
           {#if lugarHab && porHabitante.length > 1}
             {lugarHab === 1 ? 'El más alto' : lugarHab === porHabitante.length ? 'El más bajo' : `El ${lugarHab}º`} de los
-            {porHabitante.length} municipios en el mismo periodo
+            {porHabitante.length} municipios
           {:else}
             Población: {poblacion(m)?.toLocaleString('es-MX') ?? '—'} (Censo 2020)
           {/if}
         </dd>
       </div>
       <div>
-        <dt><Termino id="deuda">Deuda registrada</Termino></dt>
+        <dt class="eyebrow"><Termino id="deuda">Deuda registrada</Termino></dt>
         <dd class="valor num">{monto(saldo?.total)[0]}<span class="unidad">{monto(saldo?.total)[1]}</span></dd>
         <dd class="ctx">{saldo ? `Saldo al ${fecha(saldo.fecha)}` : ''}</dd>
       </div>
@@ -171,9 +197,9 @@
       <summary>¿De dónde salen estas cifras?</summary>
       <ul>
         <li>
-          <strong>Gastado y presupuesto:</strong> columnas «Devengado», «Aprobado» y «Modificado» del estado de gasto del
-          municipio, acumulado de enero al {fecha(p.fecha_corte)}. <Termino id="acumulado">Las cifras son acumuladas</Termino>
-          y en pesos nominales.
+          <strong>Gasto y presupuesto:</strong> columnas «Devengado» y «Modificado» del estado de gasto del municipio,
+          acumulado de enero al {fecha(p.fecha_corte)}. <Termino id="acumulado">Las cifras son acumuladas</Termino> y en
+          pesos nominales.
         </li>
         <li>
           <strong>Por habitante:</strong> gasto del mismo periodo de cada municipio entre su población del Censo 2020 del
@@ -187,40 +213,46 @@
       <Fuente ids={[p.fuente, mismoAnterior?.fuente, ...porHabitante.map((h) => h.fuente), 'inegi-mgem-19', saldo?.fuente]} />
     </details>
 
-    <div class="dos">
-      <section aria-labelledby="h-100">
-        <h2 id="h-100">De cada $100 que gastó</h2>
-        <p class="lectura">{lecturaCap}</p>
-        <p class="muted small">
-          Por tipo de gasto (<Termino id="capitulo">capítulo del gasto</Termino>). Toca un rubro para ver el monto.
-        </p>
-        <Waffle {partes} titulo={`De cada 100 pesos que gastó ${NOMBRE[m]} en ${acumulado(p.periodo)}`} />
-        <Fuente ids={[p.fuente]} compacto />
-      </section>
+    <div class="banda">
+      <div class="dos">
+        <section aria-labelledby="h-100">
+          <p class="eyebrow">De cada $100 que gastó</p>
+          <h2 id="h-100">{lecturaCap?.titular ?? 'De cada $100 que gastó'}</h2>
+          {#if lecturaCap}<p class="detalle">{lecturaCap.detalle}</p>{/if}
+          <p class="muted small">
+            Por tipo de gasto (<Termino id="capitulo">capítulo del gasto</Termino>). Toca un rubro para ver el monto.
+          </p>
+          <Waffle {partes} titulo={`De cada 100 pesos que gastó ${NOMBRE[m]} ${deEneroA}`} />
+          <Fuente ids={[p.fuente]} compacto />
+        </section>
 
-      <section aria-labelledby="h-quien">
-        <h2 id="h-quien">{p.dependencias ? '¿Quién gasta más?' : '¿En qué gasta más?'}</h2>
-        <p class="lectura">{lecturaDep}</p>
-        <p class="muted small">
-          {#if p.dependencias}
-            Las 8 <Termino id="dependencia">dependencias</Termino> con más gasto. La barra clara es su presupuesto del año.
-          {:else}
-            {p.motivo_sin_dependencias} La barra clara es el presupuesto del año.
-          {/if}
-        </p>
-        <BarList
-          {barras}
-          formato={pesos}
-          titulo={`Gasto de ${NOMBRE[m]} por ${p.dependencias ? 'dependencia' : 'tipo de gasto'}`}
-          valorEtiqueta="Gastado (devengado)"
-          referenciaEtiqueta="Presupuesto modificado"
-        />
-        <p class="small"><a href={href('/mapa')} use:link>Ver todas en el mapa del gobierno →</a></p>
-        <Fuente ids={[p.fuente_dependencias ?? p.fuente]} compacto />
-      </section>
+        <section aria-labelledby="h-quien">
+          <p class="eyebrow">{p.dependencias ? '¿Quién gasta más?' : '¿En qué gasta más?'}</p>
+          <h2 id="h-quien">{lecturaDep?.titular ?? '¿Quién gasta más?'}</h2>
+          {#if lecturaDep}<p class="detalle">{lecturaDep.detalle}</p>{/if}
+          <p class="muted small">
+            {#if p.dependencias}
+              Las 8 <Termino id="dependencia">dependencias</Termino> con más gasto. La barra clara es su presupuesto del
+              año.
+            {:else}
+              {p.motivo_sin_dependencias} La barra clara es el presupuesto del año.
+            {/if}
+          </p>
+          <BarList
+            {barras}
+            formato={pesos}
+            titulo={`Gasto de ${NOMBRE[m]} por ${p.dependencias ? 'dependencia' : 'tipo de gasto'}`}
+            valorEtiqueta="Gastado (devengado)"
+            referenciaEtiqueta="Presupuesto modificado"
+          />
+          <p class="small"><a href={href('/mapa')} use:link>Ver todas en el mapa del gobierno →</a></p>
+          <Fuente ids={[p.fuente_dependencias ?? p.fuente]} compacto />
+        </section>
+      </div>
     </div>
 
     <section class="bloque" aria-labelledby="h-movs">
+      <p class="eyebrow">Movimientos recientes</p>
       <h2 id="h-movs">¿Qué cambió recientemente?</h2>
       <ul class="movs">
         {#each movs as mv, i (i)}
@@ -230,13 +262,23 @@
       <p class="small"><a href={href('/movimientos')} use:link>Ver todos los movimientos →</a></p>
     </section>
 
-    <nav class="bloque sigue" aria-labelledby="h-sigue">
-      <h2 id="h-sigue">Sigue explorando</h2>
+    <nav class="banda sigue" aria-labelledby="h-sigue">
+      <p class="eyebrow">Sigue explorando</p>
+      <h2 id="h-sigue">Más formas de ver el dinero de {NOMBRE_CORTO[m]}</h2>
       <ul>
-        <li><a href={href('/mapa')} use:link>Mapa del gobierno</a> <span class="muted">— quién maneja cuánto</span></li>
-        <li><a href={href('/flujo')} use:link>Flujo del dinero</a> <span class="muted">— de dónde entra y en qué se va</span></li>
-        <li><a href={href('/comparar')} use:link>Comparar municipios</a> <span class="muted">— total y por habitante</span></li>
-        <li><a href="/fuentes" use:link>Fuentes y datos abiertos</a> <span class="muted">— documentos oficiales y descargas</span></li>
+        {#each [
+          { ruta: '/mapa', t: 'Mapa del gobierno', d: 'Quién es quién y cuánto maneja cada dependencia.' },
+          { ruta: '/flujo', t: 'Flujo del dinero', d: 'De dónde entra el dinero y en qué se va.' },
+          { ruta: '/comparar', t: 'Comparar municipios', d: 'Gasto total y por habitante, año por año.' },
+          { ruta: '/fuentes', t: 'Fuentes y datos abiertos', d: 'Documentos oficiales, verificaciones y descargas.' },
+        ] as e (e.ruta)}
+          <li>
+            <a href={e.ruta === '/fuentes' ? e.ruta : href(e.ruta)} use:link>
+              <span><strong>{e.t}</strong><span class="muted">{e.d}</span></span>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
+            </a>
+          </li>
+        {/each}
       </ul>
     </nav>
 
@@ -250,18 +292,34 @@
 </section>
 
 <style>
+  .cabeza {
+    margin-bottom: 0.5rem;
+  }
   .lead {
     font-size: 1.1rem;
-    max-width: 60ch;
-  }
-  .resumen {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 62ch;
-    margin: 0.5rem 0 1.5rem;
+    max-width: 58ch;
+    margin-bottom: 1.25rem;
   }
 
-  /* Key figures: open row separated by thin rules, CivLab-style (label, number, one line of context). */
+  /* The headline statement (Stripe/Nubank-style two tones). */
+  .titular {
+    font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    max-width: 34ch;
+    margin: 1.25rem 0 1.75rem;
+  }
+  .titular strong {
+    font-weight: 750;
+  }
+  @media (min-width: 900px) {
+    .titular {
+      max-width: 44ch;
+    }
+  }
+
+  /* Key figures: open row separated by thin rules. */
   .cifras {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -270,54 +328,35 @@
     border-bottom: 1px solid var(--grid);
   }
   .cifras > div {
-    padding: 1.1rem 1.25rem 1.1rem 0;
+    padding: 1.15rem 1.25rem 1.15rem 0;
     min-width: 0;
   }
   .cifras > div + div {
     padding-left: 1.25rem;
     border-left: 1px solid var(--grid);
   }
-  dt {
-    font-size: 0.9rem;
-    color: var(--ink-2);
-  }
   dd {
     margin: 0;
   }
   .valor {
-    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    margin: 0.2rem 0;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0.1rem 0 0.2rem;
   }
   .unidad {
-    font-size: 0.55em;
+    font-size: 0.5em;
     font-weight: 600;
     color: var(--ink-2);
     letter-spacing: 0;
-  }
-  .lectura {
-    font-size: 1.05rem;
-    margin: 0 0 0.35rem;
-  }
-  .sigue ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0.5rem 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
-  }
-  .sigue a {
-    font-weight: 600;
   }
   .ctx {
     font-size: 0.875rem;
     color: var(--ink-2);
   }
   .origen {
-    margin: 0.5rem 0 0;
+    margin: 0.5rem 0 2.5rem;
   }
   .origen summary {
     cursor: pointer;
@@ -333,26 +372,73 @@
     max-width: 80ch;
   }
 
-  /* Two open sections side by side, separated by space rather than boxes. */
+  /* Chart sections: question label, finding as headline, one-line detail, chart, quiet source. */
   .dos {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem 3rem;
-    margin-top: 2.5rem;
+    gap: 2.5rem 3.5rem;
   }
   .dos > section {
     min-width: 0;
   }
+  .detalle {
+    font-size: 1.05rem;
+    color: var(--ink-2);
+    margin: 0 0 0.35rem;
+  }
+
   .bloque {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--grid);
+    padding-block: clamp(2rem, 5vw, 3.25rem);
   }
   .movs {
     list-style: none;
     margin: 0;
     padding: 0;
-    max-width: 80ch;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+    column-gap: 3rem;
+  }
+
+  /* GOV.UK-style link list: title, one-line description, chevron. */
+  .sigue ul {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+    column-gap: 3rem;
+  }
+  .sigue a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 64px;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--grid);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .sigue a > span {
+    display: grid;
+    gap: 0.1rem;
+  }
+  .sigue strong {
+    color: var(--link);
+    font-weight: 650;
+  }
+  .sigue a:hover strong {
+    text-decoration: underline;
+  }
+  .sigue svg {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: none;
+    stroke: var(--ink-3);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
   .notice {
     margin-top: 2rem;
