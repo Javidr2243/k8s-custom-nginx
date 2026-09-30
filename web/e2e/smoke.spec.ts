@@ -79,7 +79,7 @@ test('cambiar de municipio actualiza la URL y el título', async ({ page }) => {
 test('cada cifra clave explica de dónde sale y enlaza a la copia archivada', async ({ page, request }) => {
   await page.goto('/');
   await page.waitForLoadState('networkidle');
-  const origen = page.locator('.tile details.origen').first();
+  const origen = page.locator('.hero details.origen').first();
   await origen.locator('> summary').click();
   await expect(origen).toContainText('Devengado');
   const det = origen.locator('details.det').first();
@@ -95,7 +95,7 @@ test('la página de fuentes lista documentos y verificaciones', async ({ page })
   await page.goto('/fuentes');
   await page.waitForLoadState('networkidle');
   await expect(page.locator('.checks li').first()).toBeVisible();
-  expect(await page.locator('table.data tbody tr').count()).toBeGreaterThan(10);
+  expect(await page.locator('.docs li.doc').count()).toBeGreaterThan(10);
   await page.getByPlaceholder(/Buscar por título/).fill('deuda');
-  await expect(page.locator('table.data tbody tr').first()).toContainText(/[Dd]euda/);
+  await expect(page.locator('.docs li.doc').first()).toContainText(/[Dd]euda/);
 });
