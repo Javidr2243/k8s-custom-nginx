@@ -106,7 +106,7 @@
       'fuentes-adonde-va-tu-dinero-mty.csv',
       aCsv(
         ['id', 'titulo', 'emisor', 'municipio', 'periodo', 'formato', 'url_oficial', 'pagina', 'copia_archivada', 'publicado', 'descargado', 'sha256', 'sha256_original'],
-        lista.map(([id, f]) => [id, f.titulo, f.emisor, f.municipio ?? 'nacional', f.periodo, f.formato, f.url, f.pagina, `${location.origin}${f.copia}`, f.publicado, f.descargado, f.sha256, f.sha256_original]),
+        lista.map(([id, f]) => [id, f.titulo, f.emisor, f.municipio ?? 'nacional', f.periodo, f.formato, f.url, f.pagina, f.copia ? `${location.origin}${f.copia}` : '', f.publicado, f.descargado, f.sha256, f.sha256_original]),
       ),
     );
   }
@@ -239,7 +239,7 @@
                     <li>
                       {#if f.municipio}<strong>{NOMBRE_CORTO[f.municipio]}:</strong>{/if}
                       {f.detalle || 'Ver documento'}
-                      {#if f.fuente && fuentes[f.fuente]}· <a href={fuentes[f.fuente]!.url} rel="noopener noreferrer" target="_blank">documento</a> · <a href={fuentes[f.fuente]!.copia} download>copia</a>{/if}
+                      {#if f.fuente && fuentes[f.fuente]}· <a href={fuentes[f.fuente]!.url} rel="noopener noreferrer" target="_blank">documento</a>{#if fuentes[f.fuente]!.copia} · <a href={fuentes[f.fuente]!.copia} download>copia</a>{/if}{/if}
                     </li>
                   {/each}
                 </ul>
@@ -275,8 +275,8 @@
                     {#if f}
                       <span class="small muted inc-doc">
                         {f.titulo} ·
-                        <a href={f.url} rel="noopener noreferrer" target="_blank">oficial</a> ·
-                        <a href={f.copia} download>copia</a>
+                        <a href={f.url} rel="noopener noreferrer" target="_blank">oficial</a>{#if f.copia}
+                          · <a href={f.copia} download>copia</a>{/if}
                       </span>
                     {/if}
                   </li>
@@ -345,10 +345,14 @@
               <a class="btn btn-s" href={f.url} rel="noopener noreferrer" target="_blank">
                 Oficial <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-s"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9" /></svg>
               </a>
-              <a class="btn btn-s" href={f.copia} download>
-                Copia{f.extracto ? ' (extracto)' : ''}
-                <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-s"><path d="M8 2v8m-3.5-3L8 10.5 11.5 7M3 13h10" /></svg>
-              </a>
+              {#if f.copia}
+                <a class="btn btn-s" href={f.copia} download>
+                  Copia{f.extracto ? ' (extracto)' : ''}
+                  <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-s"><path d="M8 2v8m-3.5-3L8 10.5 11.5 7M3 13h10" /></svg>
+                </a>
+              {:else}
+                <span class="sin-copia small muted" title={f.sin_copia ?? ''}>Sin copia (datos personales)</span>
+              {/if}
             </div>
           </li>
         {/each}
@@ -683,6 +687,11 @@
     display: flex;
     gap: 0.4rem;
     flex: none;
+  }
+  .sin-copia {
+    align-self: center;
+    max-width: 12rem;
+    line-height: 1.3;
   }
   .btn-s {
     min-height: 40px;

@@ -30,6 +30,9 @@ Tipo = Literal[
 EXTENSION = {"xlsx": "xlsx", "xls": "xls", "zip": "csv", "json": "json", "csv": "csv"}
 # Large national originals: only an extract for the three municipalities is kept (plus the original's hash).
 EXTRACTOS = {"inegi_efipem", "shcp_rpu_registro"}
+# Originals that are not archived in the repo or on the site because they contain personal data (RFC of individuals):
+# only their link and SHA-256 are published, and the build uses their masked parser output (data/intermedio/).
+SIN_COPIA = {"sipot_xxix", "sp_contratos"}
 
 
 class Fuente(BaseModel):

@@ -178,7 +178,9 @@ export interface Fuente {
   pagina: string;
   formato: string;
   archivo: string;
-  copia: string;
+  /** Archived copy served by the site; null when the original contains personal data (see sin_copia). */
+  copia: string | null;
+  sin_copia: string | null;
   extracto: boolean;
   sha256_original: string | null;
   bytes: number | null;

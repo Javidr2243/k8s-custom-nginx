@@ -27,7 +27,9 @@ Funciona en celulares, en modo claro y oscuro, con teclado y lector de pantalla 
 
 Todas están declaradas, una por una, en [`pipeline/sources.yaml`](pipeline/sources.yaml) (URL, emisor, página de
 origen y periodo). Los originales se guardan en [`data/raw/`](data/raw/) con su huella SHA-256 en
-[`data/raw/manifest.json`](data/raw/manifest.json).
+[`data/raw/manifest.json`](data/raw/manifest.json). Excepción: los archivos de **contratos** contienen RFC de
+personas físicas, así que no se guardan ni se publican; queda su enlace y su huella, y el sitio se construye con su
+versión ya enmascarada en [`data/intermedio/contratos/`](data/intermedio/contratos/) (se regenera con `make fetch`).
 
 | Fuente | Emisor | Formato | Cobertura | Detalle |
 |---|---|---|---|---|
@@ -99,7 +101,8 @@ make e2e            # pruebas en navegador contra el contenedor
 ```
 pipeline/   Python 3.12: descarga → valida → JSON estático (sin servidor, sin base de datos)
   sources.yaml, gdmty/{fetch,safeio,discover,build,validate}.py, gdmty/parsers/*
-data/raw/   originales oficiales + manifest.json (SHA-256, fechas, historial)
+data/raw/   originales oficiales + manifest.json (SHA-256, fechas, historial); contratos: solo enlace y huella
+data/intermedio/contratos/  contratos ya procesados con el RFC de personas físicas oculto
 data/public/v1/  JSON que carga el sitio + SHA256SUMS
 web/        Svelte 5 + Vite + TypeScript; gráficas en SVG con módulos de d3
 Dockerfile, nginx.conf, security-headers.conf   nginx sin privilegios, solo archivos estáticos

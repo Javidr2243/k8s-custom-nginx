@@ -10,6 +10,8 @@ const DATA_DIR = resolve(import.meta.dirname, '../data/public');
 // Archived copies of the official originals, served at /data/originales/ so any figure can be verified
 // even if the government link stops working.
 const RAW_DIR = resolve(import.meta.dirname, '../data/raw');
+// Contract originals contain RFCs of individuals: never served or copied, even if present locally after `make fetch`.
+const SIN_COPIA = /-contratos[^/\\]*$/;
 
 function publicData(): Plugin {
   return {
@@ -23,7 +25,7 @@ function publicData(): Plugin {
           rel = rel.slice('/originales'.length);
         }
         const file = resolve(base, '.' + rel);
-        if (!file.startsWith(base + sep) || !existsSync(file) || !statSync(file).isFile()) {
+        if (!file.startsWith(base + sep) || !existsSync(file) || !statSync(file).isFile() || (base === RAW_DIR && SIN_COPIA.test(file))) {
           return next();
         }
         res.setHeader('Content-Type', file.endsWith('.json') ? 'application/json' : 'application/octet-stream');
@@ -36,7 +38,10 @@ function publicData(): Plugin {
         cpSync(DATA_DIR, resolve(options.dir ?? 'dist', 'data'), { recursive: true });
       }
       if (existsSync(RAW_DIR)) {
-        cpSync(RAW_DIR, resolve(options.dir ?? 'dist', 'data', 'originales'), { recursive: true });
+        cpSync(RAW_DIR, resolve(options.dir ?? 'dist', 'data', 'originales'), {
+          recursive: true,
+          filter: (src) => !SIN_COPIA.test(src),
+        });
       }
     },
   };

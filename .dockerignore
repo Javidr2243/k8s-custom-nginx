@@ -10,3 +10,5 @@ pipeline
 web/test-results
 web/playwright-report
 *.md
+# Contract originals contain personal data and are never served (see .gitignore).
+data/raw/**/*-contratos*

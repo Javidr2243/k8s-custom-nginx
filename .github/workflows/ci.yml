@@ -44,7 +44,7 @@ jobs:
       - name: Published JSON matches the committed originals
         run: |
           uv run python -m gdmty build
-          git diff --exit-code -- ../data/public
+          git diff --exit-code -- ../data/public ../data/intermedio
       - name: pip-audit
         run: uv run pip-audit --skip-editable --progress-spinner off
 
