@@ -63,6 +63,7 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "22"
+          package-manager-cache: false
       - run: npm ci --ignore-scripts --no-fund
       - run: npm audit --audit-level=high
       - run: npm run lint
@@ -124,6 +125,18 @@ jobs:
             --cap-drop ALL --security-opt no-new-privileges gdmty:ci
           for _ in $(seq 1 20); do curl -fsS http://127.0.0.1:8080/healthz && break; sleep 1; done
           sh scripts/check-headers.sh http://127.0.0.1:8080
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Browser tests against the hardened container (routes, CSP violations, a11y basics)
+        working-directory: web
+        run: |
+          npm ci --ignore-scripts --no-fund
+          npx playwright install --with-deps chromium
+          npx playwright test
+        env:
+          E2E_BASE_URL: http://127.0.0.1:8080
       - name: Trivy (fail on fixable HIGH/CRITICAL)
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
