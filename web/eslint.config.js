@@ -28,6 +28,8 @@ export default ts.config(
         { property: 'outerHTML', message: 'No uses outerHTML.' },
         { property: 'insertAdjacentHTML', message: 'No uses insertAdjacentHTML.' },
       ],
+      // Our Map/URL/URLSearchParams instances are local temporaries inside functions, never reactive state.
+      'svelte/prefer-svelte-reactivity': 'off',
       'no-eval': 'error',
       'no-implied-eval': 'error',
       'no-new-func': 'error',
