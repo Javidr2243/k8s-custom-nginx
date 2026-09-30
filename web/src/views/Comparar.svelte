@@ -160,17 +160,35 @@
         ? `La mayor diferencia está en ${CAPITULOS[mayorDif.c]?.sencillo.toLowerCase()}: ${mayorDif.x.veces.toFixed(1)} veces`
         : '¿En qué gasta cada uno?'}
       detalle={mayorDif
-        ? `${NOMBRE_CORTO[mayorDif.x.alto.id]} ${fmt(mayorDif.x.alto.valor)} frente a ${NOMBRE_CORTO[mayorDif.x.bajo.id]} ${fmt(mayorDif.x.bajo.valor)}${unidad}. Cada bloque compara los tres municipios en un mismo tipo de gasto.`
+        ? `${NOMBRE_CORTO[mayorDif.x.alto.id]} ${fmt(mayorDif.x.alto.valor)} frente a ${NOMBRE_CORTO[mayorDif.x.bajo.id]} ${fmt(mayorDif.x.bajo.valor)}${unidad}. Cada renglón compara a los tres en un mismo tipo de gasto.`
         : null}
     >
-      <div class="caps">
-        {#each caps as c (c)}
-          <div>
-            <h3>{CAPITULOS[c]?.sencillo} <span class="small muted">(<Termino id={CAPITULOS[c]?.glosario ?? 'capitulo'}>{c}</Termino>)</span></h3>
-            <BarList barras={barrasCap(c)} formato={fmt} titulo={`${CAPITULOS[c]?.sencillo} ${ultimoAnio}`} valorEtiqueta={porHab ? 'Por habitante' : 'Total'} />
-          </div>
-        {/each}
+      <div class="table-wrap">
+        <table class="data caps">
+          <caption class="sr-only">Gasto{unidad} por tipo de gasto y municipio en {ultimoAnio}</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tipo de gasto</th>
+              {#each MUNICIPIOS as x (x)}<th scope="col" class="r"><span class="punto bg-{x}" aria-hidden="true"></span>{NOMBRE_CORTO[x]}</th>{/each}
+              <th scope="col" class="r">Mayor ÷ menor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each caps as c (c)}
+              {@const bs = barrasCap(c)}
+              {@const x = extremos(bs)}
+              <tr class:destacada={mayorDif?.c === c}>
+                <th scope="row">{CAPITULOS[c]?.sencillo} <span class="small muted">(<Termino id={CAPITULOS[c]?.glosario ?? 'capitulo'}>{c}</Termino>)</span></th>
+                {#each bs as b (b.id)}
+                  <td class="r num" class:alto={x?.alto.id === b.id}>{fmt(b.valor)}</td>
+                {/each}
+                <td class="r num">{x ? `${x.veces.toFixed(1)}×` : '—'}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
       </div>
+      <p class="small muted">En negritas, el que más gasta en cada tipo. Resaltado, el tipo de gasto con la mayor diferencia.</p>
       <p class="small muted">{datos.comp.metodo}</p>
       <Fuente ids={[datos.comp.fuente, datos.comp.fuente_poblacion]} compacto />
     </Seccion>
@@ -184,16 +202,17 @@
   .modo {
     margin-bottom: 0.5rem;
   }
-  /* Small multiples: one block per spending type, separated by thin rules instead of cards. */
-  .caps {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-    gap: 0 2.5rem;
-    margin: 0.75rem 0 1rem;
+  .caps td.alto {
+    font-weight: 700;
   }
-  .caps > div {
-    min-width: 0;
-    padding: 1rem 0;
-    border-top: 1px solid var(--grid);
+  .caps tr.destacada > * {
+    background: var(--surface-2);
+  }
+  .punto {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-right: 0.35em;
+    border-radius: 50%;
   }
 </style>

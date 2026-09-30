@@ -1,6 +1,6 @@
 <script lang="ts">
   import { api, MUNICIPIOS, NOMBRE, NOMBRE_CORTO, type Deuda, type MunicipioId, type Municipio } from '../lib/data';
-  import { cambio, fecha, pesos, pesosCorto, trimestre, porcentaje } from '../lib/format';
+  import { fecha, pesos, pesosCorto, trimestre, porcentaje } from '../lib/format';
   import { route } from '../lib/router.svelte';
   import Filtros from '../components/Filtros.svelte';
   import StatTile from '../components/StatTile.svelte';
@@ -46,6 +46,14 @@
     }));
   });
 
+  // Same Hacienda result in every evaluation → one line instead of a table.
+  const resultadoUnico = $derived.by(() => {
+    const ev = d?.alertas.filter((a) => a.resultado !== null) ?? [];
+    const r = ev[0]?.resultado;
+    if (!r || ev.length < 2 || ev.some((a) => a.resultado !== r)) return null;
+    return { resultado: r, etiqueta: ev[0]!.etiqueta ?? '', n: ev.length, desde: ev[0]!.evaluacion.toLowerCase() };
+  });
+
   // Findings used as section headlines (actual values, no subjective words).
   const cambio12 = $derived(saldo && haceUnAnio?.total ? (saldo.total - haceUnAnio.total) / haceUnAnio.total : null);
   const sinDeuda = $derived(!!d && d.saldos.every((s) => s.total === 0));
@@ -62,6 +70,7 @@
   const ultimoPagoCompleto = $derived([...pagosAnuales].reverse().find((x) => !x.etiqueta.includes('hasta')));
   const anioActual = $derived(Number(saldo?.periodo.slice(0, 4) ?? 0));
   const detalleCompleto = $derived(d?.anual_detalle.filter((x) => x.anio < anioActual).at(-1));
+
   const bancos = $derived(new Set(d?.creditos.map((c) => c.acreedor) ?? []).size);
   const porHab = $derived(
     todas
@@ -112,13 +121,6 @@
       >
         {#snippet label()}<Termino id="saldo">Deuda registrada</Termino>{/snippet}
       </StatTile>
-      <StatTile
-        value={saldo && haceUnAnio ? cambio(cambio12) : 'Sin dato'}
-        sub={haceUnAnio ? `vs. ${fecha(haceUnAnio.fecha)} (${pesos(haceUnAnio.total)})` : ''}
-        tone={saldo && haceUnAnio && saldo.total < haceUnAnio.total ? 'good' : 'neutral'}
-        label="Cambio en 12 meses"
-        origen={{ calculo: 'Saldo del trimestre más reciente comparado con el del mismo trimestre del año anterior, ambos del Registro Público Único.', fuentes: [saldo?.fuente, haceUnAnio?.fuente] }}
-      />
       <StatTile
         value={saldo && pob(m) ? pesos(saldo.total / (pob(m) ?? 1)) : 'Sin dato'}
         sub="Deuda entre población (Censo 2020)"
@@ -239,6 +241,13 @@
       titular={alerta?.resultado ? `Nivel ${alerta.resultado} de 3: ${alerta.etiqueta?.toLowerCase()}` : 'Sin evaluación reciente'}
       detalle={d.nota_alertas}
     >
+      {#if resultadoUnico}
+        <p class="status s{resultadoUnico.resultado}">
+          <span aria-hidden="true">{ICONO[resultadoUnico.resultado]}</span>
+          {resultadoUnico.etiqueta} en las {resultadoUnico.n} evaluaciones, desde la {resultadoUnico.desde}
+        </p>
+        <details class="historial">
+          <summary>Ver cada evaluación e indicadores</summary>
       <div class="table-wrap">
         <table class="data">
           <caption class="sr-only">Resultados del Sistema de Alertas</caption>
@@ -255,6 +264,25 @@
           </tbody>
         </table>
       </div>
+        </details>
+      {:else}
+      <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">Resultados del Sistema de Alertas</caption>
+          <thead><tr><th scope="col">Evaluación</th><th scope="col">Resultado</th><th scope="col" class="r">Deuda / ingresos libres</th><th scope="col" class="r">Pago de deuda / ingresos libres</th></tr></thead>
+          <tbody>
+            {#each [...d.alertas].reverse() as a, i (i)}
+              <tr>
+                <td>{a.evaluacion}</td>
+                <td>{#if a.resultado}<span class="status s{a.resultado}"><span aria-hidden="true">{ICONO[a.resultado]}</span> {a.etiqueta}</span>{:else}{a.nota || 'Sin evaluación'}{/if}</td>
+                <td class="r">{porcentaje(a.indicadores[0], 1)}</td>
+                <td class="r">{porcentaje(a.indicadores[1], 1)}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+      {/if}
       <Fuente ids={[d.alertas.at(-1)?.fuente]} compacto />
     </Seccion>
 
@@ -293,6 +321,12 @@
     border-radius: 50%;
     color: #fff;
     font-size: 0.8em;
+  }
+  .historial summary {
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
   .s1 span[aria-hidden] {
     background: var(--good);

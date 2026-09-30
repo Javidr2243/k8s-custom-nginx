@@ -45,6 +45,11 @@ export const GLOSARIO: Record<string, Entrada> = {
     termino: 'Subejercicio',
     corto: 'La parte del presupuesto modificado que todavía no se ha gastado (Modificado − Devengado). A mitad de año es normal que sea grande.',
   },
+  'solicitud-informacion': {
+    termino: 'Solicitud de acceso a la información',
+    corto: 'Pregunta por escrito que cualquier persona puede hacer a un gobierno, sin dar motivos ni identificarse con documentos. Es gratuita y deben responder en un plazo de 20 días hábiles (ampliable).',
+    largo: 'Se presenta en la Plataforma Nacional de Transparencia o en la unidad de transparencia del municipio. Si la respuesta no te convence, puedes presentar un recurso de revisión.',
+  },
   acumulado: {
     termino: 'Cifras acumuladas',
     corto: 'Los reportes trimestrales suman desde el 1 de enero hasta la fecha de corte. El 2º trimestre incluye enero a junio, no solo abril a junio.',

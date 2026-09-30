@@ -14,6 +14,7 @@
   import { acumulado, pesos, porcentaje, fecha } from '../lib/format';
   import { route, link, href } from '../lib/router.svelte';
   import { sencillo, CAPITULOS } from '../lib/capitulos';
+  import { cierre, hallazgos } from '../lib/cumplimiento';
   import Filtros from '../components/Filtros.svelte';
   import Waffle, { deCada100 } from '../components/Waffle.svelte';
   import BarList from '../components/BarList.svelte';
@@ -135,7 +136,15 @@
       detalle: `${top.etiqueta} ${p?.dependencias ? 'es la dependencia que más gastó' : 'es el rubro más grande'}: ${pesos(top.valor)}.`,
     };
   });
-  const movs = $derived(datos?.movs.filter((x) => x.municipio === m).slice(0, 4) ?? []);
+  const movs = $derived(datos?.movs.filter((x) => x.municipio === m).slice(0, 3) ?? []);
+  // Main «¿Se cumple?» finding, as the first «keep exploring» link.
+  const cumple = $derived.by(() => {
+    if (!datos) return 'Presupuesto aprobado contra lo que de verdad se gastó.';
+    const c = cierre(datos.egr);
+    const h = hallazgos(c, null, NOMBRE[m])[0];
+    if (h) return `${h.titular}.`;
+    return c ? `En ${c.anio} gastó ${porcentaje(c.total.ejecucion)} de su presupuesto final.` : 'Presupuesto aprobado contra lo que de verdad se gastó.';
+  });
 </script>
 
 <section aria-labelledby="h-inicio">
@@ -268,6 +277,7 @@
       <h2 id="h-sigue">Más formas de ver el dinero de {NOMBRE_CORTO[m]}</h2>
       <ul>
         {#each [
+          { ruta: '/cumplimiento', t: '¿Se cumple el presupuesto?', d: cumple },
           { ruta: '/mapa', t: 'Mapa del gobierno', d: 'Quién es quién y cuánto maneja cada dependencia.' },
           { ruta: '/flujo', t: 'Flujo del dinero', d: 'De dónde entra el dinero y en qué se va.' },
           { ruta: '/comparar', t: 'Comparar municipios', d: 'Gasto total y por habitante, año por año.' },

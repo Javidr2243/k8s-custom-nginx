@@ -12,6 +12,7 @@
   import Deuda from './views/Deuda.svelte';
   import Contratos from './views/Contratos.svelte';
   import Movimientos from './views/Movimientos.svelte';
+  import Cumplimiento from './views/Cumplimiento.svelte';
   import Glosario from './views/Glosario.svelte';
   import Acerca from './views/Acerca.svelte';
   import Fuentes from './views/Fuentes.svelte';
@@ -22,10 +23,9 @@
     { path: '/mapa', label: 'Mapa del gobierno' },
     { path: '/flujo', label: 'Flujo del dinero' },
     { path: '/comparar', label: 'Comparar' },
-    { path: '/deuda', label: 'Deuda' },
+    { path: '/cumplimiento', label: '¿Se cumple?' },
     { path: '/contratos', label: 'Contratos' },
-    { path: '/movimientos', label: 'Movimientos' },
-    { path: '/fuentes', label: 'Fuentes' },
+    { path: '/deuda', label: 'Deuda' },
   ];
   const VISTAS = {
     '/': Inicio,
@@ -35,6 +35,7 @@
     '/deuda': Deuda,
     '/contratos': Contratos,
     '/movimientos': Movimientos,
+    '/cumplimiento': Cumplimiento,
     '/glosario': Glosario,
     '/acerca': Acerca,
     '/fuentes': Fuentes,
@@ -47,6 +48,7 @@
     '/deuda': 'Deuda',
     '/contratos': 'Contratos y proveedores',
     '/movimientos': 'Movimientos recientes',
+    '/cumplimiento': '¿Se cumple el presupuesto?',
     '/glosario': 'Glosario',
     '/acerca': 'Acerca de los datos',
     '/fuentes': 'Fuentes y verificación',
@@ -159,6 +161,7 @@
         Datos actualizados al {fecha(meta.datos_al)}; el periodo más reciente es el {trimestre(meta.periodo_mas_reciente)}.
       {/if}
       <a href="/fuentes" use:link>Fuentes y verificación</a> ·
+      <a href="/movimientos" use:link>Movimientos recientes</a> ·
       <a href="/acerca" use:link>Acerca de los datos y privacidad</a> ·
       <a href="/glosario" use:link>Glosario</a> ·
       <a href="https://github.com/javidr2243/k8s-custom-nginx" rel="noopener noreferrer">Código y datos abiertos</a>

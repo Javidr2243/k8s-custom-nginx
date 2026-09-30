@@ -22,7 +22,8 @@ export interface Seleccion {
   import Fuente from './Fuente.svelte';
   import Termino from './Termino.svelte';
   import ContratosDependencia from './ContratosDependencia.svelte';
-  import { route } from '../lib/router.svelte';
+  import { route, href, link } from '../lib/router.svelte';
+  import { fila } from '../lib/cumplimiento';
 
   let {
     sel,
@@ -52,6 +53,14 @@ export interface Seleccion {
   const cambioAnual = $derived(
     m && m.aprobado ? ((m.modificado ?? 0) - m.aprobado) / m.aprobado : null,
   );
+
+  // How the last completed year closed (4th-quarter report), when the selected period is mid-year.
+  const cerro = $derived.by(() => {
+    if (periodo.periodo.endsWith('T4')) return null;
+    const p = egresos.periodos.filter((x) => x.periodo.endsWith('T4')).at(-1);
+    const mm = p ? montosEn(p) : null;
+    return p && mm?.modificado ? { anio: p.periodo.slice(0, 4), f: fila(sel.id, sel.etiqueta, mm) } : null;
+  });
 
   // Trend: one line per year, x = quarter (figures are cumulative from January).
   const tendencia = $derived.by(() => {
@@ -113,6 +122,13 @@ export interface Seleccion {
       Avance: {porcentaje(m.modificado ? (m.devengado ?? 0) / m.modificado : null)} del presupuesto modificado, al cierre de
       {acumulado(periodo.periodo)}.
     </p>
+    {#if cerro}
+      <p class="small cerro">
+        <strong>Cómo cerró {cerro.anio}:</strong> gastó {porcentaje(cerro.f.ejecucion)} de su presupuesto final{cerro.f.sinGastar
+          ? ` (${pesos(cerro.f.sinGastar)} sin gastar)`
+          : ''}. <a href={href('/cumplimiento')} use:link>¿Se cumple el presupuesto? →</a>
+      </p>
+    {/if}
 
     <h3>Cambios durante el año</h3>
     <p class="small">

@@ -19,6 +19,7 @@
     { tipo: 'pagina', titulo: 'Mapa del gobierno', detalle: 'quién gasta y de dónde viene el dinero', href: '/mapa' },
     { tipo: 'pagina', titulo: 'Flujo del dinero', detalle: 'ingresos y gastos del año', href: '/flujo' },
     { tipo: 'pagina', titulo: 'Comparar municipios', detalle: 'gasto por habitante', href: '/comparar' },
+    { tipo: 'pagina', titulo: '¿Se cumple el presupuesto?', detalle: 'aprobado contra gastado, dinero sin gastar', href: '/cumplimiento' },
     { tipo: 'pagina', titulo: 'Deuda', detalle: 'saldo, créditos, intereses, calificación', href: '/deuda' },
     { tipo: 'pagina', titulo: 'Contratos y proveedores', detalle: 'licitaciones, adjudicaciones', href: '/contratos' },
     { tipo: 'pagina', titulo: 'Movimientos recientes', detalle: 'cambios del último trimestre', href: '/movimientos' },

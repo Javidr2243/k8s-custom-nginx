@@ -13,6 +13,10 @@ layout, color, gráficas, escritura y accesibilidad).
   cada $100», no «el gasto está muy concentrado»). Se calcula de los mismos datos que la gráfica.
 - Al inicio, **una oración con un número** y su contexto en gris (`.titular` + `.suave`), y una fila abierta de cifras
   clave (`.cifras`, con `StatTile` dentro).
+- **Nada se repite**: si un bloque repite el titular de otro o no cambia entre periodos, se quita o se resume en
+  una línea (con el detalle plegado). Antes de quitar algo se comprueba que su cifra siga en otro lugar.
+- Menú corto (7 entradas) ordenado por utilidad; páginas de consulta (Movimientos, Fuentes) en el pie y en enlaces
+  en contexto.
 - Componente `Seccion` (`pregunta`, `titular`, `detalle`, `banda`) para no repetir la estructura en cada vista; `.dos`
   pone dos secciones lado a lado dentro de una banda.
 

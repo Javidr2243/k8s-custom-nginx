@@ -213,8 +213,7 @@
         no cuadra con su documento, la actualización se detiene. Las diferencias <em>dentro</em> de los documentos oficiales
         se publican tal cual y se listan abajo.
       </p>
-      <ul class="checks">
-        {#each val.chequeos as c (c.id)}
+      {#snippet tarjeta(c: Validacion['chequeos'][number])}
           {@const ok = c.fallas.length === 0}
           {@const frac = c.revisados ? c.aprobados / c.revisados : 0}
           <li class="chk" class:warn={!ok}>
@@ -236,18 +235,29 @@
                 <summary>Ver {c.fallas.length} {c.fallas.length === 1 ? 'caso' : 'casos'}</summary>
                 <ul class="fallas">
                   {#each c.fallas as f, i (i)}
+                    {@const doc = f.fuente ? fuentes?.[f.fuente] : undefined}
                     <li>
                       {#if f.municipio}<strong>{NOMBRE_CORTO[f.municipio]}:</strong>{/if}
                       {f.detalle || 'Ver documento'}
-                      {#if f.fuente && fuentes[f.fuente]}· <a href={fuentes[f.fuente]!.url} rel="noopener noreferrer" target="_blank">documento</a>{#if fuentes[f.fuente]!.copia} · <a href={fuentes[f.fuente]!.copia} download>copia</a>{/if}{/if}
+                      {#if doc}· <a href={doc.url} rel="noopener noreferrer" target="_blank">documento</a>{#if doc.copia} · <a href={doc.copia} download>copia</a>{/if}{/if}
                     </li>
                   {/each}
                 </ul>
               </details>
             {/if}
           </li>
-        {/each}
+      {/snippet}
+      <ul class="checks">
+        {#each val.chequeos.filter((c) => c.fallas.length) as c (c.id)}{@render tarjeta(c)}{/each}
       </ul>
+      {#if conDiferencias < val.chequeos.length}
+        <details class="sin-dif">
+          <summary>Ver las {val.chequeos.length - conDiferencias} revisiones sin diferencias</summary>
+          <ul class="checks">
+            {#each val.chequeos.filter((c) => !c.fallas.length) as c (c.id)}{@render tarjeta(c)}{/each}
+          </ul>
+        </details>
+      {/if}
     </section>
 
     <section class="banda" aria-labelledby="h-inc">
@@ -496,6 +506,16 @@
     color: var(--ink);
   }
 
+  .sin-dif {
+    margin-top: 1rem;
+  }
+  .sin-dif summary {
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
   /* Automatic checks as a grid of small cards */
   .checks {
     list-style: none;

@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const RUTAS = ['/', '/mapa', '/flujo', '/comparar', '/deuda', '/contratos', '/movimientos', '/glosario', '/acerca', '/fuentes'];
+const RUTAS = ['/', '/mapa', '/flujo', '/comparar', '/deuda', '/contratos', '/cumplimiento', '/movimientos', '/glosario', '/acerca', '/fuentes'];
 
 /** Collect CSP violations and console errors for the page. */
 async function vigilar(page: Page) {
@@ -36,7 +36,7 @@ for (const ruta of RUTAS) {
 }
 
 test('cada vista con cifras enlaza a su fuente', async ({ page }) => {
-  for (const ruta of ['/', '/mapa', '/flujo', '/comparar', '/deuda', '/contratos']) {
+  for (const ruta of ['/', '/mapa', '/flujo', '/comparar', '/deuda', '/contratos', '/cumplimiento']) {
     await page.goto(ruta);
     await page.waitForLoadState('networkidle');
     const fuentes = page.locator('.fuente a[href^="https://"]');
@@ -131,4 +131,30 @@ test('flujo compara con el año anterior y muestra la dependencia federal', asyn
   await expect(page.locator('#h-cambios')).toContainText(/más|menos/);
   await expect(page.locator('table.comparacion tbody tr').first()).toBeVisible();
   await expect(page.locator('#h-autonomia')).toContainText('De cada $100');
+});
+
+test('¿se cumple? muestra lo que quedó sin gastar y una pregunta lista para copiar', async ({ page }) => {
+  await page.goto('/cumplimiento?m=san-pedro');
+  await page.waitForLoadState('networkidle');
+  await expect(page.locator('#h-sin-gastar')).toHaveText(/Obra pública: .* sin gastar, 47% de su presupuesto final/);
+  await expect(page.locator('#h-ritmo')).toBeVisible();
+  const primera = page.locator('.preguntas li').first();
+  await expect(primera.locator('blockquote')).toContainText('¿qué programas, obras o compras');
+  await expect(primera.getByRole('button', { name: 'Copiar pregunta' })).toBeVisible();
+  await expect(page.locator('a[href="https://www.plataformadetransparencia.org.mx/"]')).toHaveCount(1);
+});
+
+test('el panel del mapa dice cómo cerró el año', async ({ page }) => {
+  await page.goto('/mapa?m=monterrey&n=secretaria-de-servicios-publicos');
+  await page.waitForLoadState('networkidle');
+  await expect(page.locator('aside.panel .cerro')).toContainText(/Cómo cerró \d{4}: gastó \d+%/);
+});
+
+test('el menú tiene 7 secciones y el pie enlaza a movimientos y fuentes', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('nav.nav a')).toHaveCount(7);
+  await page.locator('footer a', { hasText: 'Movimientos recientes' }).click();
+  await expect(page.locator('h1')).toContainText('Movimientos');
+  await page.locator('footer a', { hasText: 'Fuentes y verificación' }).click();
+  await expect(page.locator('h1')).toContainText('Fuentes');
 });
