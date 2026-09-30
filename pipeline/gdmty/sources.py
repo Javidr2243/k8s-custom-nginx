@@ -20,8 +20,16 @@ Tipo = Literal[
     "sipot_xxiib",
     "inegi_efipem",
     "inegi_poblacion",
+    "shcp_rpu_saldos",
+    "shcp_rpu_registro",
+    "shcp_alertas",
+    "mty_deuda_total",
+    "sipot_xxix",
+    "sp_contratos",
 ]
-EXTENSION = {"xlsx": "xlsx", "zip": "csv", "json": "json", "csv": "csv"}
+EXTENSION = {"xlsx": "xlsx", "xls": "xls", "zip": "csv", "json": "json", "csv": "csv"}
+# Large national originals: only an extract for the three municipalities is kept (plus the original's hash).
+EXTRACTOS = {"inegi_efipem", "shcp_rpu_registro"}
 
 
 class Fuente(BaseModel):
@@ -35,7 +43,7 @@ class Fuente(BaseModel):
     emisor: str
     url: str
     pagina: str
-    formato: Literal["xlsx", "zip", "json", "csv"]
+    formato: Literal["xlsx", "xls", "zip", "json", "csv"]
 
     @field_validator("id")
     @classmethod
@@ -66,9 +74,10 @@ class Fuente(BaseModel):
         return v
 
     def archivo(self) -> Path:
-        """Path of the original, relative to data/raw/."""
-        folder = self.municipio or "inegi"
-        return Path(folder) / f"{self.id}.{EXTENSION[self.formato]}"
+        """Path of the original, relative to data/raw/ (large national files are stored as a CSV extract)."""
+        folder = self.municipio or self.id.split("-")[0]
+        ext = "csv" if self.tipo in EXTRACTOS else EXTENSION[self.formato]
+        return Path(folder) / f"{self.id}.{ext}"
 
 
 class Faltante(BaseModel):

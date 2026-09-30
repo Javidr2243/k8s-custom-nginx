@@ -16,10 +16,20 @@ class ParseError(ValueError):
 
 def to_amount(value: object, *, where: str = "") -> float:
     """Convert a cell into pesos with 2 decimals. Accepts numbers or numeric text ("1,234.50", "(12)")."""
+    return round_money(to_decimal(value, where=where))
+
+
+def to_number(value: object, *, where: str = "") -> float:
+    """Like to_amount but without rounding (rates, percentages, amounts in millions)."""
+    return float(to_decimal(value, where=where))
+
+
+def to_decimal(value: object, *, where: str = "") -> Decimal:
+    """Strict conversion to Decimal; anything that is not clearly a number raises ParseError."""
     if isinstance(value, bool):
         raise ParseError(f"valor booleano inesperado {where}")
     if isinstance(value, int | float):
-        return round_money(value)
+        return Decimal(str(value))
     if isinstance(value, str):
         s = value.strip().replace(" ", "")
         if s in ("", "-"):
@@ -32,7 +42,7 @@ def to_amount(value: object, *, where: str = "") -> float:
             d = Decimal(s)
         except InvalidOperation as exc:
             raise ParseError(f"monto no numérico {value!r} {where}") from exc
-        return round_money(-d if negative else d)
+        return -d if negative else d
     raise ParseError(f"tipo de valor inesperado {type(value).__name__} {where}")
 
 
