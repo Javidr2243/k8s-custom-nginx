@@ -7,7 +7,6 @@
 .github
 deploy
 pipeline
-data/raw
 web/test-results
 web/playwright-report
 *.md

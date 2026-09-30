@@ -74,3 +74,18 @@ def test_checksums_match(out: Path) -> None:
 def test_build_is_deterministic(out: Path, tmp_path: Path) -> None:
     build(tmp_path)
     assert (tmp_path / "SHA256SUMS").read_text() == (out / "SHA256SUMS").read_text()
+
+
+def test_provenance_archived_copy_and_validation(out: Path) -> None:
+    fuentes = _load(out, "fuentes.json")["fuentes"]
+    for fid, f in fuentes.items():
+        # Every source has an archived copy that exists in data/raw and a fingerprint.
+        assert f["copia"].startswith("/data/originales/"), fid
+        assert (DATA_RAW / f["copia"].removeprefix("/data/originales/")).is_file(), fid
+        assert f["sha256"] and len(f["sha256"]) == 64, fid
+    val = _load(out, "validacion.json")
+    ids = {c["id"] for c in val["chequeos"]}
+    assert {"suma", "periodo", "identidad", "cruce_inegi"} <= ids
+    suma = next(c for c in val["chequeos"] if c["id"] == "suma")
+    assert suma["revisados"] == suma["aprobados"] > 0  # our sums always match the documents
+    assert all(a["mensaje"] for a in val["advertencias"])

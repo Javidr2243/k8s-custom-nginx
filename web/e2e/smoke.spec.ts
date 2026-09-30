@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const RUTAS = ['/', '/mapa', '/flujo', '/comparar', '/deuda', '/contratos', '/movimientos', '/glosario', '/acerca'];
+const RUTAS = ['/', '/mapa', '/flujo', '/comparar', '/deuda', '/contratos', '/movimientos', '/glosario', '/acerca', '/fuentes'];
 
 /** Collect CSP violations and console errors for the page. */
 async function vigilar(page: Page) {
@@ -39,7 +39,7 @@ test('cada vista con cifras enlaza a su fuente', async ({ page }) => {
   for (const ruta of ['/', '/mapa', '/flujo', '/comparar', '/deuda', '/contratos']) {
     await page.goto(ruta);
     await page.waitForLoadState('networkidle');
-    const fuentes = page.locator('p.fuente a[href^="https://"]');
+    const fuentes = page.locator('.fuente a[href^="https://"]');
     expect(await fuentes.count(), ruta).toBeGreaterThan(0);
   }
 });
@@ -74,4 +74,28 @@ test('cambiar de municipio actualiza la URL y el título', async ({ page }) => {
   await page.getByRole('radio', { name: /San Pedro/ }).click();
   await expect(page.locator('h1')).toContainText('San Pedro');
   expect(page.url()).toContain('m=san-pedro');
+});
+
+test('cada cifra clave explica de dónde sale y enlaza a la copia archivada', async ({ page, request }) => {
+  await page.goto('/');
+  await page.waitForLoadState('networkidle');
+  const origen = page.locator('.tile details.origen').first();
+  await origen.locator('> summary').click();
+  await expect(origen).toContainText('Devengado');
+  const det = origen.locator('details.det').first();
+  await det.locator('> summary').click();
+  const copia = await det.locator('a[download]').first().getAttribute('href');
+  expect(copia).toMatch(/^\/data\/originales\//);
+  const r = await request.get(copia!);
+  expect(r.status()).toBe(200);
+  expect(r.headers()['content-disposition']).toContain('attachment');
+});
+
+test('la página de fuentes lista documentos y verificaciones', async ({ page }) => {
+  await page.goto('/fuentes');
+  await page.waitForLoadState('networkidle');
+  await expect(page.locator('.checks li').first()).toBeVisible();
+  expect(await page.locator('table.data tbody tr').count()).toBeGreaterThan(10);
+  await page.getByPlaceholder(/Buscar por título/).fill('deuda');
+  await expect(page.locator('table.data tbody tr').first()).toContainText(/[Dd]euda/);
 });

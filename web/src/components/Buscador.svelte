@@ -22,7 +22,8 @@
     { tipo: 'pagina', titulo: 'Deuda', detalle: 'saldo, créditos, intereses, calificación', href: '/deuda' },
     { tipo: 'pagina', titulo: 'Contratos y proveedores', detalle: 'licitaciones, adjudicaciones', href: '/contratos' },
     { tipo: 'pagina', titulo: 'Movimientos recientes', detalle: 'cambios del último trimestre', href: '/movimientos' },
-    { tipo: 'pagina', titulo: 'Acerca de los datos', detalle: 'fuentes, límites y privacidad', href: '/acerca' },
+    { tipo: 'pagina', titulo: 'Acerca de los datos', detalle: 'método, límites y privacidad', href: '/acerca' },
+    { tipo: 'pagina', titulo: 'Fuentes y verificación', detalle: 'documentos oficiales, copias, huellas y verificaciones', href: '/fuentes' },
   ];
 
   onMount(() => {

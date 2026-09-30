@@ -191,6 +191,14 @@ export const GLOSARIO: Record<string, Entrada> = {
     termino: 'Cuenta Pública',
     corto: 'El informe anual oficial de cómo se usaron los recursos. La revisa la Auditoría Superior del Estado.',
   },
+  sha256: {
+    termino: 'Huella SHA-256',
+    corto: 'Un código único calculado a partir del contenido de un archivo. Si el archivo cambia aunque sea un poco, la huella cambia; sirve para comprobar que una copia es idéntica al original.',
+  },
+  'copia-archivada': {
+    termino: 'Copia archivada',
+    corto: 'El archivo oficial exacto que se usó para calcular las cifras, guardado por este sitio por si el enlace del gobierno cambia o desaparece.',
+  },
   trimestre: {
     termino: 'Trimestre',
     corto: 'Periodo de tres meses. Los municipios reportan su avance financiero cada trimestre (marzo, junio, septiembre y diciembre).',

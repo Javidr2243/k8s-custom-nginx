@@ -99,10 +99,21 @@
     </p>
 
     <div class="grid grid-3 tiles">
-      <StatTile value={pesos(p.total.devengado)} sub={`${porcentaje(ejercido)} del presupuesto modificado`}>
+      <StatTile
+        value={pesos(p.total.devengado)}
+        sub={`${porcentaje(ejercido)} del presupuesto modificado`}
+        origen={{
+          calculo: `Total de la columna «Devengado» del estado de gasto del municipio, acumulado de enero al ${fecha(p.fecha_corte)}. El porcentaje es Devengado ÷ Modificado.`,
+          fuentes: [p.fuente],
+        }}
+      >
         {#snippet label()}Gastado ({acumulado(p.periodo)}){/snippet}
       </StatTile>
       <StatTile
+        origen={{
+          calculo: 'Columnas «Aprobado» (presupuesto autorizado a inicio de año) y «Modificado» (después de ampliaciones y reducciones) del mismo documento. El cambio es (Modificado − Aprobado) ÷ Aprobado.',
+          fuentes: [p.fuente],
+        }}
         value={pesos(p.total.modificado)}
         sub={`Aprobado: ${pesos(p.total.aprobado)} (${cambio(
           p.total.aprobado ? ((p.total.modificado ?? 0) - p.total.aprobado) / p.total.aprobado : null,
@@ -111,12 +122,23 @@
         {#snippet label()}<Termino id="modificado">Presupuesto modificado</Termino>{/snippet}
       </StatTile>
       <StatTile
+        origen={{
+          calculo: `Gasto devengado de ${acumulado(p.periodo)} dividido entre la población del municipio según el Censo de Población y Vivienda 2020 del INEGI.`,
+          fuentes: [p.fuente, 'inegi-mgem-19'],
+        }}
         value={poblacion && p.total.devengado ? pesos(p.total.devengado / poblacion) : 'Sin dato'}
         sub={`Población: ${poblacion?.toLocaleString('es-MX') ?? '—'} (Censo 2020)`}
       >
         {#snippet label()}Gasto <Termino id="por-habitante">por habitante</Termino>{/snippet}
       </StatTile>
-      <StatTile value={saldo ? pesos(saldo.total) : 'Sin dato'} sub={saldo ? `Saldo al ${fecha(saldo.fecha)}` : ''}>
+      <StatTile
+        value={saldo ? pesos(saldo.total) : 'Sin dato'}
+        sub={saldo ? `Saldo al ${fecha(saldo.fecha)}` : ''}
+        origen={{
+          calculo: 'Saldo total de financiamientos y obligaciones inscritos a nombre del municipio en el Registro Público Único de la Secretaría de Hacienda (publicado en millones de pesos).',
+          fuentes: [saldo?.fuente],
+        }}
+      >
         {#snippet label()}<Termino id="deuda">Deuda registrada</Termino>{/snippet}
       </StatTile>
     </div>

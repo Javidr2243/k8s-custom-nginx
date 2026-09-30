@@ -30,7 +30,14 @@ from gdmty.parsers import (
 )
 from gdmty.paths import CACHE_DIR, DATA_RAW, PUBLIC_V1
 from gdmty.util import ParseError, norm_label, quarter_of, round_money, slugify
-from gdmty.validate import UMBRAL_ANOMALIA, Reporte, cambio_relativo, identidades_egresos, suma_cuadra
+from gdmty.validate import (
+    CHEQUEOS,
+    UMBRAL_ANOMALIA,
+    Reporte,
+    cambio_relativo,
+    identidades_egresos,
+    suma_cuadra,
+)
 
 EGRESOS = ("aprobado", "ampliaciones", "modificado", "devengado", "pagado", "subejercicio")
 INGRESOS_IN = ("aprobado", "ampliaciones", "modificado", "devengado", "pagado")
@@ -65,6 +72,15 @@ def _write(path: Path, data: Any, report: Reporte, base: Path) -> None:
     report.archivos.append(path.relative_to(base).as_posix())
 
 
+def _identidades(report: Reporte, montos: dict, donde: str, fuente: str, municipio: str) -> None:
+    problemas = identidades_egresos(montos, donde)
+    report.chequeo(
+        "identidad", not problemas, fuente=fuente, municipio=municipio, detalle="; ".join(problemas)
+    )
+    for p in problemas:
+        report.advertencia(p, fuente=fuente, municipio=municipio)
+
+
 # --- Spending ------------------------------------------------------------------------------------
 
 
@@ -80,15 +96,17 @@ def _egresos_monterrey(cfg, report: Reporte) -> dict[str, dict]:
             report.error(f"monterrey {pid}: falta la clasificación por objeto del gasto")
             continue
         obj = mty_estado_analitico.parse_egresos_objeto(DATA_RAW / obj_f.archivo())
+        report.chequeo("periodo", quarter_of(obj.fecha_corte) == pid, fuente=obj_f.id, municipio="monterrey")
         if quarter_of(obj.fecha_corte) != pid:
             report.error(f"{obj_f.id}: el documento dice corte {obj.fecha_corte}, se esperaba {pid}")
         notas: list[str] = []
-        for problema in suma_cuadra([c.montos for c in obj.lineas], obj.total, EGRESOS):
+        problemas = suma_cuadra([c.montos for c in obj.lineas], obj.total, EGRESOS)
+        report.chequeo("suma", not problemas, fuente=obj_f.id, municipio="monterrey")
+        for problema in problemas:
             report.error(f"{obj_f.id}: capítulos no suman el total ({problema})")
         capitulos = []
         for c in obj.lineas:
-            for p in identidades_egresos(c.montos, f"{obj_f.id} capítulo {c.clave}"):
-                report.advertencia(p)
+            _identidades(report, c.montos, f"{obj_f.id} capítulo {c.clave}", obj_f.id, "monterrey")
             capitulos.append(
                 {
                     "clave": c.clave,
@@ -111,18 +129,30 @@ def _egresos_monterrey(cfg, report: Reporte) -> dict[str, dict]:
         }
         if adm_f is not None:
             adm = mty_estado_analitico.parse_egresos_administrativa(DATA_RAW / adm_f.archivo())
-            for problema in suma_cuadra([d.montos for d in adm.lineas], adm.total, EGRESOS):
+            problemas = suma_cuadra([d.montos for d in adm.lineas], adm.total, EGRESOS)
+            report.chequeo("suma", not problemas, fuente=adm_f.id, municipio="monterrey")
+            for problema in problemas:
                 report.error(f"{adm_f.id}: dependencias no suman el total ({problema})")
             dif = suma_cuadra([adm.total], obj.total, EGRESOS)
+            report.chequeo(
+                "dependencias_vs_capitulos",
+                not dif,
+                fuente=adm_f.id,
+                municipio="monterrey",
+                detalle="; ".join(dif),
+            )
             if dif:
-                report.advertencia(f"monterrey {pid}: total por dependencia ≠ total por capítulo ({dif})")
+                report.advertencia(
+                    f"monterrey {pid}: total por dependencia ≠ total por capítulo ({dif})",
+                    fuente=adm_f.id,
+                    municipio="monterrey",
+                )
                 notas.append(
                     "El total por dependencia no coincide exactamente con el total por capítulo del gasto."
                 )
             deps = []
             for d in adm.lineas:
-                for p in identidades_egresos(d.montos, f"{adm_f.id} {d.nombre}"):
-                    report.advertencia(p)
+                _identidades(report, d.montos, f"{adm_f.id} {d.nombre}", adm_f.id, "monterrey")
                 deps.append(
                     {
                         "id": slugify(d.nombre),
@@ -170,15 +200,14 @@ def _egresos_sipot(cfg, municipio: str, report: Reporte, sin_datos: dict[str, st
                     + "; ".join(vacias)
                     + "."
                 )
-                report.advertencia(f"{f.id} {pid}: celdas vacías: {vacias}")
+                report.advertencia(f"{f.id} {pid}: celdas vacías: {vacias}", fuente=f.id, municipio=municipio)
             if p.fecha_inicio.month != 1:
                 notas.append(
                     "El formato indica el periodo "
                     f"{p.fecha_inicio:%d/%m/%Y}–{p.fecha_corte:%d/%m/%Y}, pero los montos son acumulados desde enero."
                 )
             for fila in p.filas:
-                for prob in identidades_egresos(fila.montos, f"{f.id} {pid} clave {fila.clave}"):
-                    report.advertencia(prob)
+                _identidades(report, fila.montos, f"{f.id} {pid} clave {fila.clave}", f.id, municipio)
             capitulos = [
                 {"clave": k, "nombre": CAPITULOS[k]["nombre"], "montos": _montos(v, EGRESOS), "conceptos": []}
                 for k, v in p.por_capitulo().items()
@@ -209,6 +238,13 @@ def _descartar_repetidos(municipio: str, periodos: dict[str, dict], report: Repo
             firma = json.dumps(periodos[pid]["capitulos"], sort_keys=True)
             firmas[firma].append(pid)
         for grupo in firmas.values():
+            report.chequeo(
+                "repetidos",
+                len(grupo) == 1,
+                fuente=periodos[grupo[0]]["fuente"],
+                municipio=municipio,
+                detalle=f"cifras idénticas en {', '.join(sorted(grupo))}",
+            )
             if len(grupo) > 1:
                 for pid in grupo:
                     motivos[pid] = (
@@ -216,7 +252,9 @@ def _descartar_repetidos(municipio: str, periodos: dict[str, dict], report: Repo
                         f"{', '.join(sorted(grupo))}; no es posible saber a qué periodo corresponden."
                     )
                 report.advertencia(
-                    f"{municipio}: cifras idénticas en {sorted(grupo)}; se marcan como faltantes"
+                    f"{municipio}: cifras idénticas en {sorted(grupo)}; se marcan como faltantes",
+                    fuente=periodos[grupo[0]]["fuente"],
+                    municipio=municipio,
                 )
     for pid in motivos:
         periodos.pop(pid, None)
@@ -228,10 +266,12 @@ def _checar_acumulados(municipio: str, periodos: dict[str, dict], report: Report
     for a, b in pairwise(pids):
         if a[:4] == b[:4]:
             da, db = periodos[a]["total"]["devengado"], periodos[b]["total"]["devengado"]
+            msg = f"{municipio}: el devengado acumulado baja de {a} ({da:,.2f}) a {b} ({db:,.2f})"
+            report.chequeo(
+                "acumulado", db + 1 >= da, fuente=periodos[b]["fuente"], municipio=municipio, detalle=msg
+            )
             if db + 1 < da:
-                report.advertencia(
-                    f"{municipio}: el devengado acumulado baja de {a} ({da:,.2f}) a {b} ({db:,.2f})"
-                )
+                report.advertencia(msg, fuente=periodos[b]["fuente"], municipio=municipio)
 
 
 def _anomalias(municipio: str, periodos: dict[str, dict], report: Reporte) -> None:
@@ -262,9 +302,14 @@ def _ingresos_monterrey(cfg, report: Reporte) -> list[dict]:
         if f.municipio != "monterrey" or f.tipo != "mty_ingresos":
             continue
         est = mty_estado_analitico.parse_ingresos(DATA_RAW / f.archivo())
+        report.chequeo(
+            "periodo", quarter_of(est.fecha_corte) == f.periodo, fuente=f.id, municipio="monterrey"
+        )
         if quarter_of(est.fecha_corte) != f.periodo:
             report.error(f"{f.id}: el documento dice corte {est.fecha_corte}, se esperaba {f.periodo}")
-        for problema in suma_cuadra([r.montos for r in est.lineas], est.total, INGRESOS_IN):
+        problemas = suma_cuadra([r.montos for r in est.lineas], est.total, INGRESOS_IN)
+        report.chequeo("suma", not problemas, fuente=f.id, municipio="monterrey")
+        for problema in problemas:
             report.error(f"{f.id}: rubros no suman el total ({problema})")
 
         def ren(m: dict) -> dict:
@@ -358,6 +403,7 @@ def _deuda(
         datos = shcp.rpu_saldos(DATA_RAW / f.archivo())
         usadas.add(f.id)
         for mid, s in datos.items():
+            report.chequeo("periodo", quarter_of(s.fecha) == f.periodo, fuente=f.id, municipio=mid)
             if quarter_of(s.fecha) != f.periodo:
                 report.error(f"{f.id}: el cuadro dice {s.fecha}, se esperaba {f.periodo}")
             saldos[mid].append(
@@ -429,14 +475,15 @@ def _deuda(
             fecha = vigentes[0]["saldo_fecha"]
             trimestral = next((s for s in serie if s["fecha"] == fecha), None)
             suma = sum(c["saldo"] for c in vigentes)
-            if (
-                trimestral
-                and trimestral["total"]
-                and abs(suma - trimestral["total"]) / trimestral["total"] > 0.01
-            ):
-                report.advertencia(
-                    f"{mid}: suma de créditos del registro ({suma:,.0f}) ≠ saldo trimestral ({trimestral['total']:,.0f})"
+            if trimestral and trimestral["total"]:
+                ok = abs(suma - trimestral["total"]) / trimestral["total"] <= 0.01
+                msg = (
+                    f"{mid}: suma de créditos del registro ({suma:,.0f}) ≠ saldo trimestral "
+                    f"({trimestral['total']:,.0f}); el registro solo incluye créditos vigentes a la fecha de consulta"
                 )
+                report.chequeo("cruce_creditos", ok, fuente=registro_f.id, municipio=mid, detalle=msg)
+                if not ok:
+                    report.advertencia(msg, fuente=registro_f.id, municipio=mid)
         # Cross-check (Monterrey): the drop in the SHCP balance vs. the amortisation reported by the municipality.
         if mid == "monterrey":
             por_fecha = {s["periodo"]: s["total"] for s in serie}
@@ -449,11 +496,14 @@ def _deuda(
                 if ini is None or fin is None or d["amortizacion"] <= 0:
                     continue
                 baja = ini - fin
-                if abs(baja - d["amortizacion"]) > max(1_000.0, 0.01 * d["amortizacion"]):
-                    report.advertencia(
-                        f"monterrey {d['anio']}: la baja del saldo en el RPU ({baja:,.2f}) no coincide con la "
-                        f"amortización reportada por el municipio ({d['amortizacion']:,.2f})"
-                    )
+                ok = abs(baja - d["amortizacion"]) <= max(1_000.0, 0.01 * d["amortizacion"])
+                msg = (
+                    f"monterrey {d['anio']}: la baja del saldo en el RPU ({baja:,.2f}) frente a la "
+                    f"amortización reportada por el municipio ({d['amortizacion']:,.2f})"
+                )
+                report.chequeo("cruce_amortizacion", ok, fuente=f_mty.id, municipio="monterrey", detalle=msg)
+                if not ok:
+                    report.advertencia(msg, fuente=f_mty.id, municipio="monterrey")
         _write(
             out_dir / "deuda" / f"{mid}.json",
             {
@@ -842,11 +892,14 @@ def build(out_dir: Path = PUBLIC_V1) -> Reporte:
             if p4 and anio_rec["gasto_total"]:
                 dev = p4["total"]["devengado"]
                 rel = cambio_relativo(dev, anio_rec["gasto_total"])
-                if rel is not None and abs(rel) > 0.02:
-                    report.advertencia(
-                        f"{mid} {anio_rec['anio']}: devengado 4T ({dev:,.0f}) difiere {rel:+.1%} del gasto anual "
-                        f"del INEGI ({anio_rec['gasto_total']:,.0f})"
-                    )
+                msg = (
+                    f"{mid} {anio_rec['anio']}: devengado 4T ({dev:,.0f}) difiere {rel:+.1%} del gasto anual "
+                    f"del INEGI ({anio_rec['gasto_total']:,.0f})"
+                )
+                ok = rel is not None and abs(rel) <= 0.02
+                report.chequeo("cruce_inegi", ok, fuente=p4["fuente"], municipio=mid, detalle=msg)
+                if not ok:
+                    report.advertencia(msg, fuente=p4["fuente"], municipio=mid)
 
         municipios_out.append(
             {
@@ -917,6 +970,11 @@ def build(out_dir: Path = PUBLIC_V1) -> Reporte:
             "pagina": f.pagina,
             "formato": f.formato,
             "archivo": f"data/raw/{f.archivo().as_posix()}",
+            # Archived copy of the exact file used, served by the site itself (/data/originales/…).
+            "copia": f"/data/originales/{f.archivo().as_posix()}",
+            "extracto": f.tipo in sources_mod.EXTRACTOS,
+            "sha256_original": m.get("sha256_original"),
+            "bytes": m.get("bytes") or (DATA_RAW / f.archivo()).stat().st_size,
             "sha256": m.get("sha256"),
             "publicado": m.get("publicado"),
             "descargado": m.get("descargado"),
@@ -934,6 +992,29 @@ def build(out_dir: Path = PUBLIC_V1) -> Reporte:
             "periodo_inicial": cfg.periodo_inicial,
             "municipios": {m["id"]: m["ultimo_periodo"] for m in municipios_out},
             "unidad": "Pesos mexicanos (MXN) nominales",
+        },
+        report,
+        out_dir,
+    )
+
+    _write(
+        out_dir / "validacion.json",
+        {
+            "chequeos": [
+                {
+                    "id": clave,
+                    "descripcion": CHEQUEOS[clave],
+                    "revisados": c.revisados,
+                    "aprobados": c.aprobados,
+                    "fallas": c.fallas,
+                }
+                for clave, c in sorted(report.chequeos.items(), key=lambda kv: list(CHEQUEOS).index(kv[0]))
+            ],
+            "advertencias": report.advertencias_det,
+            "nota": (
+                "Las advertencias son inconsistencias dentro de los documentos oficiales o diferencias entre fuentes. "
+                "Las cifras se publican tal como aparecen en el documento; no se corrigen ni se estiman."
+            ),
         },
         report,
         out_dir,

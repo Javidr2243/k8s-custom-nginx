@@ -43,6 +43,9 @@ check_status DELETE / 405
 check_status GET /.env 404
 check_status GET /.git/config 404
 check_status GET /data/no-existe.json 404
+check_status GET /data/originales/manifest.json 200
+check_header /data/originales/manifest.json Content-Disposition attachment
+check_header /data/originales/manifest.json X-Content-Type-Options nosniff
 
 if curl -sS -I "$BASE/" | tr -d '\r' | grep -qiE '^server: nginx/'; then
   echo "FAIL Server header leaks the nginx version"; fail=1

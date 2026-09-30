@@ -56,7 +56,11 @@
 
   {#if d && todas}
     <div class="grid tiles">
-      <StatTile value={saldo ? pesos(saldo.total) : 'Sin dato'} sub={saldo ? `Al ${fecha(saldo.fecha)}` : ''}>
+      <StatTile
+        value={saldo ? pesos(saldo.total) : 'Sin dato'}
+        sub={saldo ? `Al ${fecha(saldo.fecha)}` : ''}
+        origen={{ calculo: 'Saldo total inscrito en el Registro Público Único de Hacienda (cuadro trimestral por municipio).', fuentes: [saldo?.fuente] }}
+      >
         {#snippet label()}<Termino id="saldo">Deuda registrada</Termino>{/snippet}
       </StatTile>
       <StatTile
@@ -64,14 +68,20 @@
         sub={haceUnAnio ? `vs. ${fecha(haceUnAnio.fecha)} (${pesos(haceUnAnio.total)})` : ''}
         tone={saldo && haceUnAnio && saldo.total < haceUnAnio.total ? 'good' : 'neutral'}
         label="Cambio en 12 meses"
+        origen={{ calculo: 'Saldo del trimestre más reciente comparado con el del mismo trimestre del año anterior, ambos del Registro Público Único.', fuentes: [saldo?.fuente, haceUnAnio?.fuente] }}
       />
       <StatTile
         value={saldo && pob(m) ? pesos(saldo.total / (pob(m) ?? 1)) : 'Sin dato'}
         sub="Deuda entre población (Censo 2020)"
+        origen={{ calculo: 'Saldo de la deuda registrada dividido entre la población del Censo 2020 (INEGI).', fuentes: [saldo?.fuente, 'inegi-mgem-19'] }}
       >
         {#snippet label()}Por <Termino id="por-habitante">habitante</Termino>{/snippet}
       </StatTile>
-      <StatTile value={alerta?.etiqueta ?? 'Sin evaluación'} sub={alerta?.evaluacion ?? ''}>
+      <StatTile
+        value={alerta?.etiqueta ?? 'Sin evaluación'}
+        sub={alerta?.evaluacion ?? ''}
+        origen={{ calculo: 'Resultado publicado por Hacienda en el Sistema de Alertas para municipios (1 = sostenible, 2 = en observación, 3 = elevado).', fuentes: [alerta?.fuente] }}
+      >
         {#snippet label()}<Termino id="alertas">Calificación de Hacienda</Termino>{/snippet}
         {#if alerta?.resultado}
           <p class="status s{alerta.resultado}"><span aria-hidden="true">{ICONO[alerta.resultado]}</span> Nivel {alerta.resultado} de 3</p>

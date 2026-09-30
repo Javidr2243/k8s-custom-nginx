@@ -1,17 +1,21 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import Fuente from './Fuente.svelte';
 
   let {
     label,
     value,
     sub,
     tone = 'neutral',
+    origen,
     children,
   }: {
     label: Snippet | string;
     value: string;
     sub?: string;
     tone?: 'neutral' | 'good' | 'bad';
+    /** How the figure is obtained (plain language) and the sources it comes from. */
+    origen?: { calculo: string; fuentes: (string | null | undefined)[] };
     children?: Snippet;
   } = $props();
 </script>
@@ -21,6 +25,13 @@
   <div class="value">{value}</div>
   {#if sub}<div class="sub" class:good={tone === 'good'} class:bad={tone === 'bad'}>{sub}</div>{/if}
   {#if children}{@render children()}{/if}
+  {#if origen}
+    <details class="origen">
+      <summary>¿De dónde sale?</summary>
+      <p>{origen.calculo}</p>
+      <Fuente ids={origen.fuentes} />
+    </details>
+  {/if}
 </div>
 
 <style>
@@ -45,6 +56,21 @@
   }
   .sub {
     font-size: 0.875rem;
+    color: var(--ink-2);
+  }
+  .origen {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+  }
+  .origen summary {
+    cursor: pointer;
+    color: var(--link);
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .origen p {
+    margin: 0.3rem 0 0;
     color: var(--ink-2);
   }
   .good {
