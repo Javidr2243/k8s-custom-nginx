@@ -39,6 +39,12 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run pytest -q
+      - name: Intermediate certificates not expiring (30 days)
+        run: uv run python -m gdmty certs --days 30
+      - name: Published JSON matches the committed originals
+        run: |
+          uv run python -m gdmty build
+          git diff --exit-code -- ../data/public
       - name: pip-audit
         run: uv run pip-audit --skip-editable --progress-spinner off
 

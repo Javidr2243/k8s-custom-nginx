@@ -1,0 +1,574 @@
+{
+ "version": 1,
+ "archivos": {
+  "inegi-efipem-municipal": {
+   "url": "https://www.inegi.org.mx/contenidos/programas/finanzas/datosabiertos/conjunto_de_datos_efipem_municipal_csv.zip",
+   "archivo": "inegi/inegi-efipem-municipal.csv",
+   "publicado": "2026-08-13",
+   "descargado": "2026-09-30",
+   "sha256_original": "6fca09ef2d0529cf93553499a0c7505c12f0d7c2d0dd0bc432acc9687a66b30c",
+   "bytes_original": 95840224,
+   "filas": 1626,
+   "sha256": "fc0cafe32f1dd8948d6a2ff0f2be8f5217905b19eeecbf1313e039f7f52cf539",
+   "historial": []
+  },
+  "inegi-mgem-19": {
+   "url": "https://gaia.inegi.org.mx/wscatgeo/v2/mgem/19",
+   "archivo": "inegi/inegi-mgem-19.json",
+   "publicado": null,
+   "descargado": "2026-09-30",
+   "sha256": "31f5a3912494ba652d25964af7871190d9e83c258a2b6fbed9e31f5d33fbf19e",
+   "bytes": 9866,
+   "historial": []
+  },
+  "mty-egr-adm-2023T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_1T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2023T1.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "9c53c47fd6ee09aeb0cc57929e8f1dcae1afd5f78e01aabaea8450713496c8ee",
+   "bytes": 14951,
+   "historial": []
+  },
+  "mty-egr-adm-2023T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_2T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2023T2.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "dbf65b2a7c59776b02512b5712dbb476c1be39b429a5f53284502885dfc67df2",
+   "bytes": 16940,
+   "historial": []
+  },
+  "mty-egr-adm-2023T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_3T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2023T3.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "f68090a4e52c520863f8b3599aab8c4516ca616e9751bb5fd3fd134915ffafcf",
+   "bytes": 23100,
+   "historial": []
+  },
+  "mty-egr-adm-2023T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_4T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2023T4.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "4c78d79f24f1a622fc58b33ff674e86a8c3e0a27966e5af24a9368078dca53fa",
+   "bytes": 16776,
+   "historial": []
+  },
+  "mty-egr-adm-2024T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_1T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2024T1.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "a9b1824600b31aae03757dc8ba60b0286d512c43de6746a815a7b7577bf67b7d",
+   "bytes": 17539,
+   "historial": []
+  },
+  "mty-egr-adm-2024T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_2T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2024T2.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "1ee5f0b5702e7d6ca0ca5b5dc3168fe495668861c30ddf392b36b42741f0db09",
+   "bytes": 18544,
+   "historial": []
+  },
+  "mty-egr-adm-2024T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_3T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2024T3.xlsx",
+   "publicado": "2024-10-28",
+   "descargado": "2026-09-30",
+   "sha256": "076cb906eca0310a9ed4c7a3e26cddd3cf0b9646b23ccd01d5d8c9b0ed9f5af0",
+   "bytes": 46271,
+   "historial": []
+  },
+  "mty-egr-adm-2024T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_4T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2024T4.xlsx",
+   "publicado": "2025-01-28",
+   "descargado": "2026-09-30",
+   "sha256": "e4f6e8343427fbd02cf66a3aef2f06b4e7f5a7a6981422f597c3e234d0546da1",
+   "bytes": 16171,
+   "historial": []
+  },
+  "mty-egr-adm-2025T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_1T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2025T1.xlsx",
+   "publicado": "2025-05-07",
+   "descargado": "2026-09-30",
+   "sha256": "722d1d6997f527e4f5e515986909c32477e7894650c9f9c1893b896f6c6c26ec",
+   "bytes": 12178,
+   "historial": []
+  },
+  "mty-egr-adm-2025T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_2T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2025T2.xlsx",
+   "publicado": "2025-07-21",
+   "descargado": "2026-09-30",
+   "sha256": "03d3fd49de54f2e01967e829988c77f93b1998623c3c5b593a8a4a9b8a0fb25a",
+   "bytes": 16022,
+   "historial": []
+  },
+  "mty-egr-adm-2025T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_3T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2025T3.xlsx",
+   "publicado": "2025-11-06",
+   "descargado": "2026-09-30",
+   "sha256": "9f2bb3e245adf010cd10748c0152feab5626ef7ddd1f162b2d8497c3cc468e3b",
+   "bytes": 20173,
+   "historial": []
+  },
+  "mty-egr-adm-2025T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_4T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2025T4.xlsx",
+   "publicado": "2026-02-05",
+   "descargado": "2026-09-30",
+   "sha256": "d1115d35bfb81a571b555e582f559f47ee53db6ec51196499bc1f6b0bb4ee13c",
+   "bytes": 12212,
+   "historial": []
+  },
+  "mty-egr-adm-2026T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2026/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_1T_2026.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2026T1.xlsx",
+   "publicado": "2026-05-08",
+   "descargado": "2026-09-30",
+   "sha256": "1097724d614b2e758e82991c7177de3b92cd12dccf18867c90807203eca10db7",
+   "bytes": 16639,
+   "historial": []
+  },
+  "mty-egr-adm-2026T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2026/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_2T_2026.xlsx",
+   "archivo": "monterrey/mty-egr-adm-2026T2.xlsx",
+   "publicado": "2026-07-29",
+   "descargado": "2026-09-30",
+   "sha256": "6c24fc82dad296945c5371be3385487abc68cc2893b7c002f91502f63130d7b5",
+   "bytes": 16641,
+   "historial": []
+  },
+  "mty-egr-obj-2023T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_1T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2023T1.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "2b6fbfea7913140420e8ca1a772917f6e9daea7b288fd8da10bb106e808bc45f",
+   "bytes": 21451,
+   "historial": []
+  },
+  "mty-egr-obj-2023T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_2T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2023T2.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "518c218fa5fae9bd25a0344306c7ca31640840f2444da6062645bbc3ec477e0d",
+   "bytes": 25001,
+   "historial": []
+  },
+  "mty-egr-obj-2023T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_3T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2023T3.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "7a91170ab6f046a43e43185c00b55d493d887cf45cdbb1365db72c0807e66996",
+   "bytes": 28099,
+   "historial": []
+  },
+  "mty-egr-obj-2023T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_4T_2023.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2023T4.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "b7c8ffd384110c71b502134b3f91e6d1a975c6f21b5dfe813730574f60a05da0",
+   "bytes": 25685,
+   "historial": []
+  },
+  "mty-egr-obj-2024T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_1T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2024T1.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "3ccb48b1747f30394f98f5dd59f6b40b74d43f9fd0b457e43775e6e7bd86a968",
+   "bytes": 27118,
+   "historial": []
+  },
+  "mty-egr-obj-2024T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_2T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2024T2.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "2416f7ef692970dcf18f973369d01f75a01876ea1e1ec0c2f1cd7d7002f6030d",
+   "bytes": 27480,
+   "historial": []
+  },
+  "mty-egr-obj-2024T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_3T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2024T3.xlsx",
+   "publicado": "2024-10-28",
+   "descargado": "2026-09-30",
+   "sha256": "f43b4c42a9d4f4a455a6974556a4cdd1e230e1617e2ff22eb30d441a39391391",
+   "bytes": 21275,
+   "historial": []
+  },
+  "mty-egr-obj-2024T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_4T_2024.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2024T4.xlsx",
+   "publicado": "2025-01-28",
+   "descargado": "2026-09-30",
+   "sha256": "c7918d95cbbe3b8f20d040cf27a2fe562150afa841cacc099c931ee79b0de9cc",
+   "bytes": 22881,
+   "historial": []
+  },
+  "mty-egr-obj-2025T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_1T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2025T1.xlsx",
+   "publicado": "2025-05-07",
+   "descargado": "2026-09-30",
+   "sha256": "6b9ac2dd2e56056438083e782a14e5c1c4ee97867c58c6bf7097d65e0d3704ab",
+   "bytes": 19515,
+   "historial": []
+  },
+  "mty-egr-obj-2025T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_2T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2025T2.xlsx",
+   "publicado": "2025-07-21",
+   "descargado": "2026-09-30",
+   "sha256": "f4a0fee64d904609ea0c63d830c3dd093cef709665fe80389b5a42e8c6d485a3",
+   "bytes": 27288,
+   "historial": []
+  },
+  "mty-egr-obj-2025T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_3T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2025T3.xlsx",
+   "publicado": "2025-11-06",
+   "descargado": "2026-09-30",
+   "sha256": "4829384de77920e35906c13f155fbcabf1f1b378ed3cbdda12ea287cdfb9cc06",
+   "bytes": 22059,
+   "historial": []
+  },
+  "mty-egr-obj-2025T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_4T_2025.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2025T4.xlsx",
+   "publicado": "2026-02-05",
+   "descargado": "2026-09-30",
+   "sha256": "cbc70d8c11d682fb39cc279dcc8051bacd0e6e55eb57c16626cf8b2dacf5760e",
+   "bytes": 16567,
+   "historial": []
+  },
+  "mty-egr-obj-2026T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2026/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_1T_2026.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2026T1.xlsx",
+   "publicado": "2026-05-08",
+   "descargado": "2026-09-30",
+   "sha256": "d6a1b1da81527add766ac0763d0f7f1e0756edeaf43f7f24421314e8f6ad6e7f",
+   "bytes": 22468,
+   "historial": []
+  },
+  "mty-egr-obj-2026T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2026/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_2T_2026.xlsx",
+   "archivo": "monterrey/mty-egr-obj-2026T2.xlsx",
+   "publicado": "2026-07-29",
+   "descargado": "2026-09-30",
+   "sha256": "67a7fdb9a1cb35b269430e6308b618d7c14e04e08a66748642589c0fd24bd26d",
+   "bytes": 22630,
+   "historial": []
+  },
+  "mty-ing-2023T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_2023.xlsx",
+   "archivo": "monterrey/mty-ing-2023T1.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "f35762e09cc920a51333829578732236e759a40c9a0d0cf0e1f37bb6f9ab9b68",
+   "bytes": 19309,
+   "historial": []
+  },
+  "mty-ing-2023T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_2T_2023.xlsx",
+   "archivo": "monterrey/mty-ing-2023T2.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "66887588a3f5e189d759c1371896e4a1312530160e08188a3ab38005ef7d5f74",
+   "bytes": 18926,
+   "historial": []
+  },
+  "mty-ing-2023T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_3T_2023.xlsx",
+   "archivo": "monterrey/mty-ing-2023T3.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "7aed5e3191a36e98818b6d7dd0bf2b6f64bed096a193d2b2d52a4af2342f2d3a",
+   "bytes": 20279,
+   "historial": []
+  },
+  "mty-ing-2023T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_4T_2023.xlsx",
+   "archivo": "monterrey/mty-ing-2023T4.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "c4007a71db71ca71fcd16c13052933b234c0a438d6b49be0e006f2465a7a792b",
+   "bytes": 19378,
+   "historial": []
+  },
+  "mty-ing-2024T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/1_Estado_Analitico_del_Ingresos_2024.xlsx",
+   "archivo": "monterrey/mty-ing-2024T1.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "fb821859f83078cfa83fbc45f3b087c36e4d83265a9729776b8b55a4a73ca7d4",
+   "bytes": 19105,
+   "historial": []
+  },
+  "mty-ing-2024T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/2_Estado_Analitico_del_Ingresos_2024.xlsx",
+   "archivo": "monterrey/mty-ing-2024T2.xlsx",
+   "publicado": "2024-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "65c509ef6b0b388c6568d3ab07e2fc3924bc5a0a8234723ed5b9b987bed472a1",
+   "bytes": 19173,
+   "historial": []
+  },
+  "mty-ing-2024T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ingresos_3T_2024.xlsx",
+   "archivo": "monterrey/mty-ing-2024T3.xlsx",
+   "publicado": "2024-10-28",
+   "descargado": "2026-09-30",
+   "sha256": "91a4ad621f7b873649d7d6ca47c60c9c9d4c07552320739d49028431438331e3",
+   "bytes": 17987,
+   "historial": []
+  },
+  "mty-ing-2024T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ingresos_4T_2024.xlsx",
+   "archivo": "monterrey/mty-ing-2024T4.xlsx",
+   "publicado": "2025-01-28",
+   "descargado": "2026-09-30",
+   "sha256": "4c0a672d85f6c9bcf56dc86771ed9bb5766966e028c57bb7067d05c526c76ce6",
+   "bytes": 18111,
+   "historial": []
+  },
+  "mty-ing-2025T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_1T_2025.xlsx",
+   "archivo": "monterrey/mty-ing-2025T1.xlsx",
+   "publicado": "2025-05-07",
+   "descargado": "2026-09-30",
+   "sha256": "bb713eda7889090c69f76f2bc14a478f799b29468e04e9dc2c4b7da6745f8f82",
+   "bytes": 17868,
+   "historial": []
+  },
+  "mty-ing-2025T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_2T_2025.xlsx",
+   "archivo": "monterrey/mty-ing-2025T2.xlsx",
+   "publicado": "2025-07-21",
+   "descargado": "2026-09-30",
+   "sha256": "713a1500688cbd8aa98de90b31de0a1edb6f08ddf54036cbf50106b255ad3747",
+   "bytes": 17681,
+   "historial": []
+  },
+  "mty-ing-2025T3": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_3T_2025.xlsx",
+   "archivo": "monterrey/mty-ing-2025T3.xlsx",
+   "publicado": "2025-11-06",
+   "descargado": "2026-09-30",
+   "sha256": "61b04acf24ad4e7073fb5a46370a6b589f11194211a0dd455b20481399636e2d",
+   "bytes": 17578,
+   "historial": []
+  },
+  "mty-ing-2025T4": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_4T_2025.xlsx",
+   "archivo": "monterrey/mty-ing-2025T4.xlsx",
+   "publicado": "2026-02-05",
+   "descargado": "2026-09-30",
+   "sha256": "d584899ba26ab444275b25104776bcbc995f58fe84001e376a477bbd297cc390",
+   "bytes": 19894,
+   "historial": []
+  },
+  "mty-ing-2026T1": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2026/1_Estado_Analitico_de_Ingresos_1T_2026.xlsx",
+   "archivo": "monterrey/mty-ing-2026T1.xlsx",
+   "publicado": "2026-05-08",
+   "descargado": "2026-09-30",
+   "sha256": "dce5b7589a6bb9280e60bfc4fa9be7bcdfbd6a2faaa846d6610e05e9bc496b84",
+   "bytes": 18277,
+   "historial": []
+  },
+  "mty-ing-2026T2": {
+   "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2026/1_Estado_Analitico_de_Ingresos_2T_2026.xlsx",
+   "archivo": "monterrey/mty-ing-2026T2.xlsx",
+   "publicado": "2026-07-29",
+   "descargado": "2026-09-30",
+   "sha256": "01a01b8242d0b1db0c2913ea9118b69f4f6a9872a46a627c4dec48d3a5728bf6",
+   "bytes": 19709,
+   "historial": []
+  },
+  "sc-xxiib-2023": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6848b21124fbc_NLA95FXXIIB%20%282023.xlsx",
+   "archivo": "santa-catarina/sc-xxiib-2023.xlsx",
+   "publicado": "2025-06-10",
+   "descargado": "2026-09-30",
+   "sha256": "9cec1af4ae92e1debcf86ac7cf1703d125e4422a17b962a6574ad11306ff7798",
+   "bytes": 14332,
+   "historial": []
+  },
+  "sc-xxiib-2024": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6848b21126214_NLA95FXXIIB%202024.xlsx",
+   "archivo": "santa-catarina/sc-xxiib-2024.xlsx",
+   "publicado": "2025-06-10",
+   "descargado": "2026-09-30",
+   "sha256": "156ef9548f4466bffb0025bd0b11902e50c7e369930d0e564ff43053db0b787d",
+   "bytes": 24059,
+   "historial": []
+  },
+  "sc-xxiib-2025T1": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/6848b25cb8e41_NLA95FXXIIB%20contabilidad%201%20trimestre.xlsx",
+   "archivo": "santa-catarina/sc-xxiib-2025T1.xlsx",
+   "publicado": "2025-06-10",
+   "descargado": "2026-09-30",
+   "sha256": "09df64132e624342db7c570809b03f325066713ef0c891897b9e828ee9644975",
+   "bytes": 18122,
+   "historial": []
+  },
+  "sc-xxiib-2025T2": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68a8cc75041c1_NLA95FXXIIB%20contabilidad%20junio.xlsx",
+   "archivo": "santa-catarina/sc-xxiib-2025T2.xlsx",
+   "publicado": "2025-08-22",
+   "descargado": "2026-09-30",
+   "sha256": "b4898f008108fca99a8b779555ff83a99325978eb5b7b6d40365031bcb79dc39",
+   "bytes": 18769,
+   "historial": []
+  },
+  "sc-xxiib-2025T3": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6905347ce0f2c_NLA95FXXIIB%20conta%20sept.xlsx",
+   "archivo": "santa-catarina/sc-xxiib-2025T3.xlsx",
+   "publicado": "2025-10-31",
+   "descargado": "2026-09-30",
+   "sha256": "5e7d42bbc69a69e1b7d143aadc9f8c2fa06076cbac0c322d09a04d75a060c822",
+   "bytes": 18979,
+   "historial": []
+  },
+  "sc-xxiib-2025T4": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/697d1ed616297_NLA95FXXIIB%20DIC%20TRIME.xlsx",
+   "archivo": "santa-catarina/sc-xxiib-2025T4.xlsx",
+   "publicado": "2026-01-30",
+   "descargado": "2026-09-30",
+   "sha256": "9978fc82d4e8eede666905aed792a586e395d207e319454e13434bfadea4d63c",
+   "bytes": 19560,
+   "historial": []
+  },
+  "sc-xxiib-2026T2": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a721a2664fe1_NLA95FXXIIB%20CONTA%20JUNIO.xlsx",
+   "archivo": "santa-catarina/sc-xxiib-2026T2.xlsx",
+   "publicado": "2026-08-04",
+   "descargado": "2026-09-30",
+   "sha256": "3d5a9840898e01bcbf30bd2cd44275dddda8f8940d36eac57915f85446a00f74",
+   "bytes": 18823,
+   "historial": []
+  },
+  "sp-xxiib-2023T2": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2023/6/5302/anexo_26317_NLA95FXXIIB%20JUNIO2023FYT.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2023T2.xlsx",
+   "publicado": "2023-07-28",
+   "descargado": "2026-09-30",
+   "sha256": "54857147a90b686eecfec46cd1ddbcfc9b4db86cb8b63a132274faa35a1b109f",
+   "bytes": 7250,
+   "historial": []
+  },
+  "sp-xxiib-2023T3": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2023/9/5302/anexo_27059_NLA95FXXIIB_SEP2023.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2023T3.xlsx",
+   "publicado": "2023-10-31",
+   "descargado": "2026-09-30",
+   "sha256": "33ae1b88df0050d1292e19ffe0c584002b6ea24a798f4bde9124cd169342ef0d",
+   "bytes": 5506,
+   "historial": []
+  },
+  "sp-xxiib-2023T4": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2023/12/5302/anexo_27720_NLA95FXXIIB.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2023T4.xlsx",
+   "publicado": "2024-02-01",
+   "descargado": "2026-09-30",
+   "sha256": "87330e7194f32a5002c97ccb65a865e983ec73d7e07335b0286f4583fb9c116d",
+   "bytes": 6442,
+   "historial": []
+  },
+  "sp-xxiib-2024T1": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2024/3/5302/anexo_28743_NLA95FXXIIB%20act2024.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2024T1.xlsx",
+   "publicado": "2024-05-08",
+   "descargado": "2026-09-30",
+   "sha256": "3ba4fff2a40f16ddf48ddc2cbd9d8a646bb363733687ddb4fc0d7c3fe160ce1c",
+   "bytes": 6374,
+   "historial": []
+  },
+  "sp-xxiib-2024T2": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2024/6/5302/anexo_29453_NLA95FXXIIB%202DOTRIM2024.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2024T2.xlsx",
+   "publicado": "2024-08-01",
+   "descargado": "2026-09-30",
+   "sha256": "68e0520d92cbc48ef75934ae8f8eeacd8ddec9dfa89ae3dc170397db667960f3",
+   "bytes": 7169,
+   "historial": []
+  },
+  "sp-xxiib-2024T3": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2024/9/5302/anexo_30094_NLA95FXXIIB%20SEP24SAL.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2024T3.xlsx",
+   "publicado": "2024-11-05",
+   "descargado": "2026-09-30",
+   "sha256": "f11060c9ef6fb4d6e304a7d88fe8691d039ab774b2dbe96e30f2058f06e3c44c",
+   "bytes": 5495,
+   "historial": []
+  },
+  "sp-xxiib-2025T1": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/3/5302/anexo_31346_NLA95FXXIIB%20MAR25.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2025T1.xlsx",
+   "publicado": "2025-04-15",
+   "descargado": "2026-09-30",
+   "sha256": "ab9fa72980d3d867d009a123d9430d56c20a812d23ee0d44b5541bdd371aaaf0",
+   "bytes": 6336,
+   "historial": []
+  },
+  "sp-xxiib-2025T2": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/6/5302/anexo_32106_NLA95FXXIIB%20JUN2025%20TEMP%20SAL.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2025T2.xlsx",
+   "publicado": "2025-07-30",
+   "descargado": "2026-09-30",
+   "sha256": "cb3ac3a9cbfb287dc36c7f0d6d3d21f88aed0b125e7cda8184af4d0c4179c905",
+   "bytes": 5458,
+   "historial": []
+  },
+  "sp-xxiib-2025T3": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/9/5302/anexo_32669_NLA95FXXIIB.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2025T3.xlsx",
+   "publicado": "2025-10-30",
+   "descargado": "2026-09-30",
+   "sha256": "cfc8e94122e16df0da208c2a3d02e41953300f323bea3ba944685f7c8d5cf0d8",
+   "bytes": 7484,
+   "historial": []
+  },
+  "sp-xxiib-2025T4": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/12/5302/anexo_33321_NLA95FXXIIB%20SALDIC25.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2025T4.xlsx",
+   "publicado": "2026-02-03",
+   "descargado": "2026-09-30",
+   "sha256": "f84652fa67e529a9e99b5f2c12165f57963ae46fc18161b0cbcec7c6bef69814",
+   "bytes": 6236,
+   "historial": []
+  },
+  "sp-xxiib-2026T1": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2026/3/5302/anexo_35315_NLA95FXXIIB%201TRIM26.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2026T1.xlsx",
+   "publicado": "2026-07-29",
+   "descargado": "2026-09-30",
+   "sha256": "eb9f16765cbf30c897948439284ec23542d056d2f7c92ee93c01c1a11755d2e2",
+   "bytes": 11466,
+   "historial": []
+  },
+  "sp-xxiib-2026T2": {
+   "url": "https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2026/6/5302/anexo_35316_NLA95FXXIIB%202TRIM%20CAMBIO.xlsx",
+   "archivo": "san-pedro/sp-xxiib-2026T2.xlsx",
+   "publicado": "2026-07-29",
+   "descargado": "2026-09-30",
+   "sha256": "133f4db56142abc606230658254d3fbbe294c008509bd4fa580c37c71a7dcc63",
+   "bytes": 12019,
+   "historial": []
+  }
+ }
+}
