@@ -77,12 +77,30 @@
 
   {#if d && r}
     <div class="grid tiles">
-      <StatTile label="Contratos publicados" value={entero(r.contratos)} sub={r.fechas[0] ? `Del ${fecha(r.fechas[0])} al ${fecha(r.fechas[1])}` : ''} />
-      <StatTile label="Monto total contratado" value={pesos(r.monto_total)} sub={`${entero(r.con_monto)} contratos con monto publicado`} />
-      <StatTile value={porcentaje(directa)} sub="del monto, sin concurso abierto">
+      <StatTile
+        label="Contratos publicados"
+        value={entero(r.contratos)}
+        sub={r.fechas[0] ? `Del ${fecha(r.fechas[0])} al ${fecha(r.fechas[1])}` : ''}
+        origen={{ calculo: 'Número de contratos (renglones sin duplicados exactos) en los formatos de contratos publicados por el municipio.', fuentes: d.fuentes.length > 3 ? [d.fuentes[0], d.fuentes.at(-1)] : d.fuentes }}
+      />
+      <StatTile
+        label="Monto total contratado"
+        value={pesos(r.monto_total)}
+        sub={`${entero(r.con_monto)} contratos con monto publicado`}
+        origen={{ calculo: 'Suma de «Monto total del contrato con impuestos incluidos» de los contratos que lo publican; los que no tienen monto no se suman.', fuentes: d.fuentes.length > 3 ? [d.fuentes[0], d.fuentes.at(-1)] : d.fuentes }}
+      />
+      <StatTile
+        value={porcentaje(directa)}
+        sub="del monto, sin concurso abierto"
+        origen={{ calculo: 'Monto de contratos por adjudicación directa, excepción o tres cotizaciones ÷ monto total contratado.', fuentes: [] }}
+      >
         {#snippet label()}Por <Termino id="adjudicacion-directa">adjudicación directa</Termino>{/snippet}
       </StatTile>
-      <StatTile value={porcentaje(r.concentracion_top10)} sub={`del monto fue a los 10 mayores de ${entero(r.proveedores)} proveedores`}>
+      <StatTile
+        value={porcentaje(r.concentracion_top10)}
+        sub={`del monto fue a los 10 mayores de ${entero(r.proveedores)} proveedores`}
+        origen={{ calculo: 'Monto de los 10 proveedores con más dinero ÷ monto total contratado. Los proveedores reservados por el municipio no se cuentan; los proveedores se agrupan por RFC (o por nombre si no hay RFC).', fuentes: [] }}
+      >
         {#snippet label()}<Termino id="concentracion">Concentración</Termino>{/snippet}
       </StatTile>
     </div>

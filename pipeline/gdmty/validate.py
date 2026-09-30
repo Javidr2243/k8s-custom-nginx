@@ -16,18 +16,58 @@ TOLERANCIA = 1.0  # pesos
 UMBRAL_ANOMALIA = 0.30
 
 
+# Checks published in validacion.json (what was verified, in plain language).
+CHEQUEOS: dict[str, str] = {
+    "suma": "Los renglones de cada documento suman exactamente el total que reporta el propio documento (±1 peso).",
+    "periodo": "La fecha de corte escrita en el documento coincide con el periodo que se le asigna.",
+    "identidad": "En cada renglón, Modificado = Aprobado + Ampliaciones/(Reducciones) y Subejercicio = Modificado − Devengado.",
+    "dependencias_vs_capitulos": "Monterrey: el gasto total por dependencia es igual al gasto total por capítulo.",
+    "acumulado": "El gasto acumulado no baja de un trimestre al siguiente dentro del mismo año.",
+    "repetidos": "Ningún documento repite exactamente las mismas cifras en trimestres distintos.",
+    "cruce_inegi": "El gasto del 4º trimestre (documento del municipio) difiere menos de 2 % del gasto anual del INEGI.",
+    "cruce_creditos": "La suma de los créditos del registro de Hacienda coincide (±1 %) con el saldo trimestral publicado.",
+    "cruce_amortizacion": "Monterrey: la baja de la deuda en el registro de Hacienda coincide con la amortización que reporta el municipio.",
+}
+
+
+@dataclass
+class Chequeo:
+    revisados: int = 0
+    aprobados: int = 0
+    fallas: list[dict] = field(default_factory=list)
+
+
 @dataclass
 class Reporte:
     errores: list[str] = field(default_factory=list)
     advertencias: list[str] = field(default_factory=list)
+    advertencias_det: list[dict] = field(default_factory=list)
     anomalias: list[str] = field(default_factory=list)
     archivos: list[str] = field(default_factory=list)
+    chequeos: dict[str, Chequeo] = field(default_factory=dict)
 
     def error(self, msg: str) -> None:
         self.errores.append(msg)
 
-    def advertencia(self, msg: str) -> None:
+    def advertencia(self, msg: str, *, fuente: str | None = None, municipio: str | None = None) -> None:
         self.advertencias.append(msg)
+        self.advertencias_det.append({"mensaje": msg, "fuente": fuente, "municipio": municipio})
+
+    def chequeo(
+        self,
+        clave: str,
+        ok: bool,
+        *,
+        fuente: str | None = None,
+        municipio: str | None = None,
+        detalle: str = "",
+    ) -> None:
+        c = self.chequeos.setdefault(clave, Chequeo())
+        c.revisados += 1
+        if ok:
+            c.aprobados += 1
+        else:
+            c.fallas.append({"fuente": fuente, "municipio": municipio, "detalle": detalle})
 
 
 def identidades_egresos(montos: dict[str, float | None], donde: str) -> list[str]:

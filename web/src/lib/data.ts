@@ -178,9 +178,25 @@ export interface Fuente {
   pagina: string;
   formato: string;
   archivo: string;
+  copia: string;
+  extracto: boolean;
+  sha256_original: string | null;
+  bytes: number | null;
   sha256: string | null;
   publicado: string | null;
   descargado: string | null;
+}
+
+export interface Validacion {
+  chequeos: {
+    id: string;
+    descripcion: string;
+    revisados: number;
+    aprobados: number;
+    fallas: { fuente: string | null; municipio: MunicipioId | null; detalle: string }[];
+  }[];
+  advertencias: { mensaje: string; fuente: string | null; municipio: MunicipioId | null }[];
+  nota: string;
 }
 
 export interface Comparativo {
@@ -250,6 +266,7 @@ export const api = {
   contratos: (m: MunicipioId) => load<Contratos>(`contratos/${m}.json`),
   comparativo: () => load<Comparativo>('comparativo.json'),
   movimientos: () => load<{ movimientos: Movimiento[] }>('movimientos.json').then((d) => d.movimientos),
+  validacion: () => load<Validacion>('validacion.json'),
 };
 
 export const NOMBRE: Record<MunicipioId, string> = {

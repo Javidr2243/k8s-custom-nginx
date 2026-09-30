@@ -14,6 +14,7 @@
   import Movimientos from './views/Movimientos.svelte';
   import Glosario from './views/Glosario.svelte';
   import Acerca from './views/Acerca.svelte';
+  import Fuentes from './views/Fuentes.svelte';
   import NoEncontrado from './views/NoEncontrado.svelte';
 
   const NAV = [
@@ -24,6 +25,7 @@
     { path: '/deuda', label: 'Deuda' },
     { path: '/contratos', label: 'Contratos' },
     { path: '/movimientos', label: 'Movimientos' },
+    { path: '/fuentes', label: 'Fuentes' },
   ];
   const VISTAS = {
     '/': Inicio,
@@ -35,6 +37,7 @@
     '/movimientos': Movimientos,
     '/glosario': Glosario,
     '/acerca': Acerca,
+    '/fuentes': Fuentes,
   } as const;
   const TITULOS: Record<string, string> = {
     '/': 'Inicio',
@@ -46,6 +49,7 @@
     '/movimientos': 'Movimientos recientes',
     '/glosario': 'Glosario',
     '/acerca': 'Acerca de los datos',
+    '/fuentes': 'Fuentes y verificación',
   };
 
   const ruta = $derived(route.path.replace(/\/+$/, '') || '/');
@@ -154,6 +158,7 @@
       {#if meta}
         Datos actualizados al {fecha(meta.datos_al)}; el periodo más reciente es el {trimestre(meta.periodo_mas_reciente)}.
       {/if}
+      <a href="/fuentes" use:link>Fuentes y verificación</a> ·
       <a href="/acerca" use:link>Acerca de los datos y privacidad</a> ·
       <a href="/glosario" use:link>Glosario</a> ·
       <a href="https://github.com/javidr2243/k8s-custom-nginx" rel="noopener noreferrer">Código y datos abiertos</a>

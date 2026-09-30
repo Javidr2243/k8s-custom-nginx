@@ -1,6 +1,7 @@
 <script lang="ts">
   import { api, MUNICIPIOS, NOMBRE, type Egresos, type Fuente, type Meta, type MunicipioId } from '../lib/data';
   import { acumulado, fecha, trimestre } from '../lib/format';
+  import { link } from '../lib/router.svelte';
 
   let fuentes = $state<Record<string, Fuente> | null>(null);
   let meta = $state<Meta | null>(null);
@@ -9,15 +10,6 @@
   api.meta().then((m) => (meta = m));
   for (const m of MUNICIPIOS) api.egresos(m).then((e) => (egr[m] = e));
 
-  const grupos = $derived.by(() => {
-    if (!fuentes) return [];
-    const g = new Map<string, [string, Fuente][]>();
-    for (const [id, f] of Object.entries(fuentes)) {
-      const k = f.emisor.split(' — ')[0]!;
-      g.set(k, [...(g.get(k) ?? []), [id, f]]);
-    }
-    return [...g.entries()].sort((a, b) => a[0].localeCompare(b[0], 'es'));
-  });
 </script>
 
 <section aria-labelledby="h-acerca" class="stack">
@@ -85,24 +77,12 @@
   </article>
 
   <article class="card">
-    <h2>Fuentes ({fuentes ? Object.keys(fuentes).length : '…'} documentos)</h2>
-    <p class="small muted">
-      Cada documento se guarda con su huella digital (SHA-256) para poder comprobar que no cambió. La lista de huellas de
-      los datos del sitio está en <a href="/data/v1/SHA256SUMS">/data/v1/SHA256SUMS</a>.
+    <h2>Fuentes</h2>
+    <p>
+      Los {fuentes ? Object.keys(fuentes).length : ''} documentos oficiales, con enlace al original, copia archivada del
+      archivo exacto que se usó, fechas y huella SHA-256, además de los resultados de todas las verificaciones
+      automáticas, están en <a href="/fuentes" use:link>Fuentes y verificación</a>.
     </p>
-    {#each grupos as [emisor, lista] (emisor)}
-      <details>
-        <summary>{emisor} ({lista.length})</summary>
-        <ul class="small fuentes">
-          {#each lista as [id, f] (id)}
-            <li>
-              <a href={f.url} rel="noopener noreferrer" target="_blank">{f.titulo}</a>
-              <span class="muted">{f.publicado ? `· publicado ${fecha(f.publicado)}` : ''} · descargado {fecha(f.descargado)}</span>
-            </li>
-          {/each}
-        </ul>
-      </details>
-    {/each}
   </article>
 
   <article class="card">
@@ -121,15 +101,5 @@
   }
   li {
     margin-bottom: 0.35rem;
-  }
-  details summary {
-    cursor: pointer;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    color: var(--link);
-  }
-  .fuentes {
-    overflow-wrap: anywhere;
   }
 </style>

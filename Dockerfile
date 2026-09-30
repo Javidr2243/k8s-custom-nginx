@@ -9,6 +9,7 @@ COPY web/package.json web/package-lock.json ./
 RUN npm ci --ignore-scripts --no-audit --no-fund
 COPY web/ ./
 COPY data/public/ /src/data/public/
+COPY data/raw/ /src/data/raw/
 RUN npm run build
 
 # ---- Stage 2: runtime ----
