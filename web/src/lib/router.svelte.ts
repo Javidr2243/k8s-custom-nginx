@@ -3,9 +3,13 @@
 
 import { esMunicipio, type MunicipioId } from './data';
 
+// Preview builds (relative base, e.g. hosted inside another page) keep the route in memory and never change the
+// page's own URL, so relative data URLs keep working. The production site (base "/") uses real URLs.
+const MEMORIA = import.meta.env.BASE_URL !== '/';
+
 class Route {
-  path = $state(location.pathname);
-  search = $state(location.search);
+  path = $state(MEMORIA ? '/' : location.pathname);
+  search = $state(MEMORIA ? '' : location.search);
 
   get params(): URLSearchParams {
     return new URLSearchParams(this.search);
@@ -22,7 +26,13 @@ class Route {
 
 export const route = new Route();
 
-function sync(): void {
+function sync(e?: PopStateEvent): void {
+  if (MEMORIA) {
+    const s = (e?.state ?? {}) as { path?: string; search?: string };
+    route.path = s.path ?? '/';
+    route.search = s.search ?? '';
+    return;
+  }
   route.path = location.pathname;
   route.search = location.search;
 }
@@ -30,6 +40,15 @@ function sync(): void {
 window.addEventListener('popstate', sync);
 
 export function navigate(url: string, opts: { replace?: boolean } = {}): void {
+  if (MEMORIA) {
+    const t = new URL(url, `https://app.invalid${route.path}${route.search}`);
+    const cambia = t.pathname !== route.path;
+    history[opts.replace ? 'replaceState' : 'pushState']({ path: t.pathname, search: t.search }, '');
+    route.path = t.pathname;
+    route.search = t.search;
+    if (cambia) window.scrollTo(0, 0);
+    return;
+  }
   const target = new URL(url, location.href);
   if (target.origin !== location.origin) {
     location.href = target.href;
@@ -47,13 +66,13 @@ export function navigate(url: string, opts: { replace?: boolean } = {}): void {
 
 /** Update query parameters without adding a history entry. */
 export function setQuery(values: Record<string, string | null>): void {
-  const params = new URLSearchParams(location.search);
+  const params = new URLSearchParams(route.search);
   for (const [k, v] of Object.entries(values)) {
     if (v === null) params.delete(k);
     else params.set(k, v);
   }
   const qs = params.toString();
-  navigate(location.pathname + (qs ? `?${qs}` : ''), { replace: true });
+  navigate(route.path + (qs ? `?${qs}` : ''), { replace: true });
 }
 
 /** Build an internal link that keeps the current municipality/period. */

@@ -242,7 +242,8 @@ export interface Meta {
   unidad: string;
 }
 
-const BASE = '/data/v1/';
+// "/data/v1/" on the site; relative in preview builds (see MEMORIA in router.svelte.ts).
+const BASE = `${import.meta.env.BASE_URL}data/v1/`;
 const cache = new Map<string, Promise<unknown>>();
 
 export function load<T>(path: string): Promise<T> {
