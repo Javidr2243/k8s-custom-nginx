@@ -35,9 +35,13 @@
                 <dd><a href={f.url} rel="noopener noreferrer" target="_blank">Abrir en el sitio del emisor</a> ({f.formato.toUpperCase()})</dd>
                 <dt>Copia archivada</dt>
                 <dd>
-                  <a href={f.copia} download>Descargar la copia usada aquí</a>
-                  {tam(f.bytes)}{#if f.extracto}
-                    · <span class="muted">el original es un archivo nacional muy grande; la copia contiene solo las filas de los tres municipios</span>{/if}
+                  {#if f.copia}
+                    <a href={f.copia} download>Descargar la copia usada aquí</a>
+                    {tam(f.bytes)}{#if f.extracto}
+                      · <span class="muted">el original es un archivo nacional muy grande; la copia contiene solo las filas de los tres municipios</span>{/if}
+                  {:else}
+                    <span class="muted">No se publica copia: {f.sin_copia}</span>
+                  {/if}
                 </dd>
                 <dt>Dónde se publica</dt>
                 <dd class="url">

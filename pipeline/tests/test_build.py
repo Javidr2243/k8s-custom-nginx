@@ -2,12 +2,15 @@
 
 import hashlib
 import json
+import re
+import shutil
 from pathlib import Path
 
 import pytest
 
+from gdmty import build as build_mod
 from gdmty.build import build
-from gdmty.paths import DATA_RAW
+from gdmty.paths import DATA_INTERMEDIO, DATA_RAW
 
 
 @pytest.fixture(scope="module")
@@ -79,10 +82,13 @@ def test_build_is_deterministic(out: Path, tmp_path: Path) -> None:
 def test_provenance_archived_copy_and_validation(out: Path) -> None:
     fuentes = _load(out, "fuentes.json")["fuentes"]
     for fid, f in fuentes.items():
-        # Every source has an archived copy that exists in data/raw and a fingerprint.
+        # Every source has a fingerprint; an archived copy unless the original contains personal data.
+        assert f["sha256"] and len(f["sha256"]) == 64, fid
+        if f["copia"] is None:
+            assert f["sin_copia"] and "-contratos" in f["archivo"], fid
+            continue
         assert f["copia"].startswith("/data/originales/"), fid
         assert (DATA_RAW / f["copia"].removeprefix("/data/originales/")).is_file(), fid
-        assert f["sha256"] and len(f["sha256"]) == 64, fid
     val = _load(out, "validacion.json")
     ids = {c["id"] for c in val["chequeos"]}
     assert {"suma", "periodo", "identidad", "cruce_inegi"} <= ids
@@ -94,3 +100,24 @@ def test_provenance_archived_copy_and_validation(out: Path) -> None:
         x["fuente"] for c in val["chequeos"] for x in c["fallas"]
     }
     assert citadas - {None} <= set(fuentes)
+
+
+def test_intermediates_hide_rfc_of_individuals() -> None:
+    archivos = sorted((DATA_INTERMEDIO / "contratos").glob("*.json"))
+    assert archivos
+    rfc_persona = re.compile(r"\b[A-ZÑ&]{4}\d{6}[A-Z0-9]{3}\b")
+    for a in archivos:
+        texto = a.read_text(encoding="utf-8")
+        assert not rfc_persona.search(texto), a.name
+        for c in json.loads(texto)["contratos"]:
+            assert c["rfc"] is None or len(c["rfc"]) == 12
+
+
+def test_build_without_contract_originals(out: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # As in CI and the public repo: contract originals are absent, their masked intermediates stand in for them.
+    raw = tmp_path / "raw"
+    shutil.copytree(DATA_RAW, raw, ignore=shutil.ignore_patterns("*-contratos*"))
+    monkeypatch.setattr(build_mod, "DATA_RAW", raw)
+    report = build(tmp_path / "v1")
+    assert report.errores == []
+    assert (tmp_path / "v1" / "SHA256SUMS").read_text() == (out / "SHA256SUMS").read_text()

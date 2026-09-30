@@ -28,7 +28,7 @@ from gdmty.parsers import (
     shcp,
     sipot_xxiib,
 )
-from gdmty.paths import CACHE_DIR, DATA_RAW, PUBLIC_V1
+from gdmty.paths import CACHE_DIR, DATA_INTERMEDIO, DATA_RAW, PUBLIC_V1
 from gdmty.util import ParseError, norm_label, quarter_of, round_money, slugify
 from gdmty.validate import (
     CHEQUEOS,
@@ -562,7 +562,33 @@ NOTAS_CONTRATOS = {
 }
 
 
-def _contratos(cfg, report: Reporte, out_dir: Path, usadas: set[str]) -> dict[str, list[dict]]:
+def _contratos_de(f, manifest: Manifest, intermedio_dir: Path) -> list[dict]:
+    """Masked contract rows of one source (RFC of individuals already hidden by the parser).
+
+    The original is not archived because it contains personal data. When it is present (after 'fetch') it is parsed
+    and its rows are saved as the committed intermediate; otherwise the intermediate is used, and it must belong to
+    the exact original recorded in the manifest (same SHA-256)."""
+    sha = (manifest.get(f.id) or {}).get("sha256")
+    ruta = intermedio_dir / "contratos" / f"{f.id}.json"
+    original = DATA_RAW / f.archivo()
+    if original.exists():
+        parser = contratos_mod.parse_san_pedro if f.tipo == "sp_contratos" else contratos_mod.parse_sipot_xxix
+        filas = [dict(c.__dict__) for c in parser(original)]
+        ruta.parent.mkdir(parents=True, exist_ok=True)
+        datos = {"fuente": f.id, "sha256_original": sha, "contratos": filas}
+        ruta.write_text(json.dumps(datos, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+        return filas
+    if not ruta.exists():
+        raise ParseError(f"{f.id}: falta el original y su intermedio (ejecuta 'fetch')")
+    datos = json.loads(ruta.read_text(encoding="utf-8"))
+    if datos.get("sha256_original") != sha:
+        raise ParseError(f"{f.id}: el intermedio no corresponde al original del manifiesto (ejecuta 'fetch')")
+    return datos["contratos"]
+
+
+def _contratos(
+    cfg, manifest: Manifest, intermedio_dir: Path, report: Reporte, out_dir: Path, usadas: set[str]
+) -> dict[str, list[dict]]:
     todos: dict[str, list[dict]] = {}
     for mid in MUNICIPIOS:
         items: list[dict] = []
@@ -570,11 +596,8 @@ def _contratos(cfg, report: Reporte, out_dir: Path, usadas: set[str]) -> dict[st
         for f in cfg.fuentes:
             if f.municipio != mid or f.tipo not in ("sipot_xxix", "sp_contratos"):
                 continue
-            parser = (
-                contratos_mod.parse_san_pedro if f.tipo == "sp_contratos" else contratos_mod.parse_sipot_xxix
-            )
-            for c in parser(DATA_RAW / f.archivo()):
-                items.append({**c.__dict__, "fuente": f.id})
+            for c in _contratos_de(f, manifest, intermedio_dir):
+                items.append({**c, "fuente": f.id})
             fuentes.append(f.id)
             usadas.add(f.id)
         items.sort(key=lambda c: (c["fecha"] or "", c["monto"] or 0), reverse=True)
@@ -793,13 +816,18 @@ def _mes(iso: str) -> str:
 # --- Main ----------------------------------------------------------------------------------------
 
 
-def build(out_dir: Path = PUBLIC_V1) -> Reporte:
+def build(out_dir: Path = PUBLIC_V1, intermedio_dir: Path = DATA_INTERMEDIO) -> Reporte:
     cfg = sources_mod.load()
     manifest = Manifest(DATA_RAW / "manifest.json")
     report = Reporte()
-    faltan_archivos = [
-        f.id for f in cfg.fuentes if manifest.get(f.id) is None or not (DATA_RAW / f.archivo()).exists()
-    ]
+
+    def disponible(f) -> bool:
+        if (DATA_RAW / f.archivo()).exists():
+            return True
+        # Not archived (personal data): its masked intermediate stands in for it.
+        return f.tipo in sources_mod.SIN_COPIA and (intermedio_dir / "contratos" / f"{f.id}.json").exists()
+
+    faltan_archivos = [f.id for f in cfg.fuentes if manifest.get(f.id) is None or not disponible(f)]
     if faltan_archivos:
         report.error(f"faltan originales (ejecuta 'fetch'): {faltan_archivos}")
         return report
@@ -920,7 +948,7 @@ def build(out_dir: Path = PUBLIC_V1) -> Reporte:
 
     try:
         _deuda(cfg, egresos, report, out_dir, fuentes_usadas)
-        contratos = _contratos(cfg, report, out_dir, fuentes_usadas)
+        contratos = _contratos(cfg, manifest, intermedio_dir, report, out_dir, fuentes_usadas)
     except ParseError as exc:
         report.error(f"error al leer un original de deuda o contratos: {exc}")
         return report
@@ -974,10 +1002,19 @@ def build(out_dir: Path = PUBLIC_V1) -> Reporte:
             "formato": f.formato,
             "archivo": f"data/raw/{f.archivo().as_posix()}",
             # Archived copy of the exact file used, served by the site itself (/data/originales/…).
-            "copia": f"/data/originales/{f.archivo().as_posix()}",
+            # Not archived when the original contains personal data: only its link and fingerprint are published.
+            "copia": None
+            if f.tipo in sources_mod.SIN_COPIA
+            else f"/data/originales/{f.archivo().as_posix()}",
+            "sin_copia": (
+                "Contiene RFC de personas físicas; descárgalo del sitio oficial y compara su huella SHA-256."
+                if f.tipo in sources_mod.SIN_COPIA
+                else None
+            ),
             "extracto": f.tipo in sources_mod.EXTRACTOS,
             "sha256_original": m.get("sha256_original"),
-            "bytes": m.get("bytes") or (DATA_RAW / f.archivo()).stat().st_size,
+            "bytes": m.get("bytes")
+            or ((DATA_RAW / f.archivo()).stat().st_size if (DATA_RAW / f.archivo()).exists() else None),
             "sha256": m.get("sha256"),
             "publicado": m.get("publicado"),
             "descargado": m.get("descargado"),

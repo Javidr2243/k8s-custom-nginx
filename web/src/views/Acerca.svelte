@@ -69,15 +69,16 @@
       personales. El único dato que se guarda en tu navegador es tu preferencia de modo claro u oscuro.
     </p>
     <p>
-      En los contratos solo se muestra el RFC de empresas; el de personas físicas se oculta. No se publican domicilios ni
-      listas de beneficiarios de apoyos.
+      En los contratos solo se muestra el RFC de empresas; el de personas físicas se oculta. Por eso tampoco se publica
+      copia de los archivos originales de contratos: se da el enlace oficial y su huella SHA-256. No se publican
+      domicilios ni listas de beneficiarios de apoyos.
     </p>
   </Seccion>
 
   <Seccion id="h-f" titular="Fuentes">
     <p>
       Los {fuentes ? Object.keys(fuentes).length : ''} documentos oficiales, con enlace al original, copia archivada del
-      archivo exacto que se usó, fechas y huella SHA-256, además de los resultados de todas las verificaciones
+      archivo exacto que se usó (salvo los de contratos, por datos personales), fechas y huella SHA-256, además de los resultados de todas las verificaciones
       automáticas, están en <a href="/fuentes" use:link>Fuentes y verificación</a>.
     </p>
   </Seccion>

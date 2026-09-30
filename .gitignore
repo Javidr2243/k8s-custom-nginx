@@ -12,3 +12,6 @@ web/playwright-report/
 .env.*
 # Temporary pipeline work (downloads are committed under data/raw/ only once validated)
 .cache/
+# Contract originals contain RFCs of individuals: they are never committed or served. The build uses their masked
+# parser output in data/intermedio/contratos/ (see SIN_COPIA in pipeline/gdmty/sources.py).
+data/raw/**/*-contratos*
