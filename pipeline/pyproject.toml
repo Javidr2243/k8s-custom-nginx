@@ -1,0 +1,45 @@
+[project]
+name = "gdmty"
+version = "0.1.0"
+description = "Pipeline de datos de ¿A dónde va tu dinero? MTY: descarga, valida y normaliza datos financieros oficiales."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+  "httpx>=0.28",
+  "openpyxl>=3.1.5",
+  "defusedxml>=0.7.1",
+  "pydantic>=2.9",
+  "pyyaml>=6.0.2",
+]
+
+[project.scripts]
+gdmty = "gdmty.cli:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.8",
+  "pip-audit>=2.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["gdmty"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF"]
+ignore = ["S101"]  # assert is fine in tests
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,52 @@
+{
+  "name": "adonde-va-tu-dinero-mty",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "¿A dónde va tu dinero? MTY — cómo gastan Monterrey, San Pedro Garza García y Santa Catarina",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json --fail-on-warnings",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "d3-array": "3.2.4",
+    "d3-hierarchy": "3.1.2",
+    "d3-sankey": "0.12.3",
+    "d3-scale": "4.0.2",
+    "d3-selection": "3.0.0",
+    "d3-shape": "3.2.0",
+    "d3-zoom": "3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "@tsconfig/svelte": "5.0.8",
+    "@types/d3-array": "3.2.2",
+    "@types/d3-hierarchy": "3.1.7",
+    "@types/d3-sankey": "0.12.5",
+    "@types/d3-scale": "4.0.9",
+    "@types/d3-selection": "3.0.12",
+    "@types/d3-shape": "3.2.0",
+    "@types/d3-zoom": "3.0.9",
+    "@types/node": "22.20.4",
+    "eslint": "10.11.0",
+    "eslint-plugin-svelte": "3.23.0",
+    "globals": "17.12.0",
+    "svelte": "5.57.1",
+    "svelte-check": "4.7.6",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.0",
+    "vite": "8.3.1",
+    "vitest": "5.0.2"
+  }
+}
