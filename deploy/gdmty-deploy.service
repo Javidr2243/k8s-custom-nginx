@@ -1,0 +1,22 @@
+[Unit]
+Description=Despliegue de ¿A dónde va tu dinero? MTY (imagen firmada)
+Wants=network-online.target
+After=network-online.target docker.service
+
+[Service]
+Type=oneshot
+User=gdmty-deploy
+Group=gdmty-deploy
+Environment=HOME=/var/lib/gdmty-deploy
+ExecStart=/opt/gdmty/deploy.sh
+# The user is in the docker group (equivalent to root): this unit is its only job.
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/gdmty /var/lib/gdmty-deploy
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
