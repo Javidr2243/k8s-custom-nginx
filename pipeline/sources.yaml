@@ -11,6 +11,8 @@ dominios_permitidos:
 - www.stacatarina.gob.mx
 - www.inegi.org.mx
 - gaia.inegi.org.mx
+- www.disciplinafinanciera.hacienda.gob.mx
+- licitaciones.sanpedro.gob.mx
 faltantes_conocidos:
 - municipio: san-pedro
   periodo: 2024T4
@@ -589,3 +591,417 @@ fuentes:
   url: https://gaia.inegi.org.mx/wscatgeo/v2/mgem/19
   pagina: https://www.inegi.org.mx/servicios/catalogoUnico.html
   formato: json
+- id: shcp-rpu-saldos-2023T1
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2023T1
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 1er trimestre 2023 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/1erTrimestre/02_04_1_trim_2023.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2023
+  formato: xlsx
+- id: shcp-rpu-saldos-2023T2
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2023T2
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 2º trimestre 2023 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/2doTrimestre/02_04_2_trim_2023.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2023
+  formato: xlsx
+- id: shcp-rpu-saldos-2023T3
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2023T3
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 3er trimestre 2023 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/3erTrimestre/02_04_3_trim_2023.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2023
+  formato: xlsx
+- id: shcp-rpu-saldos-2023T4
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2023T4
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 4º trimestre 2023 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/4toTrimestre/02_04_4_trim_2023.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2023
+  formato: xlsx
+- id: shcp-rpu-saldos-2024T1
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2024T1
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 1er trimestre 2024 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/1erTrimestre/02_04_1_trim_2024.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2024
+  formato: xlsx
+- id: shcp-rpu-saldos-2024T2
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2024T2
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 2º trimestre 2024 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/2doTrimestre/02_04_2_trim_2024.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2024
+  formato: xlsx
+- id: shcp-rpu-saldos-2024T3
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2024T3
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 3er trimestre 2024 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/3erTrimestre/02_04_3_trim_2024.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2024
+  formato: xlsx
+- id: shcp-rpu-saldos-2024T4
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2024T4
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 4º trimestre 2024 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/4toTrimestre/02_04_4_trim_2024.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2024
+  formato: xlsx
+- id: shcp-rpu-saldos-2025T1
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2025T1
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 1er trimestre 2025 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/1erTrimestre/02_04_1_trim_2025.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2025
+  formato: xlsx
+- id: shcp-rpu-saldos-2025T2
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2025T2
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 2º trimestre 2025 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/2doTrimestre/02_04_2_trim_2025.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2025
+  formato: xlsx
+- id: shcp-rpu-saldos-2025T3
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2025T3
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 3er trimestre 2025 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/3erTrimestre/02_04_3_trim_2025.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2025
+  formato: xlsx
+- id: shcp-rpu-saldos-2025T4
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2025T4
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 4º trimestre 2025 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/4toTrimestre/02_04_4_trim_2025.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2025
+  formato: xlsx
+- id: shcp-rpu-saldos-2026T1
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2026T1
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 1er trimestre 2026 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2026/1erTrimestre/02_04_1_trim_2026.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2026
+  formato: xlsx
+- id: shcp-rpu-saldos-2026T2
+  municipio: null
+  tipo: shcp_rpu_saldos
+  periodo: 2026T2
+  titulo: Registro Público Único — saldos de financiamientos y obligaciones por municipio, 2º trimestre 2026 (millones de pesos)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2026/2doTrimestre/02_04_2_trim_2026.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/2026
+  formato: xlsx
+- id: shcp-rpu-registro
+  municipio: null
+  tipo: shcp_rpu_registro
+  periodo: null
+  titulo: Registro Público Único — financiamientos y obligaciones inscritos (un renglón por crédito)
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/RegistroDiario/registro_deuda.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Registro_Publico_Unico
+  formato: xlsx
+- id: shcp-alertas-2023-cp
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación Cuenta Pública 2023
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2023/Municipio/CP/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: shcp-alertas-2024-1s
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación 1er semestre 2024
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2024/Municipio/1S/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: shcp-alertas-2024-2s
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación 2º semestre 2024
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2024/Municipio/2S/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: shcp-alertas-2024-cp
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación Cuenta Pública 2024
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2024/Municipio/CP/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: shcp-alertas-2025-1s
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación 1er semestre 2025
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2025/Municipio/1S/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: shcp-alertas-2025-2s
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación 2º semestre 2025
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2025/Municipio/2S/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: shcp-alertas-2025-cp
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación Cuenta Pública 2025
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2025/Municipio/CP/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: shcp-alertas-2026-1s
+  municipio: null
+  tipo: shcp_alertas
+  periodo: null
+  titulo: Sistema de Alertas — resultados de municipios, evaluación 1er semestre 2026
+  emisor: SHCP — Unidad de Coordinación con Entidades Federativas
+  url: https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2026/Municipio/1S/Resultados%20SdA%20municipios.xlsx
+  pagina: https://www.disciplinafinanciera.hacienda.gob.mx/es/DISCIPLINA_FINANCIERA/Sistema_de_Alertas
+  formato: xlsx
+- id: mty-deuda-total
+  municipio: monterrey
+  tipo: mty_deuda_total
+  periodo: null
+  titulo: 'Deuda pública (total): amortización, intereses y gastos de la deuda por año, 2014–2026'
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/portaln/ITDIF/4_Deuda_total_2014_2026_2T_2026.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-contratos-2025
+  municipio: monterrey
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, 2025 (acumulado del año)
+  emisor: Municipio de Monterrey
+  url: https://www.monterrey.gob.mx/pdf/portaln/2025/MTY_2025_12_FORMATO_95_XXIX.xls
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/
+  formato: xls
+- id: mty-contratos-2026
+  municipio: monterrey
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, 2026 (acumulado del año, enero–julio)
+  emisor: Municipio de Monterrey
+  url: https://www.monterrey.gob.mx/pdf/portaln/2026/MTY_2026_07_FORMATO_95_XXIX.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/
+  formato: xlsx
+- id: sc-contratos-2025-01
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, enero 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d7050_XXIX%20ENERO%202025.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-02
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, febrero 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d7cd6_XXIX%20FEBRERO%202025.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-03
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, marzo 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d8633_XXIX%20MARZO%202025.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-04
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, abril 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d8d49_XXIX%20BRIL%202025.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-05
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, mayo 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68a8f09ac4f5a_xxix%20mayo.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-06
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, junio 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68a8f09ac593d_xxixx%20junio.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-07
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, julio 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68b0ac0a859dc_xxix%20adquisciciones%20julio%202025.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-08
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, agosto 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed2873e5_NLA95FXXIX%20Agosto%2025%20PAGI%20M.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xlsx
+- id: sc-contratos-2025-09
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, septiembre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed287d59_29.-%20NLA95FXXIX%20SEP%202025%20PAG%20MUN.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xlsx
+- id: sc-contratos-2025-10
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, octubre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed288763_692a227558b61_XXIX%20OCT.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-11
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, noviembre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed288e7b_695bfeaf03fa5_95%20XXIX%20NOV.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2025-12
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, diciembre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed289397_697d27d702074_95%20XXIX%20A%20DIC.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2026-01
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, enero 2026
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/69a762cbad149_XXIX%20A%20ENERO.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2026-02
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, febrero 2026
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/69cad1f20d3d2_xxix%20a%20fev.xls
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xls
+- id: sc-contratos-2026-03
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, marzo 2026
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a021d82e3d33_NLA95XXIX%20ADQUI%20Marzo%202.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xlsx
+- id: sc-contratos-2026-04
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, abril 2026
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a1f587314aa2_NLA95FXXIX%20concentrada%20abril.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xlsx
+- id: sc-contratos-2026-05
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, mayo 2026
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a4556bdde57f_NLA95FXXIX%20(14).xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xlsx
+- id: sc-contratos-2026-06
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, junio 2026
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a73873867287_NLA95FXXIX%20JUNIO%202026.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xlsx
+- id: sc-contratos-2026-07
+  municipio: santa-catarina
+  tipo: sipot_xxix
+  periodo: null
+  titulo: Formato NLA95FXXIX — resultados de adjudicaciones, invitaciones y licitaciones, julio 2026
+  emisor: Municipio de Santa Catarina — Dirección de Adquisiciones
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a989dcbb2e5f_NLA95FXXIX%20(17).xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXIX)
+  formato: xlsx
+- id: sp-contratos-adquisiciones
+  municipio: san-pedro
+  tipo: sp_contratos
+  periodo: null
+  titulo: Relación de contratos de adquisiciones y servicios, administración 2024–2027
+  emisor: Municipio de San Pedro Garza García — Dirección de Adquisiciones
+  url: https://licitaciones.sanpedro.gob.mx/doc/ContratosAdq/202609094141Contratos%20Adquisiciones%202024-2026.xlsx
+  pagina: https://licitaciones.sanpedro.gob.mx/
+  formato: xlsx

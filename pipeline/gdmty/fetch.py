@@ -18,7 +18,7 @@ import httpx
 
 from gdmty import sources as sources_mod
 from gdmty.manifest import Manifest
-from gdmty.parsers import efipem
+from gdmty.parsers import efipem, shcp
 from gdmty.paths import CACHE_DIR, DATA_RAW
 from gdmty.safeio import (
     TIMEOUT,
@@ -30,6 +30,8 @@ from gdmty.safeio import (
     sha256_file,
 )
 from gdmty.safeio import ssl_context as make_ssl_context
+
+EXTRACTORES = {"inegi_efipem": efipem.extract, "shcp_rpu_registro": shcp.extract_registro}
 
 
 @dataclass
@@ -73,15 +75,15 @@ def fetch(
                     "publicado": _fecha_http(dl.last_modified),
                     "descargado": hoy,
                 }
-                if f.tipo == "inegi_efipem":
-                    # Large original: keep its hash and store only the extract.
+                if f.tipo in EXTRACTORES:
+                    # Large national original: keep its hash and store only the extract.
                     entry["sha256_original"] = sha256_bytes(dl.content)
                     entry["bytes_original"] = len(dl.content)
                     with tempfile.TemporaryDirectory(dir=_cache_dir()) as tmp:
-                        zpath = Path(tmp) / "efipem.zip"
-                        zpath.write_bytes(dl.content)
+                        orig = Path(tmp) / f"original.{f.formato}"
+                        orig.write_bytes(dl.content)
                         extract_tmp = Path(tmp) / "extract.csv"
-                        entry["filas"] = efipem.extract(zpath, extract_tmp)
+                        entry["filas"] = EXTRACTORES[f.tipo](orig, extract_tmp)
                         entry["sha256"] = sha256_file(extract_tmp)
                         estado = manifest.record(f.id, entry)
                         if estado != "sin_cambios":

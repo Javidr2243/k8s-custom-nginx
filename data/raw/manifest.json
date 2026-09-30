@@ -21,6 +21,33 @@
    "bytes": 9866,
    "historial": []
   },
+  "mty-contratos-2025": {
+   "url": "https://www.monterrey.gob.mx/pdf/portaln/2025/MTY_2025_12_FORMATO_95_XXIX.xls",
+   "archivo": "monterrey/mty-contratos-2025.xls",
+   "publicado": "2026-04-29",
+   "descargado": "2026-09-30",
+   "sha256": "da0070f24e4a300e2e024b7d939cb4c3f93797cdccd6d4d719667436bdc3a748",
+   "bytes": 1517056,
+   "historial": []
+  },
+  "mty-contratos-2026": {
+   "url": "https://www.monterrey.gob.mx/pdf/portaln/2026/MTY_2026_07_FORMATO_95_XXIX.xlsx",
+   "archivo": "monterrey/mty-contratos-2026.xlsx",
+   "publicado": "2026-09-22",
+   "descargado": "2026-09-30",
+   "sha256": "5ca37ebdda748002048b022f388c7cea40a108aa064d2fee7993ac513ad2210f",
+   "bytes": 141801,
+   "historial": []
+  },
+  "mty-deuda-total": {
+   "url": "https://www.monterrey.gob.mx/pdf/portaln/ITDIF/4_Deuda_total_2014_2026_2T_2026.xlsx",
+   "archivo": "monterrey/mty-deuda-total.xlsx",
+   "publicado": "2026-09-18",
+   "descargado": "2026-09-30",
+   "sha256": "12a08531383f75eed5042b4208ff3e132a318fb1e505153ec336dfb7d355d03a",
+   "bytes": 40394,
+   "historial": []
+  },
   "mty-egr-adm-2023T1": {
    "url": "https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_1T_2023.xlsx",
    "archivo": "monterrey/mty-egr-adm-2023T1.xlsx",
@@ -399,6 +426,177 @@
    "bytes": 19709,
    "historial": []
   },
+  "sc-contratos-2025-01": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d7050_XXIX%20ENERO%202025.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-01.xls",
+   "publicado": "2025-07-01",
+   "descargado": "2026-09-30",
+   "sha256": "eead52a00d331959b5b9871385411a58a72f9717d053c28352ad684a02f7c71a",
+   "bytes": 35840,
+   "historial": []
+  },
+  "sc-contratos-2025-02": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d7cd6_XXIX%20FEBRERO%202025.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-02.xls",
+   "publicado": "2025-07-01",
+   "descargado": "2026-09-30",
+   "sha256": "0818525d1089326f4a44559c6d2758c2994ac460f179f1419fbabd767293b1c3",
+   "bytes": 32768,
+   "historial": []
+  },
+  "sc-contratos-2025-03": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d8633_XXIX%20MARZO%202025.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-03.xls",
+   "publicado": "2025-07-01",
+   "descargado": "2026-09-30",
+   "sha256": "c04c62386fa45b9f4a635d628e4a3febc48b50ec198b2409239ee24be92e304d",
+   "bytes": 32768,
+   "historial": []
+  },
+  "sc-contratos-2025-04": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/68645ab9d8d49_XXIX%20BRIL%202025.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-04.xls",
+   "publicado": "2025-07-01",
+   "descargado": "2026-09-30",
+   "sha256": "e63fe793b97c61c2416708d45265c58c92bbf2c42b9332946fb88f90cce9f784",
+   "bytes": 32768,
+   "historial": []
+  },
+  "sc-contratos-2025-05": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68a8f09ac4f5a_xxix%20mayo.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-05.xls",
+   "publicado": "2025-08-22",
+   "descargado": "2026-09-30",
+   "sha256": "3013bdcd7702b702526ffeb2f99a74aac72ae419de1921f3b9e7bdc606e632a0",
+   "bytes": 57344,
+   "historial": []
+  },
+  "sc-contratos-2025-06": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68a8f09ac593d_xxixx%20junio.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-06.xls",
+   "publicado": "2025-08-22",
+   "descargado": "2026-09-30",
+   "sha256": "e211bf0426d61d6df3fb335ec92cc2fc69201b3e1e161d8130451b63f49028f0",
+   "bytes": 57344,
+   "historial": []
+  },
+  "sc-contratos-2025-07": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68b0ac0a859dc_xxix%20adquisciciones%20julio%202025.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-07.xls",
+   "publicado": "2025-08-28",
+   "descargado": "2026-09-30",
+   "sha256": "cdf3d97b7764623a3d7f299bdfccb6e86463c25935dd95ad8d554dfca4a9de06",
+   "bytes": 57344,
+   "historial": []
+  },
+  "sc-contratos-2025-08": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed2873e5_NLA95FXXIX%20Agosto%2025%20PAGI%20M.xlsx",
+   "archivo": "santa-catarina/sc-contratos-2025-08.xlsx",
+   "publicado": "2026-09-02",
+   "descargado": "2026-09-30",
+   "sha256": "ba30db36b98b0cead32062f1f01cb225d5546d86cf3d34cd70de5192436b6034",
+   "bytes": 36510,
+   "historial": []
+  },
+  "sc-contratos-2025-09": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed287d59_29.-%20NLA95FXXIX%20SEP%202025%20PAG%20MUN.xlsx",
+   "archivo": "santa-catarina/sc-contratos-2025-09.xlsx",
+   "publicado": "2026-09-02",
+   "descargado": "2026-09-30",
+   "sha256": "3ceab74f358398e6bb3af0511da7a7ad75d266d75fc0c8784d3c7a5b129d606b",
+   "bytes": 58105,
+   "historial": []
+  },
+  "sc-contratos-2025-10": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed288763_692a227558b61_XXIX%20OCT.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-10.xls",
+   "publicado": "2026-09-02",
+   "descargado": "2026-09-30",
+   "sha256": "a9e0609a5346cc144d84b7dabf4f783b21b6724d203e813c953c26e8bb8dfcab",
+   "bytes": 68096,
+   "historial": []
+  },
+  "sc-contratos-2025-11": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed288e7b_695bfeaf03fa5_95%20XXIX%20NOV.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-11.xls",
+   "publicado": "2026-09-02",
+   "descargado": "2026-09-30",
+   "sha256": "0725ab72d0b206e17ada9a92649b7276107a9dfb07c2638224e6d2fc2ac500cc",
+   "bytes": 42496,
+   "historial": []
+  },
+  "sc-contratos-2025-12": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a986ed289397_697d27d702074_95%20XXIX%20A%20DIC.xls",
+   "archivo": "santa-catarina/sc-contratos-2025-12.xls",
+   "publicado": "2026-09-02",
+   "descargado": "2026-09-30",
+   "sha256": "2f18533bfc93099911a0d91a645e3fc077a4ed395cd639bbc2dd203eecaae682",
+   "bytes": 38912,
+   "historial": []
+  },
+  "sc-contratos-2026-01": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/69a762cbad149_XXIX%20A%20ENERO.xls",
+   "archivo": "santa-catarina/sc-contratos-2026-01.xls",
+   "publicado": "2026-03-03",
+   "descargado": "2026-09-30",
+   "sha256": "927908c19b4d5e03d143bb2b6e559277f16af6f92e42ae03f2a2ccbf47359c8b",
+   "bytes": 32768,
+   "historial": []
+  },
+  "sc-contratos-2026-02": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/69cad1f20d3d2_xxix%20a%20fev.xls",
+   "archivo": "santa-catarina/sc-contratos-2026-02.xls",
+   "publicado": "2026-03-30",
+   "descargado": "2026-09-30",
+   "sha256": "5c1234bbf72dfd2319bbe576b5024f3b66d6ef08e6949017feee1dd74dc2fdb2",
+   "bytes": 32256,
+   "historial": []
+  },
+  "sc-contratos-2026-03": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a021d82e3d33_NLA95XXIX%20ADQUI%20Marzo%202.xlsx",
+   "archivo": "santa-catarina/sc-contratos-2026-03.xlsx",
+   "publicado": "2026-05-11",
+   "descargado": "2026-09-30",
+   "sha256": "7a7924125ece31ff3e14120e51fa51862374a25a788d124b7f0a57c9591f60d8",
+   "bytes": 33694,
+   "historial": []
+  },
+  "sc-contratos-2026-04": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a1f587314aa2_NLA95FXXIX%20concentrada%20abril.xlsx",
+   "archivo": "santa-catarina/sc-contratos-2026-04.xlsx",
+   "publicado": "2026-06-02",
+   "descargado": "2026-09-30",
+   "sha256": "11b367d22c604f0ca80ff8035806f34f6d0bda2c803fba8ef3d86465522ab1c1",
+   "bytes": 24459,
+   "historial": []
+  },
+  "sc-contratos-2026-05": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a4556bdde57f_NLA95FXXIX%20(14).xlsx",
+   "archivo": "santa-catarina/sc-contratos-2026-05.xlsx",
+   "publicado": "2026-07-01",
+   "descargado": "2026-09-30",
+   "sha256": "af6e96750421b8dbbca8c562e5daf4023a966d2d2dfd54fd3450f5a99163fdef",
+   "bytes": 22843,
+   "historial": []
+  },
+  "sc-contratos-2026-06": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a73873867287_NLA95FXXIX%20JUNIO%202026.xlsx",
+   "archivo": "santa-catarina/sc-contratos-2026-06.xlsx",
+   "publicado": "2026-08-05",
+   "descargado": "2026-09-30",
+   "sha256": "b69dc8833c25445baae03434c1356d9032376907fac3d701edff4cbc9b9d3f01",
+   "bytes": 38801,
+   "historial": []
+  },
+  "sc-contratos-2026-07": {
+   "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a989dcbb2e5f_NLA95FXXIX%20(17).xlsx",
+   "archivo": "santa-catarina/sc-contratos-2026-07.xlsx",
+   "publicado": "2026-09-02",
+   "descargado": "2026-09-30",
+   "sha256": "8a11bc9633c5c9c2dbd207d99d9d3e42f5167ee5438fa100ad0dbbec8a26c963",
+   "bytes": 22845,
+   "historial": []
+  },
   "sc-xxiib-2023": {
    "url": "https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6848b21124fbc_NLA95FXXIIB%20%282023.xlsx",
    "archivo": "santa-catarina/sc-xxiib-2023.xlsx",
@@ -460,6 +658,224 @@
    "descargado": "2026-09-30",
    "sha256": "3d5a9840898e01bcbf30bd2cd44275dddda8f8940d36eac57915f85446a00f74",
    "bytes": 18823,
+   "historial": []
+  },
+  "shcp-alertas-2023-cp": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2023/Municipio/CP/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2023-cp.xlsx",
+   "publicado": "2024-07-31",
+   "descargado": "2026-09-30",
+   "sha256": "54888db950b2e5315a6e3a3c49dfad878700216c4794a042f4e537cc193c50bc",
+   "bytes": 1438094,
+   "historial": []
+  },
+  "shcp-alertas-2024-1s": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2024/Municipio/1S/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2024-1s.xlsx",
+   "publicado": "2024-09-27",
+   "descargado": "2026-09-30",
+   "sha256": "b7e5b1dd0c5937f8b9abfe66092f5c2d2438a77c15f36d4bd4bffbe11b97f288",
+   "bytes": 2664435,
+   "historial": []
+  },
+  "shcp-alertas-2024-2s": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2024/Municipio/2S/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2024-2s.xlsx",
+   "publicado": "2025-07-04",
+   "descargado": "2026-09-30",
+   "sha256": "7bff3cb87792ef900945859e253214aa260074d891250ea1c84b38f02b1123c7",
+   "bytes": 52527,
+   "historial": []
+  },
+  "shcp-alertas-2024-cp": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2024/Municipio/CP/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2024-cp.xlsx",
+   "publicado": "2025-07-31",
+   "descargado": "2026-09-30",
+   "sha256": "07fe164ebb2b2305c7ff4e8834151a2af059ac5e3a13f6a9312e703f11e2cfca",
+   "bytes": 52371,
+   "historial": []
+  },
+  "shcp-alertas-2025-1s": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2025/Municipio/1S/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2025-1s.xlsx",
+   "publicado": "2025-09-26",
+   "descargado": "2026-09-30",
+   "sha256": "f38c07fb4266a76676b8bb613509dcef8030e9c3eda7d47ba91612a9abe26f09",
+   "bytes": 50639,
+   "historial": []
+  },
+  "shcp-alertas-2025-2s": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2025/Municipio/2S/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2025-2s.xlsx",
+   "publicado": "2026-04-17",
+   "descargado": "2026-09-30",
+   "sha256": "a84da481eb6a4a4fb4db1f03f42510ee67585f0dd30736b87cba5c1013e7716e",
+   "bytes": 49730,
+   "historial": []
+  },
+  "shcp-alertas-2025-cp": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2025/Municipio/CP/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2025-cp.xlsx",
+   "publicado": "2026-07-31",
+   "descargado": "2026-09-30",
+   "sha256": "021b95e198528f49c3cfeac15c8d0d86b9c1c5e5f8b12ebc08139811d199e6af",
+   "bytes": 49231,
+   "historial": []
+  },
+  "shcp-alertas-2026-1s": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/SistemaAlertas/2026/Municipio/1S/Resultados%20SdA%20municipios.xlsx",
+   "archivo": "shcp/shcp-alertas-2026-1s.xlsx",
+   "publicado": "2026-09-28",
+   "descargado": "2026-09-30",
+   "sha256": "ddd14dcb35bbb93f12f49386674a73c87214599e1fd59d2a69f5fbc53676d06b",
+   "bytes": 50140,
+   "historial": []
+  },
+  "shcp-rpu-registro": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Documentos/RegistroDiario/registro_deuda.xlsx",
+   "archivo": "shcp/shcp-rpu-registro.csv",
+   "publicado": "2026-09-29",
+   "descargado": "2026-09-30",
+   "sha256_original": "5e0936636ca35210ae995eca6b848b023e684bc90e78aafc2a9ff62df0728768",
+   "bytes_original": 3209970,
+   "filas": 5,
+   "sha256": "701be0a9618270d90a3978ccd3ac206c819fb6444a53ff727343fb98bd4ed77a",
+   "historial": []
+  },
+  "shcp-rpu-saldos-2023T1": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/1erTrimestre/02_04_1_trim_2023.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2023T1.xlsx",
+   "publicado": "2024-09-30",
+   "descargado": "2026-09-30",
+   "sha256": "721d2555191942f9d02013f381fbc152cbde1ff3342028e9776efc6da4696b2e",
+   "bytes": 182377,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2023T2": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/2doTrimestre/02_04_2_trim_2023.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2023T2.xlsx",
+   "publicado": "2024-09-30",
+   "descargado": "2026-09-30",
+   "sha256": "a943e2bdc37c63bb68e6a55fc4ec1d77921ec1babcd5fce3b76d4d3608daa893",
+   "bytes": 182903,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2023T3": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/3erTrimestre/02_04_3_trim_2023.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2023T3.xlsx",
+   "publicado": "2024-09-30",
+   "descargado": "2026-09-30",
+   "sha256": "899200ec44c3093355397fed21925d758ea702daa1d38ac6071d756be181062c",
+   "bytes": 183150,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2023T4": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2023/4toTrimestre/02_04_4_trim_2023.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2023T4.xlsx",
+   "publicado": "2024-09-30",
+   "descargado": "2026-09-30",
+   "sha256": "111ecc41a045c75523b8444b5f66d791967191747e11429aa1b3824b13141acb",
+   "bytes": 182911,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2024T1": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/1erTrimestre/02_04_1_trim_2024.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2024T1.xlsx",
+   "publicado": "2024-09-11",
+   "descargado": "2026-09-30",
+   "sha256": "3f3ff690879a1fa4cf922dfdd9963a85e958ee112e8320e6ed9fb1b8a4bd9ecb",
+   "bytes": 183486,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2024T2": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/2doTrimestre/02_04_2_trim_2024.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2024T2.xlsx",
+   "publicado": "2024-08-29",
+   "descargado": "2026-09-30",
+   "sha256": "a60931b4cede24f301aa3a4baa634c98df83ac058866c231a27ae29228e7cca9",
+   "bytes": 183284,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2024T3": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/3erTrimestre/02_04_3_trim_2024.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2024T3.xlsx",
+   "publicado": "2024-11-29",
+   "descargado": "2026-09-30",
+   "sha256": "21b42f890fb3a24f982b6edebb0b663910d1ec6364ffa12892fb1d4781779fef",
+   "bytes": 202939,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2024T4": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2024/4toTrimestre/02_04_4_trim_2024.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2024T4.xlsx",
+   "publicado": "2025-02-28",
+   "descargado": "2026-09-30",
+   "sha256": "8f6476e01c104cb7d216479548f924d9588bb3d5bc76fdb54b81c967cebaa118",
+   "bytes": 210852,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2025T1": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/1erTrimestre/02_04_1_trim_2025.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2025T1.xlsx",
+   "publicado": "2025-05-29",
+   "descargado": "2026-09-30",
+   "sha256": "fc878fad69b70f0a8723d28988e9bda7d53ed5bf4a2a5ed13423b70d2c399325",
+   "bytes": 211595,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2025T2": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/2doTrimestre/02_04_2_trim_2025.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2025T2.xlsx",
+   "publicado": "2025-08-28",
+   "descargado": "2026-09-30",
+   "sha256": "d791f125415811d7f59d57d5d1a4c5df3879bbaff5c69354c3e7e083058933aa",
+   "bytes": 211849,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2025T3": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/3erTrimestre/02_04_3_trim_2025.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2025T3.xlsx",
+   "publicado": "2025-11-28",
+   "descargado": "2026-09-30",
+   "sha256": "dfc2ce91fdb5fc48bcffe7dbeac7056243b3c871826487801cc9381afbd7ce98",
+   "bytes": 211411,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2025T4": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2025/4toTrimestre/02_04_4_trim_2025.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2025T4.xlsx",
+   "publicado": "2026-02-27",
+   "descargado": "2026-09-30",
+   "sha256": "cccc300b5e93be3ba819054c384c14ade9d110e62747a3d472acc2b8cafc3586",
+   "bytes": 210293,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2026T1": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2026/1erTrimestre/02_04_1_trim_2026.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2026T1.xlsx",
+   "publicado": "2026-05-29",
+   "descargado": "2026-09-30",
+   "sha256": "1ac27cd44a815bf8fa073e52394aa91a918952a9ebde3a4fd00bfa7e0b65a106",
+   "bytes": 211312,
+   "historial": []
+  },
+  "shcp-rpu-saldos-2026T2": {
+   "url": "https://www.disciplinafinanciera.hacienda.gob.mx/work/models/DISCIPLINA_FINANCIERA/Indicadores_de_Obligaciones/2026/2doTrimestre/02_04_2_trim_2026.xlsx",
+   "archivo": "shcp/shcp-rpu-saldos-2026T2.xlsx",
+   "publicado": "2026-08-28",
+   "descargado": "2026-09-30",
+   "sha256": "ea5e9570acd9090837c5cb822503c46654001945d3fd61d664beaa843cd57785",
+   "bytes": 215566,
+   "historial": []
+  },
+  "sp-contratos-adquisiciones": {
+   "url": "https://licitaciones.sanpedro.gob.mx/doc/ContratosAdq/202609094141Contratos%20Adquisiciones%202024-2026.xlsx",
+   "archivo": "san-pedro/sp-contratos-adquisiciones.xlsx",
+   "publicado": "2026-09-09",
+   "descargado": "2026-09-30",
+   "sha256": "28b344016dbe70b1d2c8cd2b2b01b87d83320e0e1025fcd0dc5e1d2abae2550f",
+   "bytes": 176073,
    "historial": []
   },
   "sp-xxiib-2023T2": {

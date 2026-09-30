@@ -17,7 +17,17 @@ from gdmty import __version__
 from gdmty import sources as sources_mod
 from gdmty.catalogos import CAPITULOS, MUNICIPIOS, capitulo_por_nombre
 from gdmty.manifest import Manifest
-from gdmty.parsers import efipem, inegi_poblacion, mty_estado_analitico, sipot_xxiib
+from gdmty.parsers import (
+    contratos as contratos_mod,
+)
+from gdmty.parsers import (
+    efipem,
+    inegi_poblacion,
+    mty_deuda,
+    mty_estado_analitico,
+    shcp,
+    sipot_xxiib,
+)
 from gdmty.paths import CACHE_DIR, DATA_RAW, PUBLIC_V1
 from gdmty.util import ParseError, norm_label, quarter_of, round_money, slugify
 from gdmty.validate import UMBRAL_ANOMALIA, Reporte, cambio_relativo, identidades_egresos, suma_cuadra
@@ -335,6 +345,386 @@ def _gasto_efipem(egresos_total: float | None, caps: dict[str, float]) -> float 
     return round_money(egresos_total - caps.get("disponibilidad-final", 0.0))
 
 
+# --- Debt ----------------------------------------------------------------------------------------
+
+
+def _deuda(
+    cfg, egresos: dict[str, dict[str, dict]], report: Reporte, out_dir: Path, usadas: set[str]
+) -> None:
+    saldos: dict[str, list[dict]] = defaultdict(list)
+    for f in cfg.fuentes:
+        if f.tipo != "shcp_rpu_saldos":
+            continue
+        datos = shcp.rpu_saldos(DATA_RAW / f.archivo())
+        usadas.add(f.id)
+        for mid, s in datos.items():
+            if quarter_of(s.fecha) != f.periodo:
+                report.error(f"{f.id}: el cuadro dice {s.fecha}, se esperaba {f.periodo}")
+            saldos[mid].append(
+                {
+                    "periodo": f.periodo,
+                    "fecha": s.fecha.isoformat(),
+                    "total": s.total,
+                    "banca_multiple": s.banca_multiple,
+                    "banca_desarrollo": s.banca_desarrollo,
+                    "emisiones": s.emisiones,
+                    "otros": s.otros,
+                    "fuente": f.id,
+                }
+            )
+    registro_f = cfg.fuente("shcp-rpu-registro")
+    creditos = shcp.rpu_registro(DATA_RAW / registro_f.archivo())
+    usadas.add(registro_f.id)
+
+    alertas: dict[str, list[dict]] = defaultdict(list)
+    for f in cfg.fuentes:
+        if f.tipo != "shcp_alertas":
+            continue
+        titulo, res = shcp.alertas(DATA_RAW / f.archivo())
+        usadas.add(f.id)
+        for mid in MUNICIPIOS:
+            a = res.get(mid)
+            alertas[mid].append(
+                {
+                    "evaluacion": titulo,
+                    "resultado": a.resultado if a else None,
+                    "etiqueta": shcp.ETIQUETAS_ALERTA.get(a.resultado) if a and a.resultado else None,
+                    "indicadores": a.indicadores if a else [None, None, None],
+                    "nota": (a.nota if a else "El municipio no aparece en esta evaluación."),
+                    "fuente": f.id,
+                }
+            )
+
+    anual_mty = []
+    f_mty = cfg.fuente("mty-deuda-total")
+    for d in mty_deuda.parse(DATA_RAW / f_mty.archivo()):
+        if d.anio >= 2018:
+            anual_mty.append(
+                {
+                    "anio": d.anio,
+                    "amortizacion": d.amortizacion,
+                    "intereses": d.intereses,
+                    "gastos": d.gastos,
+                    "total": d.total,
+                }
+            )
+    usadas.add(f_mty.id)
+
+    for mid in MUNICIPIOS:
+        serie = sorted(saldos[mid], key=lambda x: x["periodo"])
+        pagos = [
+            {
+                "periodo": pid,
+                "montos": next((c["montos"] for c in p["capitulos"] if c["clave"] == "9000"), None),
+                "fuente": p["fuente"],
+            }
+            for pid, p in sorted(egresos[mid].items())
+        ]
+        mis_creditos = [
+            {k: v for k, v in c.__dict__.items() if k != "municipio"} for c in creditos if c.municipio == mid
+        ]
+        vigentes = [c for c in mis_creditos if c["saldo"]]
+        # Cross-check: loan-by-loan sum vs. the quarterly table for the same date.
+        if vigentes and serie:
+            fecha = vigentes[0]["saldo_fecha"]
+            trimestral = next((s for s in serie if s["fecha"] == fecha), None)
+            suma = sum(c["saldo"] for c in vigentes)
+            if (
+                trimestral
+                and trimestral["total"]
+                and abs(suma - trimestral["total"]) / trimestral["total"] > 0.01
+            ):
+                report.advertencia(
+                    f"{mid}: suma de créditos del registro ({suma:,.0f}) ≠ saldo trimestral ({trimestral['total']:,.0f})"
+                )
+        # Cross-check (Monterrey): the drop in the SHCP balance vs. the amortisation reported by the municipality.
+        if mid == "monterrey":
+            por_fecha = {s["periodo"]: s["total"] for s in serie}
+            for d in anual_mty:
+                ini, fin = por_fecha.get(f"{d['anio'] - 1}T4"), None
+                for q in (4, 3, 2, 1):
+                    if f"{d['anio']}T{q}" in por_fecha:
+                        fin = por_fecha[f"{d['anio']}T{q}"]
+                        break
+                if ini is None or fin is None or d["amortizacion"] <= 0:
+                    continue
+                baja = ini - fin
+                if abs(baja - d["amortizacion"]) > max(1_000.0, 0.01 * d["amortizacion"]):
+                    report.advertencia(
+                        f"monterrey {d['anio']}: la baja del saldo en el RPU ({baja:,.2f}) no coincide con la "
+                        f"amortización reportada por el municipio ({d['amortizacion']:,.2f})"
+                    )
+        _write(
+            out_dir / "deuda" / f"{mid}.json",
+            {
+                "municipio": mid,
+                "unidad": "MXN",
+                "saldos": serie,
+                "creditos": mis_creditos,
+                "fuente_creditos": registro_f.id,
+                "nota_creditos": (
+                    "Créditos inscritos en el Registro Público Único a la fecha de consulta. Los créditos ya "
+                    "liquidados salen del registro, por lo que la suma puede diferir del saldo trimestral."
+                ),
+                "pagos_capitulo_9000": pagos,
+                "nota_pagos": (
+                    "Capítulo 9000 'Deuda pública' del gasto: incluye pago de capital (amortización), intereses "
+                    "y otros costos de la deuda. Acumulado de enero a la fecha de corte."
+                ),
+                "anual_detalle": anual_mty if mid == "monterrey" else [],
+                "fuente_anual_detalle": f_mty.id if mid == "monterrey" else None,
+                "alertas": alertas[mid],
+                "nota_alertas": (
+                    "Sistema de Alertas de la SHCP. Indicador 1: deuda y obligaciones ÷ ingresos de libre "
+                    "disposición. Indicador 2: servicio de la deuda ÷ ingresos de libre disposición. Indicador 3: "
+                    "obligaciones de corto plazo y proveedores, menos efectivo ÷ ingresos totales."
+                ),
+            },
+            report,
+            out_dir,
+        )
+
+
+# --- Contracts -----------------------------------------------------------------------------------
+
+CATEGORIAS = {
+    "licitacion": "Licitación pública",
+    "invitacion": "Invitación restringida",
+    "directa": "Adjudicación directa o por excepción",
+    "modificatorio": "Convenio modificatorio",
+    "otro": "Otro",
+}
+
+
+NOTAS_CONTRATOS = {
+    "monterrey": [
+        "Fuente: formato de transparencia NLA95FXXIX (adjudicaciones directas, invitaciones y licitaciones). "
+        "En varios contratos el municipio clasificó como reservado el nombre del proveedor."
+    ],
+    "san-pedro": [
+        "Fuente: relación de contratos de adquisiciones y servicios de la administración 2024–2027. "
+        "No incluye contratos de obra pública (se publican aparte, en su portal de obra)."
+    ],
+    "santa-catarina": [
+        "Fuente: formato de transparencia NLA95FXXIX de la Dirección de Adquisiciones. Solo se encontraron "
+        "invitaciones y licitaciones; no se encontraron adjudicaciones directas de 2025–2026 en formato abierto."
+    ],
+}
+
+
+def _contratos(cfg, report: Reporte, out_dir: Path, usadas: set[str]) -> dict[str, list[dict]]:
+    todos: dict[str, list[dict]] = {}
+    for mid in MUNICIPIOS:
+        items: list[dict] = []
+        fuentes = []
+        for f in cfg.fuentes:
+            if f.municipio != mid or f.tipo not in ("sipot_xxix", "sp_contratos"):
+                continue
+            parser = (
+                contratos_mod.parse_san_pedro if f.tipo == "sp_contratos" else contratos_mod.parse_sipot_xxix
+            )
+            for c in parser(DATA_RAW / f.archivo()):
+                items.append({**c.__dict__, "fuente": f.id})
+            fuentes.append(f.id)
+            usadas.add(f.id)
+        items.sort(key=lambda c: (c["fecha"] or "", c["monto"] or 0), reverse=True)
+        con_monto = [c for c in items if c["monto"]]
+        total = round_money(sum(c["monto"] for c in con_monto))
+        por_cat: dict[str, dict] = {}
+        for c in items:
+            d = por_cat.setdefault(
+                c["categoria"], {"nombre": CATEGORIAS[c["categoria"]], "n": 0, "monto": 0.0}
+            )
+            d["n"] += 1
+            d["monto"] = round_money(d["monto"] + (c["monto"] or 0))
+        prov: dict[str, dict] = {}
+        for c in con_monto:
+            if c["tipo_persona"] == "reservada":
+                continue
+            key = c["rfc"] or norm_label(c["proveedor"])
+            d = prov.setdefault(key, {"proveedor": c["proveedor"], "rfc": c["rfc"], "n": 0, "monto": 0.0})
+            d["n"] += 1
+            d["monto"] = round_money(d["monto"] + c["monto"])
+        top = sorted(prov.values(), key=lambda d: d["monto"], reverse=True)
+        for d in top:
+            d["porcentaje"] = round(d["monto"] / total, 4) if total else None
+        top10 = round(sum(d["monto"] for d in top[:10]) / total, 4) if total else None
+        _write(
+            out_dir / "contratos" / f"{mid}.json",
+            {
+                "municipio": mid,
+                "unidad": "MXN",
+                "fuentes": fuentes,
+                "resumen": {
+                    "contratos": len(items),
+                    "con_monto": len(con_monto),
+                    "monto_total": total,
+                    "proveedores": len(prov),
+                    "reservados": sum(1 for c in items if c["tipo_persona"] == "reservada"),
+                    "por_categoria": por_cat,
+                    "proveedores_top": top[:15],
+                    "concentracion_top10": top10,
+                    "fechas": [
+                        min((c["fecha"] for c in items if c["fecha"]), default=None),
+                        max((c["fecha"] for c in items if c["fecha"]), default=None),
+                    ],
+                },
+                "notas": [
+                    *NOTAS_CONTRATOS.get(mid, []),
+                    "Montos con impuestos incluidos, tal como los publica el municipio. Los contratos sin monto "
+                    "publicado no se suman.",
+                    "Solo se muestra el RFC de empresas (personas morales); el de personas físicas se oculta.",
+                    "Los proveedores marcados como información reservada no se incluyen en la concentración.",
+                ],
+                "contratos": items,
+            },
+            report,
+            out_dir,
+        )
+        todos[mid] = items
+    return todos
+
+
+# --- Recent changes ------------------------------------------------------------------------------
+
+
+def _fmt(m: float) -> str:
+    return f"${m / 1e6:,.1f} millones" if abs(m) >= 1e6 else f"${m:,.0f}"
+
+
+def _movimientos(egresos, deuda_dir: Path, contratos: dict[str, list[dict]], report: Reporte, out_dir: Path):
+    items: list[dict] = []
+    for mid, periodos in egresos.items():
+        nombre = MUNICIPIOS[mid]["nombre"]
+        pids = sorted(periodos)
+        if not pids:
+            continue
+        ult = periodos[pids[-1]]
+        pid = ult["periodo"]
+        # 1) New period against the same quarter of the previous year.
+        prev_year = periodos.get(f"{int(pid[:4]) - 1}{pid[4:]}")
+        cambio = (
+            cambio_relativo(ult["total"]["devengado"], prev_year["total"]["devengado"]) if prev_year else None
+        )
+        items.append(
+            {
+                "fecha": ult["fecha_corte"],
+                "municipio": mid,
+                "tipo": "periodo",
+                "titulo": f"{nombre} gastó {_fmt(ult['total']['devengado'])} de enero a {_mes(ult['fecha_corte'])}",
+                "detalle": (
+                    f"{cambio:+.0%} frente al mismo periodo de {int(pid[:4]) - 1}."
+                    if cambio is not None
+                    else "No hay dato comparable del año anterior."
+                ),
+                "monto": ult["total"]["devengado"],
+                "cambio": cambio,
+                "fuente": ult["fuente"],
+            }
+        )
+        # 2) Mid-year changes (Ampliaciones/Reducciones) against the previous quarter of the same year.
+        prev_q = periodos.get(pids[-2]) if len(pids) > 1 and pids[-2][:4] == pid[:4] else None
+        base_ant = {}
+        if prev_q:
+            base_ant = {c["clave"]: c["montos"]["ampliaciones"] or 0 for c in prev_q["capitulos"]}
+        lineas = [(c["nombre"], c["montos"], base_ant.get(c["clave"], 0.0)) for c in ult["capitulos"]]
+        if ult["dependencias"]:
+            ant_dep = {
+                d["id"]: d["montos"]["ampliaciones"] or 0 for d in (prev_q or {}).get("dependencias") or []
+            }
+            lineas = [(d["nombre"], d["montos"], ant_dep.get(d["id"], 0.0)) for d in ult["dependencias"]]
+        for nombre_l, montos, amp_ant in lineas:
+            amp = montos.get("ampliaciones") or 0.0
+            delta = amp - amp_ant
+            apr = montos.get("aprobado") or 0.0
+            if abs(delta) >= 50_000_000 or (apr > 0 and abs(delta) / apr > 0.2 and abs(delta) >= 10_000_000):
+                verbo = "recibió" if delta > 0 else "perdió"
+                items.append(
+                    {
+                        "fecha": ult["fecha_corte"],
+                        "municipio": mid,
+                        "tipo": "modificacion",
+                        "titulo": f"{nombre_l} {verbo} {_fmt(abs(delta))} en cambios al presupuesto",
+                        "detalle": (
+                            f"{nombre}: presupuesto aprobado {_fmt(apr)}; modificado a {_mes(ult['fecha_corte'])}: "
+                            f"{_fmt(montos.get('modificado') or 0)}."
+                        ),
+                        "monto": delta,
+                        "cambio": None,
+                        "fuente": ult["fuente_dependencias"] if ult["dependencias"] else ult["fuente"],
+                    }
+                )
+    for mid in MUNICIPIOS:
+        nombre = MUNICIPIOS[mid]["nombre"]
+        d = json.loads((deuda_dir / f"{mid}.json").read_text(encoding="utf-8"))
+        s = d["saldos"]
+        if len(s) >= 2:
+            a, b = s[-2], s[-1]
+            delta = b["total"] - a["total"]
+            if abs(delta) >= 1:
+                items.append(
+                    {
+                        "fecha": b["fecha"],
+                        "municipio": mid,
+                        "tipo": "deuda",
+                        "titulo": (
+                            f"La deuda de {nombre} {'bajó' if delta < 0 else 'subió'} {_fmt(abs(delta))} "
+                            f"en el trimestre"
+                        ),
+                        "detalle": f"Saldo registrado al {b['fecha']}: {_fmt(b['total'])}.",
+                        "monto": delta,
+                        "cambio": cambio_relativo(b["total"], a["total"]),
+                        "fuente": b["fuente"],
+                    }
+                )
+        al = [x for x in d["alertas"] if x["resultado"]]
+        if len(al) >= 2 and al[-1]["resultado"] != al[-2]["resultado"]:
+            items.append(
+                {
+                    "fecha": None,
+                    "municipio": mid,
+                    "tipo": "alerta",
+                    "titulo": f"Cambió la calificación de deuda de {nombre}: {al[-1]['etiqueta']}",
+                    "detalle": al[-1]["evaluacion"],
+                    "monto": None,
+                    "cambio": None,
+                    "fuente": al[-1]["fuente"],
+                }
+            )
+    for mid, cs in contratos.items():
+        nombre = MUNICIPIOS[mid]["nombre"]
+        fechas = [c["fecha"] for c in cs if c["fecha"]]
+        if not fechas:
+            continue
+        ultima = max(fechas)
+        desde = f"{int(ultima[:4]) - (1 if int(ultima[5:7]) <= 3 else 0)}-{(int(ultima[5:7]) - 4) % 12 + 1:02d}-01"
+        recientes = sorted((c for c in cs if c["fecha"] and c["fecha"] >= desde and c["monto"]),
+                           key=lambda c: c["monto"], reverse=True)[:3]  # fmt: skip
+        for c in recientes:
+            items.append(
+                {
+                    "fecha": c["fecha"],
+                    "municipio": mid,
+                    "tipo": "contrato",
+                    "titulo": f"Contrato de {_fmt(c['monto'])}: {c['descripcion'][:90]}".rstrip(),
+                    "detalle": f"{nombre} · {c['proveedor']} · {c['procedimiento']}",
+                    "monto": c["monto"],
+                    "cambio": None,
+                    "fuente": c["fuente"],
+                }
+            )
+    items.sort(key=lambda x: (x["fecha"] or "", abs(x["monto"] or 0)), reverse=True)
+    _write(out_dir / "movimientos.json", {"movimientos": items}, report, out_dir)
+
+
+_MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
+          "noviembre", "diciembre"]  # fmt: skip
+
+
+def _mes(iso: str) -> str:
+    return f"{_MESES[int(iso[5:7]) - 1]} de {iso[:4]}"
+
+
 # --- Main ----------------------------------------------------------------------------------------
 
 
@@ -459,6 +849,14 @@ def build(out_dir: Path = PUBLIC_V1) -> Reporte:
             }
         )
     fuentes_usadas.update({"inegi-efipem-municipal", "inegi-mgem-19"})
+
+    try:
+        _deuda(cfg, egresos, report, out_dir, fuentes_usadas)
+        contratos = _contratos(cfg, report, out_dir, fuentes_usadas)
+    except ParseError as exc:
+        report.error(f"error al leer un original de deuda o contratos: {exc}")
+        return report
+    _movimientos(egresos, out_dir / "deuda", contratos, report, out_dir)
 
     _write(out_dir / "municipios.json", {"municipios": municipios_out}, report, out_dir)
 
