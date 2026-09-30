@@ -1,0 +1,40 @@
+# Caddy: automatic HTTPS (Let's Encrypt), HTTP/3, HSTS. Security headers come from nginx
+# (security-headers.conf); here only HSTS is added (it belongs to the TLS layer) and version leaks are removed.
+{
+	admin off
+	email {$ACME_EMAIL}
+	servers {
+		protocols h1 h2 h3
+	}
+}
+
+www.{$DOMINIO} {
+	redir https://{$DOMINIO}{uri} permanent
+}
+
+{$DOMINIO} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		-Server
+		-Via
+	}
+
+	# Caddy overwrites X-Forwarded-For with the real client IP (it does not trust incoming values),
+	# so nginx can rate-limit per client safely.
+	reverse_proxy app:8080 {
+		header_up -X-Real-IP
+	}
+
+	log {
+		output stdout
+		format json
+		# No full client IPs in logs: keep only the /24 (IPv4) or /48 (IPv6) prefix.
+		format filter {
+			request>remote_ip ip_mask 24 48
+			request>client_ip ip_mask 24 48
+			request>headers>X-Forwarded-For ip_mask 24 48
+		}
+	}
+}

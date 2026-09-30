@@ -1,0 +1,60 @@
+# Production on a single VPS: Caddy (HTTPS) in front of the static nginx container.
+# APP_IMAGE is written by deploy.sh as ghcr.io/…@sha256:<digest> (pinned by digest, signature verified).
+# Only Caddy publishes ports. The app is reachable only on the internal network (Docker publishes ports
+# around ufw, so nothing else must publish ports).
+name: gdmty
+
+services:
+  app:
+    image: ${APP_IMAGE:?APP_IMAGE no definida; ejecuta deploy.sh}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 128m
+    pids_limit: 100
+    networks: [interna]
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "3" }
+
+  caddy:
+    image: caddy:2.11.4-alpine@sha256:6aeddd44c3078b0f9a35206472a11420648a79c184603ef95957d0a20044cb2b
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMINIO: ${DOMINIO:?DOMINIO no definido}
+      ACME_EMAIL: ${ACME_EMAIL:?ACME_EMAIL no definido}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m
+    cap_drop: [ALL]
+    cap_add: [NET_BIND_SERVICE]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    pids_limit: 200
+    networks: [interna]
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "5" }
+
+networks:
+  interna: {}
+
+volumes:
+  caddy_data: {}
+  caddy_config: {}
