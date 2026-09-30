@@ -89,3 +89,8 @@ def test_provenance_archived_copy_and_validation(out: Path) -> None:
     suma = next(c for c in val["chequeos"] if c["id"] == "suma")
     assert suma["revisados"] == suma["aprobados"] > 0  # our sums always match the documents
     assert all(a["mensaje"] for a in val["advertencias"])
+    # Every document a warning or failed check points to can be opened from the site.
+    citadas = {a["fuente"] for a in val["advertencias"]} | {
+        x["fuente"] for c in val["chequeos"] for x in c["fallas"]
+    }
+    assert citadas - {None} <= set(fuentes)

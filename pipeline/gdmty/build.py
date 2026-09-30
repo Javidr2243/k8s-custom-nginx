@@ -956,6 +956,9 @@ def build(out_dir: Path = PUBLIC_V1) -> Reporte:
         comparativo["municipios"][mid] = {"poblacion": poblacion[mid], "anual": filas}
     _write(out_dir / "comparativo.json", comparativo, report, out_dir)
 
+    # Documents cited by a warning or a failed check are listed too, so every inconsistency links to its original.
+    fuentes_usadas.update(a["fuente"] for a in report.advertencias_det if a["fuente"])
+    fuentes_usadas.update(x["fuente"] for c in report.chequeos.values() for x in c.fallas if x["fuente"])
     fuentes_out = {}
     for f in cfg.fuentes:
         if f.id not in fuentes_usadas:

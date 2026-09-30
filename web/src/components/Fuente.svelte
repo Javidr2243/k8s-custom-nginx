@@ -6,7 +6,11 @@
   import { fecha } from '../lib/format';
   import { link } from '../lib/router.svelte';
 
-  let { ids, etiqueta = 'Fuente' }: { ids: (string | null | undefined)[]; etiqueta?: string } = $props();
+  let {
+    ids,
+    etiqueta = 'Fuente',
+    compacto = false,
+  }: { ids: (string | null | undefined)[]; etiqueta?: string; compacto?: boolean } = $props();
   let fuentes = $state<Record<string, Fuente>>({});
   api.fuentes().then((f) => (fuentes = f));
   const lista = $derived([...new Set(ids.filter((x): x is string => !!x))].map((id) => [id, fuentes[id]] as const));
@@ -14,16 +18,18 @@
 </script>
 
 {#if lista.length}
-  <div class="fuente small">
+  <div class="fuente small" class:compacto>
     <span class="lbl">{etiqueta}{lista.length > 1 ? 's' : ''}:</span>
     <ul>
       {#each lista as [id, f] (id)}
         <li>
           {#if f}
-            <a href={f.url} rel="noopener noreferrer" target="_blank">{f.titulo}</a>
-            <span class="muted">— {f.emisor}{f.publicado ? `, publicado el ${fecha(f.publicado)}` : ''}.</span>
+            <a class="tit" href={f.url} rel="noopener noreferrer" target="_blank" title={f.titulo}>{f.titulo}</a>
+            {#if !compacto}
+              <span class="muted">— {f.emisor}{f.publicado ? `, publicado el ${fecha(f.publicado)}` : ''}.</span>
+            {/if}
             <details class="det">
-              <summary>Detalles y copia del archivo</summary>
+              <summary>{compacto ? 'Detalles' : 'Detalles y copia del archivo'}</summary>
               <dl>
                 <dt>Documento oficial</dt>
                 <dd><a href={f.url} rel="noopener noreferrer" target="_blank">Abrir en el sitio del emisor</a> ({f.formato.toUpperCase()})</dd>
@@ -80,6 +86,22 @@
     display: inline-flex;
     min-height: 32px;
     align-items: center;
+  }
+  /* Compact: the label, the title clipped to one line, then "Detalles"; used in dense lists. */
+  .compacto {
+    color: var(--ink-3);
+  }
+  .compacto .lbl {
+    font-weight: 500;
+  }
+  .compacto .tit {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .compacto .det summary {
+    min-height: 28px;
   }
   dl {
     display: grid;

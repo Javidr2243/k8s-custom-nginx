@@ -3,7 +3,7 @@
   import { fecha } from '../lib/format';
   import Fuente from './Fuente.svelte';
 
-  let { movimiento: mv }: { movimiento: Movimiento } = $props();
+  let { movimiento: mv, compacto = false }: { movimiento: Movimiento; compacto?: boolean } = $props();
   const TIPO: Record<Movimiento['tipo'], string> = {
     periodo: 'Nuevo reporte',
     modificacion: 'Cambio al presupuesto',
@@ -23,7 +23,7 @@
   </div>
   <p class="tit">{mv.titulo}</p>
   <p class="det small muted">{mv.detalle}</p>
-  <Fuente ids={[mv.fuente]} />
+  <Fuente ids={[mv.fuente]} {compacto} />
 </li>
 
 <style>
