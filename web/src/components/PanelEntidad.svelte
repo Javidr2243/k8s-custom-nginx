@@ -21,6 +21,8 @@ export interface Seleccion {
   import LineChart from './LineChart.svelte';
   import Fuente from './Fuente.svelte';
   import Termino from './Termino.svelte';
+  import ContratosDependencia from './ContratosDependencia.svelte';
+  import { route } from '../lib/router.svelte';
 
   let {
     sel,
@@ -85,7 +87,7 @@ export interface Seleccion {
       contratación de deuda, y revisa la <Termino id="cuenta-publica">Cuenta Pública</Termino>.
     </p>
   {:else if sel.tipo === 'ingreso' && sel.ingreso}
-    <dl class="cifras">
+    <dl class="montos">
       <div><dt>{sel.ingreso.anual ? 'Recibido en el año' : 'Recaudado'}</dt><dd>{pesos(sel.ingreso.recaudado)}</dd></div>
       {#if !sel.ingreso.anual}
         <div><dt>Estimado para el año</dt><dd>{pesos(sel.ingreso.estimado)}</dd></div>
@@ -101,7 +103,7 @@ export interface Seleccion {
     </p>
     <Fuente ids={[sel.ingreso.fuente]} />
   {:else if m}
-    <dl class="cifras">
+    <dl class="montos">
       <div><dt><Termino id="aprobado">Aprobado</Termino></dt><dd>{pesos(m.aprobado)}</dd></div>
       <div><dt><Termino id="modificado">Modificado</Termino></dt><dd>{pesos(m.modificado)}</dd></div>
       <div><dt><Termino id="devengado">Gastado (devengado)</Termino></dt><dd>{pesos(m.devengado)}</dd></div>
@@ -161,6 +163,9 @@ export interface Seleccion {
       {#each dependencia.notas as n, i (i)}<p class="small notice">{n}</p>{/each}
     {/if}
     <Fuente ids={[dependencia ? periodo.fuente_dependencias : periodo.fuente]} />
+    {#if dependencia}
+      <ContratosDependencia municipio={route.municipio} dependencia={dependencia.id} />
+    {/if}
   {/if}
   <p class="small muted">{nombreMunicipio} · montos en pesos nominales.</p>
 </aside>
@@ -193,13 +198,13 @@ export interface Seleccion {
     font-size: 1.3rem;
     padding: 0.2rem;
   }
-  .cifras {
+  .montos {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem;
     margin: 0.25rem 0;
   }
-  .cifras div {
+  .montos div {
     background: var(--surface-2);
     border-radius: var(--radius-sm);
     padding: 0.55rem 0.7rem;

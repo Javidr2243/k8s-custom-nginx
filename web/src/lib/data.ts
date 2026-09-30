@@ -132,7 +132,12 @@ export interface Contrato {
   proveedor: string;
   tipo_persona: 'moral' | 'fisica' | 'reservada' | 'desconocido';
   rfc: string | null;
+  /** Requesting area (who needed the purchase); falls back to the contracting office. */
   area: string;
+  area_solicitante: string;
+  area_contratante: string;
+  /** Budget department linked from the requesting area (Monterrey only); null when unclear. */
+  dependencia: string | null;
   monto: number | null;
   monto_sin_impuestos: number | null;
   monto_maximo: number | null;
@@ -154,9 +159,36 @@ export interface Contratos {
     proveedores_top: { proveedor: string; rfc: string | null; n: number; monto: number; porcentaje: number | null }[];
     concentracion_top10: number | null;
     fechas: [string | null, string | null];
+    por_area: (GrupoContratos & { area: string })[];
+    por_dependencia: Record<string, GrupoContratos & { nombre: string; proveedores: ProveedorMonto[]; contratos: ContratoBreve[]; fechas: [string | null, string | null] }>;
+    dependencias_ligadas: { contratos: number; de: number; areas_sin_ligar: string[] };
   };
+  senales: Senales;
   notas: string[];
   contratos: Contrato[];
+}
+
+export interface GrupoContratos {
+  n: number;
+  monto: number;
+  /** Share of the amount awarded directly (without an open tender). */
+  pct_directa: number | null;
+}
+export interface ProveedorMonto {
+  proveedor: string;
+  rfc: string | null;
+  n: number;
+  monto: number;
+}
+export type ContratoBreve = Pick<Contrato, 'numero' | 'fecha' | 'proveedor' | 'rfc' | 'monto' | 'descripcion' | 'area' | 'fuente'>;
+/** Objective patterns worth a closer look (they do not indicate irregularities). */
+export interface Senales {
+  umbrales: { meses_empresa_joven: number; min_directas_repetidas: number };
+  empresas_jovenes: (ContratoBreve & { constitucion: string; dias: number })[];
+  empresa_mas_joven: (ContratoBreve & { constitucion: string; dias: number }) | null;
+  directas_repetidas: { proveedor: string; rfc: string | null; n: number; con_monto: number; monto: number | null; fechas: [string | null, string | null]; fuente: string }[];
+  mayores_directas: ContratoBreve[];
+  modificatorios: { n: number; monto: number; mayores: ContratoBreve[] };
 }
 
 export interface Municipio {

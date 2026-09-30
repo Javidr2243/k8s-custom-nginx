@@ -68,7 +68,9 @@ class Contrato:
     proveedor: str
     tipo_persona: str  # moral | fisica | reservada | desconocido
     rfc: str | None
-    area: str
+    area: str  # requesting area (who needed the purchase), or the contracting area if not published
+    area_solicitante: str
+    area_contratante: str  # office that ran the procurement (often a central purchasing office)
     monto: float | None  # with taxes
     monto_sin_impuestos: float | None
     monto_maximo: float | None
@@ -258,7 +260,9 @@ def parse_sipot_xxix(path: Path) -> list[Contrato]:
                 proveedor=proveedor,
                 tipo_persona=tipo,
                 rfc=rfc,
-                area=clean_label(g("area_contratante")) or clean_label(g("area_solicitante")),
+                area=clean_label(g("area_solicitante")) or clean_label(g("area_contratante")),
+                area_solicitante=clean_label(g("area_solicitante")),
+                area_contratante=clean_label(g("area_contratante")),
                 monto=monto,
                 monto_sin_impuestos=_monto(g("monto_sin"), where),
                 monto_maximo=_monto(g("monto_max"), where),
@@ -319,6 +323,8 @@ def parse_san_pedro(path: Path) -> list[Contrato]:
                 tipo_persona="moral" if tipo == "desconocido" else tipo,
                 rfc=rfc if tipo == "moral" else None,
                 area=clean_label(g("secretaria")) or clean_label(g("area")),
+                area_solicitante=clean_label(g("secretaria")) or clean_label(g("area")),
+                area_contratante="",
                 monto=_monto(g("monto"), f"{path.name} fila {n}"),
                 monto_sin_impuestos=None,
                 monto_maximo=None,

@@ -170,6 +170,11 @@ export const GLOSARIO: Record<string, Entrada> = {
   rfc: {
     termino: 'RFC',
     corto: 'Registro Federal de Contribuyentes. Aquí solo se muestra el de empresas; el de personas físicas se oculta para proteger datos personales.',
+    largo: 'En el RFC de una empresa (12 caracteres), los 6 números después de las 3 letras son su fecha de constitución: año, mes y día.',
+  },
+  'area-solicitante': {
+    termino: 'Área solicitante',
+    corto: 'La oficina que necesitaba la compra. Puede ser distinta del área contratante, que organiza el concurso (a menudo una oficina central de compras).',
   },
   reservada: {
     termino: 'Información reservada',

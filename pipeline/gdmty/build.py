@@ -13,7 +13,7 @@ from itertools import pairwise
 from pathlib import Path
 from typing import Any
 
-from gdmty import __version__
+from gdmty import __version__, contratos_analisis
 from gdmty import sources as sources_mod
 from gdmty.catalogos import CAPITULOS, MUNICIPIOS, capitulo_por_nombre
 from gdmty.manifest import Manifest
@@ -587,8 +587,15 @@ def _contratos_de(f, manifest: Manifest, intermedio_dir: Path) -> list[dict]:
 
 
 def _contratos(
-    cfg, manifest: Manifest, intermedio_dir: Path, report: Reporte, out_dir: Path, usadas: set[str]
+    cfg,
+    manifest: Manifest,
+    intermedio_dir: Path,
+    dependencias: dict[str, dict[str, str]],
+    report: Reporte,
+    out_dir: Path,
+    usadas: set[str],
 ) -> dict[str, list[dict]]:
+    """`dependencias`: per municipality, budget department id → name (to link each contract to who asked for it)."""
     todos: dict[str, list[dict]] = {}
     for mid in MUNICIPIOS:
         items: list[dict] = []
@@ -597,7 +604,8 @@ def _contratos(
             if f.municipio != mid or f.tipo not in ("sipot_xxix", "sp_contratos"):
                 continue
             for c in _contratos_de(f, manifest, intermedio_dir):
-                items.append({**c, "fuente": f.id})
+                dep = contratos_analisis.ligar_dependencia(c["area"], dependencias.get(mid, {}))
+                items.append({**c, "dependencia": dep, "fuente": f.id})
             fuentes.append(f.id)
             usadas.add(f.id)
         items.sort(key=lambda c: (c["fecha"] or "", c["monto"] or 0), reverse=True)
@@ -641,7 +649,19 @@ def _contratos(
                         min((c["fecha"] for c in items if c["fecha"]), default=None),
                         max((c["fecha"] for c in items if c["fecha"]), default=None),
                     ],
+                    "por_area": contratos_analisis.por_area(items),
+                    "por_dependencia": contratos_analisis.por_dependencia(items, dependencias.get(mid, {})),
+                    "dependencias_ligadas": {
+                        "contratos": sum(1 for c in items if c["dependencia"]),
+                        "de": len(items),
+                        "areas_sin_ligar": sorted(
+                            {c["area"] for c in items if not c["dependencia"] and c["area"]}
+                        )
+                        if dependencias.get(mid)
+                        else [],
+                    },
                 },
+                "senales": contratos_analisis.senales(items),
                 "notas": [
                     *NOTAS_CONTRATOS.get(mid, []),
                     "Montos con impuestos incluidos, tal como los publica el municipio. Los contratos sin monto "
@@ -948,7 +968,17 @@ def build(out_dir: Path = PUBLIC_V1, intermedio_dir: Path = DATA_INTERMEDIO) -> 
 
     try:
         _deuda(cfg, egresos, report, out_dir, fuentes_usadas)
-        contratos = _contratos(cfg, manifest, intermedio_dir, report, out_dir, fuentes_usadas)
+        # Every department name the budget used (only Monterrey publishes them), ordered by the last budget that
+        # used it, so a department renamed between years resolves to its current name.
+        deps: dict[str, dict[str, str]] = {}
+        for mid in MUNICIPIOS:
+            orden: dict[str, str] = {}
+            for _pid, p in sorted(egresos[mid].items()):
+                for d in p.get("dependencias") or []:
+                    orden.pop(d["id"], None)
+                    orden[d["id"]] = d["nombre"]
+            deps[mid] = orden
+        contratos = _contratos(cfg, manifest, intermedio_dir, deps, report, out_dir, fuentes_usadas)
     except ParseError as exc:
         report.error(f"error al leer un original de deuda o contratos: {exc}")
         return report

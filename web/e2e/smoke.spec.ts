@@ -106,3 +106,21 @@ test('cada contrato enlaza a su documento oficial', async ({ page }) => {
   const enlace = page.locator('section[aria-labelledby="h-todos"] table.data tbody tr').first().locator('a[href^="https://"]', { hasText: 'Documento oficial' });
   await expect(enlace).toHaveCount(1);
 });
+
+test('contratos muestra patrones para revisar y filtra por dependencia', async ({ page }) => {
+  await page.goto('/contratos?m=monterrey');
+  await page.waitForLoadState('networkidle');
+  await expect(page.locator('#h-revisar')).toBeVisible();
+  await expect(page.locator('.revisar')).toContainText('no indican irregularidades');
+  await page.goto('/contratos?m=monterrey&dep=secretaria-de-servicios-publicos');
+  await page.waitForLoadState('networkidle');
+  await expect(page.locator('.filtro-dep')).toContainText('Secretaría de Servicios Públicos');
+});
+
+test('el panel de una dependencia muestra sus contratos', async ({ page }) => {
+  await page.goto('/mapa?m=monterrey&n=secretaria-de-servicios-publicos');
+  await page.waitForLoadState('networkidle');
+  const bloque = page.locator('aside.panel .contratos');
+  await expect(bloque).toContainText('Contratos de esta dependencia');
+  await expect(bloque.locator('a[href*="dep=secretaria-de-servicios-publicos"]')).toHaveCount(1);
+});
