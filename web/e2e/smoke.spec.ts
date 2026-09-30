@@ -99,3 +99,10 @@ test('la página de fuentes lista documentos y verificaciones', async ({ page })
   await page.getByPlaceholder(/Buscar por título/).fill('deuda');
   await expect(page.locator('.docs li.doc').first()).toContainText(/[Dd]euda/);
 });
+
+test('cada contrato enlaza a su documento oficial', async ({ page }) => {
+  await page.goto('/contratos');
+  await page.waitForLoadState('networkidle');
+  const enlace = page.locator('section[aria-labelledby="h-todos"] table.data tbody tr').first().locator('a[href^="https://"]', { hasText: 'Documento oficial' });
+  await expect(enlace).toHaveCount(1);
+});

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { api, NOMBRE, type Contratos, type Contrato } from '../lib/data';
+  import { api, NOMBRE, type Contratos, type Contrato, type Fuente as FuenteDoc } from '../lib/data';
   import { fecha, pesos, porcentaje, entero } from '../lib/format';
   import { route } from '../lib/router.svelte';
   import { normalizar } from '../lib/search';
@@ -13,6 +13,9 @@
   import Seccion from '../components/Seccion.svelte';
 
   let d = $state<Contratos | null>(null);
+  // Official document of each contract (by source id), to link every row to the municipality's own file.
+  let docs = $state<Record<string, FuenteDoc>>({});
+  api.fuentes().then((f) => (docs = f)).catch(() => {});
   let error = $state<string | null>(null);
   let q = $state('');
   let cat = $state('todas');
@@ -179,7 +182,7 @@
       id="h-todos"
       pregunta="Todos los contratos"
       titular={`${entero(r.contratos)} contratos para buscar y descargar`}
-      detalle="Filtra por proveedor, objeto, área o RFC; la descarga en CSV incluye la fuente de cada contrato."
+      detalle="Filtra por proveedor, objeto, área, número o RFC. Cada contrato enlaza al archivo oficial del municipio; ahí se ubica por su número de contrato."
     >
       <div class="controles">
         <label class="buscar">
@@ -212,7 +215,10 @@
           <tbody>
             {#each visibles as c, i (i)}
               <tr>
-                <td class="nw">{c.fecha ? fecha(c.fecha) : '—'}</td>
+                <td>
+                  <span class="nw">{c.fecha ? fecha(c.fecha) : '—'}</span>
+                  {#if c.numero}<br /><span class="small muted">No. {c.numero}</span>{/if}
+                </td>
                 <td>
                   {c.proveedor}
                   {#if c.rfc}<br /><span class="small muted">RFC {c.rfc}</span>{/if}
@@ -224,6 +230,10 @@
                 </td>
                 <td>
                   {#if GLOS[c.categoria]}<Termino id={GLOS[c.categoria]!}>{c.procedimiento}</Termino>{:else}{c.procedimiento}{/if}
+                  {#if docs[c.fuente]}
+                    <br /><a class="small doc" href={docs[c.fuente]!.url} rel="noopener noreferrer" target="_blank" title={docs[c.fuente]!.titulo}>Documento oficial ↗</a>
+                    {#if docs[c.fuente]!.publicado}<br /><span class="small muted nw">publicado {fecha(docs[c.fuente]!.publicado)}</span>{/if}
+                  {/if}
                 </td>
                 <td class="r nw">{c.monto !== null ? pesos(c.monto) : c.monto_maximo !== null ? `Hasta ${pesos(c.monto_maximo)}` : 'Sin monto publicado'}</td>
               </tr>
@@ -277,6 +287,9 @@
     width: 100%;
   }
   .nw {
+    white-space: nowrap;
+  }
+  .doc {
     white-space: nowrap;
   }
   .desc {
