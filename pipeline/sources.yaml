@@ -1,0 +1,591 @@
+# Official sources for ¿A dónde va tu dinero? MTY.
+# - Every file the app uses is listed here with its URL and the page that links to it.
+# - dominios_permitidos is the download allowlist (re-checked after every redirect).
+# - faltantes_conocidos documents periods that have no machine-readable data, and why.
+# Changes to this file need owner review (CODEOWNERS).
+version: 1
+periodo_inicial: 2023T1
+dominios_permitidos:
+- www.monterrey.gob.mx
+- transparencia.sanpedro.gob.mx
+- www.stacatarina.gob.mx
+- www.inegi.org.mx
+- gaia.inegi.org.mx
+faltantes_conocidos:
+- municipio: san-pedro
+  periodo: 2024T4
+  motivo: El municipio no publicó el formato NLA95FXXIIB de este trimestre en su portal de transparencia.
+- municipio: santa-catarina
+  periodo: 2024T3
+  motivo: El archivo anual 2024 del formato NLA95FXXIIB no incluye el 3er trimestre.
+- municipio: santa-catarina
+  periodo: 2026T1
+  motivo: Solo se publicó como PDF escaneado (sin datos legibles por máquina).
+fuentes:
+- id: mty-ing-2023T1
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2023T1
+  titulo: Estado Analítico de Ingresos, 1er trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2023T2
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2023T2
+  titulo: Estado Analítico de Ingresos, 2º trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_2T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2023T3
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2023T3
+  titulo: Estado Analítico de Ingresos, 3er trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_3T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2023T4
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2023T4
+  titulo: Estado Analítico de Ingresos, 4º trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/1_Estado_Analitico_del_Ingresos_4T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2023T1
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2023T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 1er trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_1T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2023T2
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2023T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 2º trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_2T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2023T3
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2023T3
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 3er trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_3T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2023T4
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2023T4
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 4º trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_4T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2023T1
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2023T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 1er trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_1T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2023T2
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2023T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 2º trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_2T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2023T3
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2023T3
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 3er trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_3T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2023T4
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2023T4
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 4º trimestre 2023 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2023/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_4T_2023.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2024T1
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2024T1
+  titulo: Estado Analítico de Ingresos, 1er trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/1_Estado_Analitico_del_Ingresos_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2024T2
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2024T2
+  titulo: Estado Analítico de Ingresos, 2º trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/2_Estado_Analitico_del_Ingresos_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2024T1
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2024T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 1er trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_1T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2024T2
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2024T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 2º trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_2T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2024T3
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2024T3
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 3er trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_3T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2024T4
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2024T4
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 4º trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Administrativa_Municipal_4T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2024T1
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2024T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 1er trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_1T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2024T2
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2024T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 2º trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_2T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2024T3
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2024T3
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 3er trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_3T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2024T4
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2024T4
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 4º trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ejercicio_del_PE_Objeto_del_Gasto_4T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2024T3
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2024T3
+  titulo: Estado Analítico de Ingresos, 3er trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ingresos_3T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2024T4
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2024T4
+  titulo: Estado Analítico de Ingresos, 4º trimestre 2024 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2024/Estado_Analitico_del_Ingresos_4T_2024.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2025T1
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2025T1
+  titulo: Estado Analítico de Ingresos, 1er trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_1T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2025T2
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2025T2
+  titulo: Estado Analítico de Ingresos, 2º trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_2T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2025T3
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2025T3
+  titulo: Estado Analítico de Ingresos, 3er trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_3T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2025T4
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2025T4
+  titulo: Estado Analítico de Ingresos, 4º trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/1_Estado_Analitico_de_Ingresos_4T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2025T1
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2025T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 1er trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_1T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2025T2
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2025T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 2º trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_2T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2025T3
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2025T3
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 3er trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_3T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2025T4
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2025T4
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 4º trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_4T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2025T1
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2025T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 1er trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_1T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2025T2
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2025T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 2º trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_2T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2025T3
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2025T3
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 3er trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_3T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2025T4
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2025T4
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 4º trimestre 2025 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2025/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_4T_2025.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2026T1
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2026T1
+  titulo: Estado Analítico de Ingresos, 1er trimestre 2026 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2026/1_Estado_Analitico_de_Ingresos_1T_2026.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-ing-2026T2
+  municipio: monterrey
+  tipo: mty_ingresos
+  periodo: 2026T2
+  titulo: Estado Analítico de Ingresos, 2º trimestre 2026 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2026/1_Estado_Analitico_de_Ingresos_2T_2026.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2026T1
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2026T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 1er trimestre 2026 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2026/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_1T_2026.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-adm-2026T2
+  municipio: monterrey
+  tipo: mty_egresos_administrativa
+  periodo: 2026T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación Administrativa, 2º trimestre 2026 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2026/3_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Administrativa_Municipal_2T_2026.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2026T1
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2026T1
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 1er trimestre 2026 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2026/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_1T_2026.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: mty-egr-obj-2026T2
+  municipio: monterrey
+  tipo: mty_egresos_objeto
+  periodo: 2026T2
+  titulo: Estado Analítico del Ejercicio del Presupuesto de Egresos — Clasificación por Objeto del Gasto, 2º trimestre 2026 (acumulado)
+  emisor: Municipio de Monterrey — Tesorería Municipal
+  url: https://www.monterrey.gob.mx/pdf/tesoreria/2026/5_Estado_Analitico_del_Ejercicio_del_PE_Clasificacion_Objeto_del_Gasto_2T_2026.xlsx
+  pagina: https://www.monterrey.gob.mx/transparencia/Oficial_/Informacion_Fiscal/
+  formato: xlsx
+- id: sp-xxiib-2023T4
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2023T4
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 4º trimestre 2023
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2023/12/5302/anexo_27720_NLA95FXXIIB.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2023T2
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2023T2
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 2º trimestre 2023
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2023/6/5302/anexo_26317_NLA95FXXIIB%20JUNIO2023FYT.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2023T3
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2023T3
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 3er trimestre 2023
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2023/9/5302/anexo_27059_NLA95FXXIIB_SEP2023.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2024T1
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2024T1
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 1er trimestre 2024
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2024/3/5302/anexo_28743_NLA95FXXIIB%20act2024.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2024T2
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2024T2
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 2º trimestre 2024
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2024/6/5302/anexo_29453_NLA95FXXIIB%202DOTRIM2024.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2024T3
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2024T3
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 3er trimestre 2024
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2024/9/5302/anexo_30094_NLA95FXXIIB%20SEP24SAL.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2025T4
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2025T4
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 4º trimestre 2025
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/12/5302/anexo_33321_NLA95FXXIIB%20SALDIC25.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2025T1
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2025T1
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 1er trimestre 2025
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/3/5302/anexo_31346_NLA95FXXIIB%20MAR25.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2025T2
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2025T2
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 2º trimestre 2025
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/6/5302/anexo_32106_NLA95FXXIIB%20JUN2025%20TEMP%20SAL.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2025T3
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2025T3
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 3er trimestre 2025
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2025/9/5302/anexo_32669_NLA95FXXIIB.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2026T1
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2026T1
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 1er trimestre 2026
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2026/3/5302/anexo_35315_NLA95FXXIIB%201TRIM26.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sp-xxiib-2026T2
+  municipio: san-pedro
+  tipo: sipot_xxiib
+  periodo: 2026T2
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 2º trimestre 2026
+  emisor: Municipio de San Pedro Garza García — Secretaría de Finanzas y Tesorería
+  url: https://transparencia.sanpedro.gob.mx/documentosTransparencia/1/30/2026/6/5302/anexo_35316_NLA95FXXIIB%202TRIM%20CAMBIO.xlsx
+  pagina: https://transparencia.sanpedro.gob.mx/transparencia/descFraccion.aspx?articuloId=1&fraccionid=28&area=5302&idDireccion=0&inc=True
+  formato: xlsx
+- id: sc-xxiib-2023
+  municipio: santa-catarina
+  tipo: sipot_xxiib
+  periodo: null
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, ejercicio 2023 (varios trimestres)
+  emisor: Municipio de Santa Catarina — Dirección de Contabilidad
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6848b21124fbc_NLA95FXXIIB%20%282023.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXII)
+  formato: xlsx
+- id: sc-xxiib-2024
+  municipio: santa-catarina
+  tipo: sipot_xxiib
+  periodo: null
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, ejercicio 2024 (varios trimestres)
+  emisor: Municipio de Santa Catarina — Dirección de Contabilidad
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6848b21126214_NLA95FXXIIB%202024.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXII)
+  formato: xlsx
+- id: sc-xxiib-2025T1
+  municipio: santa-catarina
+  tipo: sipot_xxiib
+  periodo: 2025T1
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 1er trimestre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Contabilidad
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/ss/6848b25cb8e41_NLA95FXXIIB%20contabilidad%201%20trimestre.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXII)
+  formato: xlsx
+- id: sc-xxiib-2025T2
+  municipio: santa-catarina
+  tipo: sipot_xxiib
+  periodo: 2025T2
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 2º trimestre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Contabilidad
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/68a8cc75041c1_NLA95FXXIIB%20contabilidad%20junio.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXII)
+  formato: xlsx
+- id: sc-xxiib-2025T3
+  municipio: santa-catarina
+  tipo: sipot_xxiib
+  periodo: 2025T3
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 3er trimestre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Contabilidad
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6905347ce0f2c_NLA95FXXIIB%20conta%20sept.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXII)
+  formato: xlsx
+- id: sc-xxiib-2025T4
+  municipio: santa-catarina
+  tipo: sipot_xxiib
+  periodo: 2025T4
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 4º trimestre 2025
+  emisor: Municipio de Santa Catarina — Dirección de Contabilidad
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/697d1ed616297_NLA95FXXIIB%20DIC%20TRIME.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXII)
+  formato: xlsx
+- id: sc-xxiib-2026T2
+  municipio: santa-catarina
+  tipo: sipot_xxiib
+  periodo: 2026T2
+  titulo: Formato NLA95FXXIIB — Ejercicio de los egresos presupuestarios, 2º trimestre 2026
+  emisor: Municipio de Santa Catarina — Dirección de Contabilidad
+  url: https://www.stacatarina.gob.mx/storage/apps/transparencia/public/files/s/6a721a2664fe1_NLA95FXXIIB%20CONTA%20JUNIO.xlsx
+  pagina: https://www.stacatarina.gob.mx/ (Transparencia → Artículo 95 → Fracción XXII)
+  formato: xlsx
+- id: inegi-efipem-municipal
+  municipio: null
+  tipo: inegi_efipem
+  periodo: null
+  titulo: Estadística de Finanzas Públicas Estatales y Municipales (EFIPEM) — datos abiertos municipales, 1989–2025
+  emisor: INEGI
+  url: https://www.inegi.org.mx/contenidos/programas/finanzas/datosabiertos/conjunto_de_datos_efipem_municipal_csv.zip
+  pagina: https://www.inegi.org.mx/programas/finanzas/
+  formato: zip
+- id: inegi-mgem-19
+  municipio: null
+  tipo: inegi_poblacion
+  periodo: null
+  titulo: Marco Geoestadístico — catálogo de municipios de Nuevo León con población del Censo de Población y Vivienda 2020
+  emisor: INEGI
+  url: https://gaia.inegi.org.mx/wscatgeo/v2/mgem/19
+  pagina: https://www.inegi.org.mx/servicios/catalogoUnico.html
+  formato: json

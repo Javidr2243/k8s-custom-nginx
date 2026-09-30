@@ -1,0 +1,1627 @@
+ANIO,CVEGEO,CVE_ENT,CVE_MUN,TEMA,CATEGORIA,DESCRIPCION_CATEGORIA,VALOR,ESTATUS
+2018,19019,19,019,Egresos,Tema,Total de egresos,2913257973,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,Servicios personales,1032989000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Remuneraciones al personal,427458000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,168117000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Seguridad social,130665000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,302523000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,4226000,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,Materiales y suministros,180186000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",8056000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Alimentos y utensilios,9847000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",10771000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,59406000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",3184000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",63472000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",8795000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Materiales y suministros para seguridad,16655000,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,Servicios generales,511126000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Servicios básicos,82189000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,49877000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",60677000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",26892000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",228232000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,8517000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,1150000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Servicios oficiales,7129000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Otros servicios generales,46463000,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",416708000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,392393000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Ayudas sociales,24315000,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",219374736,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,20127993,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,44695758,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",93418771,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Bienes inmuebles,59900000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Activos intangibles,1156124,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",76090,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,Inversión pública,441505237,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,441505237,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,Otros egresos,103463000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Egresos diversos,103463000,Cifras Definitivas
+2018,19019,19,019,Egresos,Capítulo,Deuda pública,7906000,Cifras Definitivas
+2018,19019,19,019,Egresos,Concepto,Intereses de la deuda pública,7906000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Tema,Total de ingresos,2913257973,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Impuestos,1180727000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1179618000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",1102000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Accesorios,7000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Derechos,157779000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",119559000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Accesorios,13000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Otros Derechos,38207000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Productos,152586000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,113328000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Productos de tipo capital,29460000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Otros productos,9798000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Aprovechamientos,92557000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,67290000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,25267000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Participaciones federales,1054163270,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Fondos participables,955835839,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Impuestos participables,83365579,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Otras participaciones,7440692,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Participaciones estatales,7521160,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,257857730,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,80179414,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,177678316,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Otros ingresos,280000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Otros ingresos extraordinarios,280000,Cifras Definitivas
+2018,19019,19,019,Ingresos,Capítulo,Financiamiento,17307973,Cifras Definitivas
+2018,19019,19,019,Ingresos,Concepto,Déficit,17307973,Cifras Definitivas
+2018,19039,19,039,Egresos,Tema,Total de egresos,6414610156,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,Servicios personales,1738649594,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Remuneraciones al personal,908113619,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Remuneraciones adicionales y especiales,263815407,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Seguridad social,34072998,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Otras prestaciones sociales y económicas,278572330,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Previsiones,254075240,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,Materiales y suministros,679196543,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",25289292,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Alimentos y utensilios,19567615,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",22728230,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Materiales y artículos de construcción y de reparación,172474852,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",219585948,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Combustibles, lubricantes y aditivos",172380137,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",43047126,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Materiales y suministros para seguridad,4123343,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,Servicios generales,1466866042,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Servicios básicos,227914796,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Servicios de arrendamiento,98700521,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",417827028,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",76391356,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",451177346,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Servicios de comunicación social y publicidad,85687590,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Servicios de traslado y viáticos,1649332,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Servicios oficiales,16337650,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Otros servicios generales,91180423,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",774153556,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,200562771,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Ayudas sociales,101438205,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Subsidios y subvenciones,5100000,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Pensiones y jubilaciones,467052580,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",370247220,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Mobiliario y equipo de administración,16899198,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Mobiliario y equipo educacional y recreativo,786635,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Vehículos y equipo de transporte,28684531,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,296532382,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",27344474,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,Inversión pública,1016376399,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,1015519942,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Obra pública en bienes propios,856457,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,Otros egresos,185224098,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Egresos diversos,185224098,Cifras Definitivas
+2018,19039,19,039,Egresos,Capítulo,Deuda pública,183896704,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Amortización de la deuda pública,73383688,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Intereses de la deuda pública,107860460,Cifras Definitivas
+2018,19039,19,039,Egresos,Concepto,Gastos de la deuda pública,2652556,Cifras Definitivas
+2018,19039,19,039,Ingresos,Tema,Total de ingresos,6414610156,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Impuestos,2046074617,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Impuestos sobre el Patrimonio,1986601202,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",28826448,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Accesorios,30646967,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Derechos,313447586,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",300712438,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Derechos por prestación de servicios,3262644,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Accesorios,2378516,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Otros Derechos,7093988,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Productos,179839557,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Productos de tipo corriente,82895077,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Productos de tipo capital,35782,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Otros productos,96908698,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Aprovechamientos,339787186,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Aprovechamientos de tipo corriente,299221275,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,40565911,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Participaciones federales,2243680526,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Fondos participables,1889218995,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Impuestos participables,159972762,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Otras participaciones,14351451,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Participaciones estatales,180137318,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,1220218306,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,785370660,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,434847646,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Otros ingresos,802575,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Otros ingresos extraordinarios,802575,Cifras Definitivas
+2018,19039,19,039,Ingresos,Capítulo,Financiamiento,70759803,Cifras Definitivas
+2018,19039,19,039,Ingresos,Concepto,Déficit,70759803,Cifras Definitivas
+2018,19048,19,048,Egresos,Tema,Total de egresos,1260464995,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,Servicios personales,443513193,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Remuneraciones al personal,277041046,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Remuneraciones adicionales y especiales,80840800,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Seguridad social,876259,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Otras prestaciones sociales y económicas,84755088,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,Materiales y suministros,59212473,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",12694370,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Alimentos y utensilios,450317,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",7213846,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Materiales y artículos de construcción y de reparación,4400288,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",312571,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Combustibles, lubricantes y aditivos",23950583,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",9278557,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Materiales y suministros para seguridad,337503,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Materiales y suministros diversos,574438,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,Servicios generales,383171069,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Servicios básicos,101406460,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Servicios de arrendamiento,9461145,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",81786073,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",10378418,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",92551320,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Servicios de comunicación social y publicidad,28914994,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Servicios de traslado y viáticos,269380,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Servicios oficiales,19566574,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Otros servicios generales,38836705,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",6978571,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Ayudas sociales,6978571,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",109098822,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Mobiliario y equipo de administración,10400723,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Mobiliario y equipo educacional y recreativo,5292152,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Vehículos y equipo de transporte,68439644,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,3151163,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",21815140,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,Inversión pública,204660960,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,56705958,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Obra pública en bienes propios,147955002,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,Otros egresos,14521459,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Egresos diversos,14521459,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,Deuda pública,19095863,Cifras Definitivas
+2018,19048,19,048,Egresos,Concepto,Intereses de la deuda pública,19095863,Cifras Definitivas
+2018,19048,19,048,Egresos,Capítulo,Disponibilidad final,20212585,Cifras Definitivas
+2018,19048,19,048,Ingresos,Tema,Total de ingresos,1260464995,Cifras Definitivas
+2018,19048,19,048,Ingresos,Capítulo,Impuestos,255212315,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Impuestos sobre el Patrimonio,251743055,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",10528,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Accesorios,3458732,Cifras Definitivas
+2018,19048,19,048,Ingresos,Capítulo,Derechos,75037911,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",72684754,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Derechos por prestación de servicios,1476745,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Accesorios,59887,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Otros Derechos,816525,Cifras Definitivas
+2018,19048,19,048,Ingresos,Capítulo,Productos,10183989,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Productos de tipo corriente,8744750,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Productos de tipo capital,1435209,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Otros productos,4030,Cifras Definitivas
+2018,19048,19,048,Ingresos,Capítulo,Aprovechamientos,24520286,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Aprovechamientos de tipo corriente,16837035,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,7683251,Cifras Definitivas
+2018,19048,19,048,Ingresos,Capítulo,Participaciones federales,374354524,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Fondos participables,320733380,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Impuestos participables,25191107,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Otras participaciones,2257142,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Participaciones estatales,26172895,Cifras Definitivas
+2018,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,520199397,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,209864007,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,310335390,Cifras Definitivas
+2018,19048,19,048,Ingresos,Capítulo,Otros ingresos,956573,Cifras Definitivas
+2018,19048,19,048,Ingresos,Concepto,Otros ingresos extraordinarios,956573,Cifras Definitivas
+2019,19019,19,019,Egresos,Tema,Total de egresos,3176582328,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,Servicios personales,1156161779,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Remuneraciones al personal,460583360,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,168825650,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Seguridad social,179469680,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,341123744,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,6159345,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,Materiales y suministros,186397915,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",8386470,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Alimentos y utensilios,11142760,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",16090388,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,68447724,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",2616996,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",60801109,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",18517696,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Materiales y suministros para seguridad,366951,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Materiales y suministros diversos,27821,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,Servicios generales,520191566,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Servicios básicos,109150640,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,41278839,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",82146773,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",27224231,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",192410780,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,13939874,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,1676870,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Servicios oficiales,6369757,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Otros servicios generales,45993802,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",67170290,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,50850905,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Ayudas sociales,16319385,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",189329903,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,34872933,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,39001589,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,8019140,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",77325595,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Bienes inmuebles,14607993,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Activos intangibles,15502653,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,Inversión pública,381858892,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,323080997,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Obra pública en bienes propios,58777895,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,Deuda pública,9552852,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Amortización de la deuda pública,5686816,Cifras Definitivas
+2019,19019,19,019,Egresos,Concepto,Intereses de la deuda pública,3866036,Cifras Definitivas
+2019,19019,19,019,Egresos,Capítulo,Disponibilidad final,665919131,Cifras Definitivas
+2019,19019,19,019,Ingresos,Tema,Total de ingresos,3176582328,Cifras Definitivas
+2019,19019,19,019,Ingresos,Capítulo,Impuestos,1269571000,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1250038636,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",2819240,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Otros Impuestos,16713124,Cifras Definitivas
+2019,19019,19,019,Ingresos,Capítulo,Derechos,118397000,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",75616343,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Derechos por prestación de servicios,41499000,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Accesorios,1281000,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Otros Derechos,657,Cifras Definitivas
+2019,19019,19,019,Ingresos,Capítulo,Productos,167420375,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,156412514,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Productos de tipo capital,66162,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Otros productos,10941699,Cifras Definitivas
+2019,19019,19,019,Ingresos,Capítulo,Aprovechamientos,75853475,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,58649873,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,17203602,Cifras Definitivas
+2019,19019,19,019,Ingresos,Capítulo,Participaciones federales,1317864008,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Fondos participables,1170011778,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Impuestos participables,72222790,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Otras participaciones,3166851,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Participaciones estatales,72462589,Cifras Definitivas
+2019,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,226639860,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,90700746,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,135939114,Cifras Definitivas
+2019,19019,19,019,Ingresos,Capítulo,Otros ingresos,836610,Cifras Definitivas
+2019,19019,19,019,Ingresos,Concepto,Otros ingresos extraordinarios,836610,Cifras Definitivas
+2019,19039,19,039,Egresos,Tema,Total de egresos,6847324604,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,Servicios personales,1764515769,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Remuneraciones al personal,933372391,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Remuneraciones adicionales y especiales,270848329,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Seguridad social,33948316,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Otras prestaciones sociales y económicas,511166197,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Pago de estímulos a servidores públicos,15180536,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,Materiales y suministros,764789670,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",39889405,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Alimentos y utensilios,21527745,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",17564536,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Materiales y artículos de construcción y de reparación,183979403,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",231588687,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Combustibles, lubricantes y aditivos",203736537,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",57646540,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Materiales y suministros para seguridad,8706546,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Materiales y suministros diversos,150271,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,Servicios generales,1616647879,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Servicios básicos,235917709,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Servicios de arrendamiento,107814759,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",377025686,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",78436505,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",519665627,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Servicios de comunicación social y publicidad,98532894,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Servicios de traslado y viáticos,802631,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Servicios oficiales,15850275,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Otros servicios generales,182601793,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",700047542,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,142567440,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Ayudas sociales,86453270,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Subsidios y subvenciones,1000000,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Pensiones y jubilaciones,470026832,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",374884791,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Mobiliario y equipo de administración,15149180,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Mobiliario y equipo educacional y recreativo,2710775,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Vehículos y equipo de transporte,230655240,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,59005031,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",66652035,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Activos intangibles,712530,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,Inversión pública,974893220,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,952431913,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Obra pública en bienes propios,224092,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Proyectos productivos y acciones de fomento,22237215,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,Otros egresos,331515062,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Egresos diversos,331515062,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,Deuda pública,186813673,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Intereses de la deuda pública,167902019,Cifras Definitivas
+2019,19039,19,039,Egresos,Concepto,Gastos de la deuda pública,18911654,Cifras Definitivas
+2019,19039,19,039,Egresos,Capítulo,Disponibilidad final,133216998,Cifras Definitivas
+2019,19039,19,039,Ingresos,Tema,Total de ingresos,6847324604,Cifras Definitivas
+2019,19039,19,039,Ingresos,Capítulo,Impuestos,2063332165,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Impuestos sobre el Patrimonio,1996618166,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",33097387,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Accesorios,33616612,Cifras Definitivas
+2019,19039,19,039,Ingresos,Capítulo,Derechos,346551599,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",232458175,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Derechos por prestación de servicios,79174292,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Accesorios,3952254,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Otros Derechos,30966878,Cifras Definitivas
+2019,19039,19,039,Ingresos,Capítulo,Productos,224750965,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Productos de tipo corriente,126876077,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Productos de tipo capital,124298,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Otros productos,97750590,Cifras Definitivas
+2019,19039,19,039,Ingresos,Capítulo,Aprovechamientos,313024909,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Aprovechamientos de tipo corriente,312452582,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,572327,Cifras Definitivas
+2019,19039,19,039,Ingresos,Capítulo,Participaciones federales,2512562988,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Fondos participables,2145346904,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Impuestos participables,162402055,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Otras participaciones,5998817,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Participaciones estatales,198815212,Cifras Definitivas
+2019,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,1387098558,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,890600268,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,496498290,Cifras Definitivas
+2019,19039,19,039,Ingresos,Capítulo,Otros ingresos,3420,Cifras Definitivas
+2019,19039,19,039,Ingresos,Concepto,Otros ingresos extraordinarios,3420,Cifras Definitivas
+2019,19048,19,048,Egresos,Tema,Total de egresos,1337178572,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,Servicios personales,443711576,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Remuneraciones al personal,285161639,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Remuneraciones adicionales y especiales,77165277,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Seguridad social,686106,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Otras prestaciones sociales y económicas,78964404,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Pago de estímulos a servidores públicos,1734150,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,Materiales y suministros,66188069,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",26231500,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Alimentos y utensilios,1260940,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",426469,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Materiales y artículos de construcción y de reparación,20083229,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",507558,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Combustibles, lubricantes y aditivos",10655232,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",5142611,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Materiales y suministros para seguridad,472303,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Materiales y suministros diversos,1408227,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,Servicios generales,395568215,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Servicios básicos,65906825,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Servicios de arrendamiento,31516271,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",61509995,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",5800373,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",138155930,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Servicios de comunicación social y publicidad,30766933,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Servicios de traslado y viáticos,447916,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Servicios oficiales,21165496,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Otros servicios generales,40298476,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",6548341,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Ayudas sociales,6548341,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",23164223,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Mobiliario y equipo de administración,4571838,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Vehículos y equipo de transporte,6807041,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,3841074,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",4842300,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Activos intangibles,3101970,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,Inversión pública,202901981,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,107173776,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Obra pública en bienes propios,95728205,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,Deuda pública,46395502,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Amortización de la deuda pública,11345252,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Intereses de la deuda pública,18375054,Cifras Definitivas
+2019,19048,19,048,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),16675196,Cifras Definitivas
+2019,19048,19,048,Egresos,Capítulo,Disponibilidad final,152700665,Cifras Definitivas
+2019,19048,19,048,Ingresos,Tema,Total de ingresos,1337178572,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Impuestos,303394172,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Impuestos sobre el Patrimonio,299747862,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",7959,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Accesorios,3638351,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Contribuciones de Mejoras,3044,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Contribución de mejoras por obras públicas,3044,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Derechos,64138848,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",53988338,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Derechos por prestación de servicios,8445998,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Accesorios,112914,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Otros Derechos,1591598,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Productos,8147762,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Productos de tipo corriente,8146412,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Otros productos,1350,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Aprovechamientos,37186708,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Aprovechamientos de tipo corriente,27272671,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,9914037,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Participaciones federales,451308351,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Fondos participables,395653084,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Impuestos participables,26832019,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Otras participaciones,863360,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Participaciones estatales,27959888,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,470048574,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,237801492,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,232247082,Cifras Definitivas
+2019,19048,19,048,Ingresos,Capítulo,Otros ingresos,2951113,Cifras Definitivas
+2019,19048,19,048,Ingresos,Concepto,Otros ingresos extraordinarios,2951113,Cifras Definitivas
+2020,19019,19,019,Egresos,Tema,Total de egresos,3482419185,Cifras Definitivas
+2020,19019,19,019,Egresos,Capítulo,Servicios personales,1193474471,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Remuneraciones al personal,550084911,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,187475717,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Seguridad social,236328974,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,215317658,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,4267211,Cifras Definitivas
+2020,19019,19,019,Egresos,Capítulo,Materiales y suministros,195069541,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",9648717,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Alimentos y utensilios,7000085,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",13002909,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,60874576,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",8428580,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",68636853,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",23148685,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Materiales y suministros para seguridad,4307867,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Materiales y suministros diversos,21269,Cifras Definitivas
+2020,19019,19,019,Egresos,Capítulo,Servicios generales,521581176,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Servicios básicos,79227284,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,66965740,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",70260407,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",28735243,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",220117790,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,17718183,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,538079,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Servicios oficiales,2685013,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Otros servicios generales,35333437,Cifras Definitivas
+2020,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",294336270,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,47702886,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Ayudas sociales,68809095,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Subsidios y subvenciones,24275000,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Pensiones y jubilaciones,153549289,Cifras Definitivas
+2020,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",150660953,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,28226599,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,8705245,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,32556380,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",13447390,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Bienes inmuebles,46744452,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Activos intangibles,8375334,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",12605553,Cifras Definitivas
+2020,19019,19,019,Egresos,Capítulo,Inversión pública,1117743922,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,864229761,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Obra pública en bienes propios,253514161,Cifras Definitivas
+2020,19019,19,019,Egresos,Capítulo,Deuda pública,9552852,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Amortización de la deuda pública,6091858,Cifras Definitivas
+2020,19019,19,019,Egresos,Concepto,Intereses de la deuda pública,3460994,Cifras Definitivas
+2020,19019,19,019,Ingresos,Tema,Total de ingresos,3482419185,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Impuestos,1036273439,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1025121897,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",422454,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Otros Impuestos,10729088,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Contribuciones de Mejoras,13512510,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Contribución de mejoras por obras públicas,13512510,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Derechos,64134107,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",15178447,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Otros Derechos,48955660,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Productos,122438803,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,111101674,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Productos de tipo capital,6095375,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Otros productos,5241754,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Aprovechamientos,64839702,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,47492063,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,17347639,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Participaciones federales,1357732246,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Fondos participables,1102139878,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Impuestos participables,61511241,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Otras participaciones,120858248,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Participaciones estatales,73222879,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,222739451,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,93580912,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,129158539,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Otros ingresos,7450,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Otros ingresos extraordinarios,7450,Cifras Definitivas
+2020,19019,19,019,Ingresos,Capítulo,Financiamiento,600741477,Cifras Definitivas
+2020,19019,19,019,Ingresos,Concepto,Déficit,600741477,Cifras Definitivas
+2020,19039,19,039,Egresos,Tema,Total de egresos,7399439240,Cifras Definitivas
+2020,19039,19,039,Egresos,Capítulo,Servicios personales,1883304620,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Remuneraciones al personal,1042827198,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Remuneraciones adicionales y especiales,279984887,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Seguridad social,35133505,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Otras prestaciones sociales y económicas,512139130,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Pago de estímulos a servidores públicos,13219900,Cifras Definitivas
+2020,19039,19,039,Egresos,Capítulo,Materiales y suministros,809238141,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",37293181,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Alimentos y utensilios,18879135,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",84167879,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Materiales y artículos de construcción y de reparación,211446301,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",213878003,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Combustibles, lubricantes y aditivos",180040137,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",53939853,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Materiales y suministros para seguridad,9593652,Cifras Definitivas
+2020,19039,19,039,Egresos,Capítulo,Servicios generales,1583481676,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Servicios básicos,228423632,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Servicios de arrendamiento,149130323,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",376581218,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",77508893,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",519387608,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Servicios de comunicación social y publicidad,96946586,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Servicios de traslado y viáticos,773427,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Servicios oficiales,8535281,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Otros servicios generales,126194708,Cifras Definitivas
+2020,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",1021883177,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,180514026,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Ayudas sociales,358059711,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Subsidios y subvenciones,8000000,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Pensiones y jubilaciones,475309440,Cifras Definitivas
+2020,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",401095275,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Mobiliario y equipo de administración,10120108,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Mobiliario y equipo educacional y recreativo,442035,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Vehículos y equipo de transporte,53024316,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,316898948,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",19196964,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Activos intangibles,1412904,Cifras Definitivas
+2020,19039,19,039,Egresos,Capítulo,Inversión pública,1352903678,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,1329182762,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Obra pública en bienes propios,743082,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Proyectos productivos y acciones de fomento,22977834,Cifras Definitivas
+2020,19039,19,039,Egresos,Capítulo,Deuda pública,347532673,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Amortización de la deuda pública,25744848,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Intereses de la deuda pública,201602783,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Gastos de la deuda pública,1629864,Cifras Definitivas
+2020,19039,19,039,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),118555178,Cifras Definitivas
+2020,19039,19,039,Ingresos,Tema,Total de ingresos,7399439240,Cifras Definitivas
+2020,19039,19,039,Ingresos,Capítulo,Impuestos,1837793165,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Impuestos sobre el Patrimonio,1780511986,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",24044152,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Accesorios,33237027,Cifras Definitivas
+2020,19039,19,039,Ingresos,Capítulo,Derechos,242362003,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",219649067,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Derechos por prestación de servicios,21571036,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Accesorios,1141900,Cifras Definitivas
+2020,19039,19,039,Ingresos,Capítulo,Productos,184724685,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Productos de tipo corriente,52166853,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Productos de tipo capital,10972776,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Otros productos,121585056,Cifras Definitivas
+2020,19039,19,039,Ingresos,Capítulo,Aprovechamientos,286337353,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Aprovechamientos de tipo corriente,284698874,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,1638479,Cifras Definitivas
+2020,19039,19,039,Ingresos,Capítulo,Participaciones federales,2539194511,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Fondos participables,1985212012,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Impuestos participables,133053861,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Otras participaciones,231276893,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Participaciones estatales,189651745,Cifras Definitivas
+2020,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,1468976879,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,911816737,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,557160142,Cifras Definitivas
+2020,19039,19,039,Ingresos,Capítulo,Financiamiento,840050644,Cifras Definitivas
+2020,19039,19,039,Ingresos,Concepto,Déficit,840050644,Cifras Definitivas
+2020,19048,19,048,Egresos,Tema,Total de egresos,1249984939,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,Servicios personales,449121432,Cifras Definitivas
+2020,19048,19,048,Egresos,Concepto,Remuneraciones al personal,449121432,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,Materiales y suministros,108752871,Cifras Definitivas
+2020,19048,19,048,Egresos,Concepto,Materiales y suministros diversos,108752871,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,Servicios generales,394770491,Cifras Definitivas
+2020,19048,19,048,Egresos,Concepto,Otros servicios generales,394770491,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",20456332,Cifras Definitivas
+2020,19048,19,048,Egresos,Concepto,Transferencias internas y asignaciones al sector público,20456332,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",40005688,Cifras Definitivas
+2020,19048,19,048,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",40005688,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,Inversión pública,170381284,Cifras Definitivas
+2020,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,170381284,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,Deuda pública,52848007,Cifras Definitivas
+2020,19048,19,048,Egresos,Concepto,Amortización de la deuda pública,52848007,Cifras Definitivas
+2020,19048,19,048,Egresos,Capítulo,Disponibilidad final,13648834,Cifras Definitivas
+2020,19048,19,048,Ingresos,Tema,Total de ingresos,1249984939,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Impuestos,238885536,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Otros Impuestos,238885536,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Contribuciones de Mejoras,2919,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Contribución de mejoras por obras públicas,2919,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Derechos,55961932,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Otros Derechos,55961932,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Productos,4987806,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Otros productos,4987806,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Aprovechamientos,22162279,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,22162279,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Participaciones federales,354701567,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Fondos participables,274281024,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Impuestos participables,21939161,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Otras participaciones,33156861,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Participaciones estatales,25324521,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,568496478,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,243615171,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,324881307,Cifras Definitivas
+2020,19048,19,048,Ingresos,Capítulo,Otros ingresos,4786422,Cifras Definitivas
+2020,19048,19,048,Ingresos,Concepto,Otros ingresos extraordinarios,4786422,Cifras Definitivas
+2021,19019,19,019,Egresos,Tema,Total de egresos,3142218487,Cifras Definitivas
+2021,19019,19,019,Egresos,Capítulo,Servicios personales,1324438667,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Remuneraciones al personal,583470520,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,198800070,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Seguridad social,301935785,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,237136429,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,3095863,Cifras Definitivas
+2021,19019,19,019,Egresos,Capítulo,Materiales y suministros,204176455,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",9117488,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Alimentos y utensilios,14831535,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,63490628,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",20596493,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",80220933,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",15919378,Cifras Definitivas
+2021,19019,19,019,Egresos,Capítulo,Servicios generales,608391794,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Servicios básicos,89126085,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,104447032,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",80510835,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",29717483,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",228681975,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,13625736,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,672275,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Servicios oficiales,4692178,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Otros servicios generales,56918195,Cifras Definitivas
+2021,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",322713111,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,50262720,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Ayudas sociales,108001154,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Pensiones y jubilaciones,164449237,Cifras Definitivas
+2021,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",76108141,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,17628331,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,1478466,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,1805250,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",16640437,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Bienes inmuebles,30532311,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Activos intangibles,665570,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",7357776,Cifras Definitivas
+2021,19019,19,019,Egresos,Capítulo,Inversión pública,596837467,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,463700317,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Obra pública en bienes propios,133137150,Cifras Definitivas
+2021,19019,19,019,Egresos,Capítulo,Deuda pública,9552852,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Amortización de la deuda pública,6525747,Cifras Definitivas
+2021,19019,19,019,Egresos,Concepto,Intereses de la deuda pública,3027105,Cifras Definitivas
+2021,19019,19,019,Ingresos,Tema,Total de ingresos,3142218487,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Impuestos,1196236952,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1180816560,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",184421,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Otros Impuestos,15235971,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Contribuciones de Mejoras,44044826,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Contribución de mejoras por obras públicas,44044826,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Derechos,66305471,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",14999484,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Otros Derechos,51305987,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Productos,79231542,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,73230820,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Productos de tipo capital,245302,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Otros productos,5755420,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Aprovechamientos,76061220,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,56031514,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,20029706,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Participaciones federales,1403939116,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Fondos participables,1234888710,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Impuestos participables,69381097,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Otras participaciones,17344266,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Participaciones estatales,82325043,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,224053471,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,88324662,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,135728809,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Otros ingresos,2685417,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Otros ingresos extraordinarios,2685417,Cifras Definitivas
+2021,19019,19,019,Ingresos,Capítulo,Financiamiento,49660472,Cifras Definitivas
+2021,19019,19,019,Ingresos,Concepto,Déficit,49660472,Cifras Definitivas
+2021,19039,19,039,Egresos,Tema,Total de egresos,7008731464,Cifras Definitivas
+2021,19039,19,039,Egresos,Capítulo,Servicios personales,1861049081,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Remuneraciones al personal,1030668432,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Remuneraciones adicionales y especiales,293275337,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Seguridad social,34989584,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Otras prestaciones sociales y económicas,488405378,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Pago de estímulos a servidores públicos,13710350,Cifras Definitivas
+2021,19039,19,039,Egresos,Capítulo,Materiales y suministros,817530701,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",23333439,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Alimentos y utensilios,41709275,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",59730773,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Materiales y artículos de construcción y de reparación,217161230,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",229178432,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Combustibles, lubricantes y aditivos",237413182,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",5696214,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Materiales y suministros para seguridad,3308156,Cifras Definitivas
+2021,19039,19,039,Egresos,Capítulo,Servicios generales,1789463582,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Servicios básicos,364749241,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Servicios de arrendamiento,190425605,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",404770074,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",58853035,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",499665517,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Servicios de comunicación social y publicidad,103666538,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Servicios de traslado y viáticos,306681,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Servicios oficiales,6509654,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Otros servicios generales,160517237,Cifras Definitivas
+2021,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",890006519,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,211243675,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Ayudas sociales,191278788,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Subsidios y subvenciones,3660582,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Pensiones y jubilaciones,483823474,Cifras Definitivas
+2021,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",186845703,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Mobiliario y equipo de administración,5984378,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Mobiliario y equipo educacional y recreativo,295185,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Vehículos y equipo de transporte,159422339,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,11223202,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",7798613,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Activos intangibles,2121986,Cifras Definitivas
+2021,19039,19,039,Egresos,Capítulo,Inversión pública,1109960051,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,1085415657,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Obra pública en bienes propios,758723,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Proyectos productivos y acciones de fomento,23785671,Cifras Definitivas
+2021,19039,19,039,Egresos,Capítulo,Deuda pública,353875827,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Amortización de la deuda pública,30061018,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Intereses de la deuda pública,198698515,Cifras Definitivas
+2021,19039,19,039,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),125116294,Cifras Definitivas
+2021,19039,19,039,Ingresos,Tema,Total de ingresos,7008731464,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Impuestos,2235768000,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Impuestos sobre el Patrimonio,1819803259,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",19286313,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Accesorios,396678428,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Derechos,251856790,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",194780747,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Derechos por prestación de servicios,54195114,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Accesorios,2880929,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Productos,326587335,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Productos de tipo corriente,41710511,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Productos de tipo capital,48214,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Otros productos,284828610,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Aprovechamientos,269067675,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Aprovechamientos de tipo corriente,257307898,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,11759777,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Participaciones federales,2576656082,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Fondos participables,2182700412,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Impuestos participables,147508877,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Otras participaciones,32640714,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Participaciones estatales,213806079,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,1205274738,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,833964153,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,371310585,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Otros ingresos,3461096,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Otros ingresos extraordinarios,3461096,Cifras Definitivas
+2021,19039,19,039,Ingresos,Capítulo,Financiamiento,140059748,Cifras Definitivas
+2021,19039,19,039,Ingresos,Concepto,Déficit,140059748,Cifras Definitivas
+2021,19048,19,048,Egresos,Tema,Total de egresos,1352030260,Cifras Definitivas
+2021,19048,19,048,Egresos,Capítulo,Servicios personales,466874434,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Remuneraciones al personal,317632704,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Remuneraciones adicionales y especiales,84105943,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Seguridad social,752617,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Otras prestaciones sociales y económicas,62521110,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Pago de estímulos a servidores públicos,1862060,Cifras Definitivas
+2021,19048,19,048,Egresos,Capítulo,Materiales y suministros,124438739,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",44806632,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Alimentos y utensilios,424652,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",8342682,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Materiales y artículos de construcción y de reparación,22335852,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",463788,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Combustibles, lubricantes y aditivos",13793511,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",10004185,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Materiales y suministros para seguridad,690931,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Materiales y suministros diversos,23576506,Cifras Definitivas
+2021,19048,19,048,Egresos,Capítulo,Servicios generales,411493634,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Servicios básicos,85124972,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Servicios de arrendamiento,41400193,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",49010831,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",5045569,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",140831955,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Servicios de comunicación social y publicidad,32851059,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Servicios de traslado y viáticos,750415,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Servicios oficiales,5128174,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Otros servicios generales,51350466,Cifras Definitivas
+2021,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",25214140,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Ayudas sociales,25214140,Cifras Definitivas
+2021,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",34706887,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Mobiliario y equipo de administración,2085313,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Vehículos y equipo de transporte,3429600,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,26254421,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",986725,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Activos intangibles,1950828,Cifras Definitivas
+2021,19048,19,048,Egresos,Capítulo,Inversión pública,233821887,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,92464217,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Obra pública en bienes propios,141357670,Cifras Definitivas
+2021,19048,19,048,Egresos,Capítulo,Deuda pública,55480539,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Amortización de la deuda pública,11345253,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Intereses de la deuda pública,10105452,Cifras Definitivas
+2021,19048,19,048,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),34029834,Cifras Definitivas
+2021,19048,19,048,Ingresos,Tema,Total de ingresos,1352030260,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Impuestos,295753614,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Impuestos sobre el Patrimonio,292280617,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",9538,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Accesorios,3463459,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Contribuciones de Mejoras,2785,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Contribución de mejoras por obras públicas,2785,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Derechos,93134226,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",76204668,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Derechos por prestación de servicios,8402163,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Accesorios,117918,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Otros Derechos,8409477,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Productos,4974835,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Productos de tipo corriente,4974835,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Aprovechamientos,23942013,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Aprovechamientos de tipo corriente,22116014,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,1825999,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Participaciones federales,384928047,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Fondos participables,327527291,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Impuestos participables,23981922,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Otras participaciones,4673669,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Participaciones estatales,28745165,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,539872610,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,222986791,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,316885819,Cifras Definitivas
+2021,19048,19,048,Ingresos,Capítulo,Financiamiento,9422130,Cifras Definitivas
+2021,19048,19,048,Ingresos,Concepto,Déficit,9422130,Cifras Definitivas
+2022,19019,19,019,Egresos,Tema,Total de egresos,3835873877,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,Servicios personales,1317121684,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Remuneraciones al personal,634834142,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,213719875,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Seguridad social,213430899,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,251277811,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,3858957,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,Materiales y suministros,256913552,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",9357447,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Alimentos y utensilios,14103474,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",23483742,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,52403979,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",58790502,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",73839898,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",24477093,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Materiales y suministros para seguridad,457417,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,Servicios generales,693903701,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Servicios básicos,102271797,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,131622313,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",89816256,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",34950244,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",255408161,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,16329695,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,1015730,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Servicios oficiales,7153371,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Otros servicios generales,55336134,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",345268979,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,98414689,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Ayudas sociales,57730141,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Pensiones y jubilaciones,189124149,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",76907803,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,21935167,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,789589,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,3772909,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",18767948,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Bienes inmuebles,13413216,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Activos intangibles,18228974,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,Inversión pública,484055263,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,446123026,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Obra pública en bienes propios,37932237,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,Deuda pública,9552852,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Amortización de la deuda pública,6987260,Cifras Definitivas
+2022,19019,19,019,Egresos,Concepto,Intereses de la deuda pública,2565592,Cifras Definitivas
+2022,19019,19,019,Egresos,Capítulo,Disponibilidad final,652150043,Cifras Definitivas
+2022,19019,19,019,Ingresos,Tema,Total de ingresos,3835873877,Cifras Definitivas
+2022,19019,19,019,Ingresos,Capítulo,Impuestos,1436885362,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1415483642,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",1432860,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Otros Impuestos,19968860,Cifras Definitivas
+2022,19019,19,019,Ingresos,Capítulo,Contribuciones de Mejoras,125690419,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Contribución de mejoras por obras públicas,125690419,Cifras Definitivas
+2022,19019,19,019,Ingresos,Capítulo,Derechos,98444741,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",28075148,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Otros Derechos,70369593,Cifras Definitivas
+2022,19019,19,019,Ingresos,Capítulo,Productos,190341753,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,172939111,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Productos de tipo capital,5511687,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Otros productos,11890955,Cifras Definitivas
+2022,19019,19,019,Ingresos,Capítulo,Aprovechamientos,108122722,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,92452987,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,15669735,Cifras Definitivas
+2022,19019,19,019,Ingresos,Capítulo,Participaciones federales,1609932653,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Fondos participables,1396656495,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Impuestos participables,87093059,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Otras participaciones,24176590,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Participaciones estatales,102006509,Cifras Definitivas
+2022,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,266456227,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,107864564,Cifras Definitivas
+2022,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,158591663,Cifras Definitivas
+2022,19039,19,039,Egresos,Tema,Total de egresos,8153791529,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,Servicios personales,2029035921,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Remuneraciones al personal,1146958123,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Remuneraciones adicionales y especiales,302992482,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Seguridad social,37543465,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Otras prestaciones sociales y económicas,525949276,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Pago de estímulos a servidores públicos,15592575,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,Materiales y suministros,796722083,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",31318266,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Alimentos y utensilios,44532528,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",61284078,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Materiales y artículos de construcción y de reparación,183014208,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",254466703,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Combustibles, lubricantes y aditivos",177672813,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",42875914,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Materiales y suministros para seguridad,1557573,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,Servicios generales,2079733588,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Servicios básicos,395886321,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Servicios de arrendamiento,171666785,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",501656564,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",100333962,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",580866364,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Servicios de comunicación social y publicidad,112038512,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Servicios de traslado y viáticos,1136270,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Servicios oficiales,105466919,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Otros servicios generales,110681891,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",746252054,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,177151191,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Ayudas sociales,80301179,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Subsidios y subvenciones,3000000,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Pensiones y jubilaciones,485799684,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",269614077,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Mobiliario y equipo de administración,35935855,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Vehículos y equipo de transporte,164799907,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,3419158,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",45207968,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Activos intangibles,4684720,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",15566469,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,Inversión pública,1379182352,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,1345159882,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Obra pública en bienes propios,8622923,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Proyectos productivos y acciones de fomento,25399547,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,Deuda pública,569194683,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Amortización de la deuda pública,304648344,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Intereses de la deuda pública,195724190,Cifras Definitivas
+2022,19039,19,039,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),68822149,Cifras Definitivas
+2022,19039,19,039,Egresos,Capítulo,Disponibilidad final,284056771,Cifras Definitivas
+2022,19039,19,039,Ingresos,Tema,Total de ingresos,8153791529,Cifras Definitivas
+2022,19039,19,039,Ingresos,Capítulo,Impuestos,2491065112,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Impuestos sobre el Patrimonio,1192257997,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Accesorios,289685765,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Otros Impuestos,1009121350,Cifras Definitivas
+2022,19039,19,039,Ingresos,Capítulo,Derechos,322226436,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Otros Derechos,322226436,Cifras Definitivas
+2022,19039,19,039,Ingresos,Capítulo,Productos,282450960,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Otros productos,282450960,Cifras Definitivas
+2022,19039,19,039,Ingresos,Capítulo,Aprovechamientos,416944854,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,416944854,Cifras Definitivas
+2022,19039,19,039,Ingresos,Capítulo,Participaciones federales,3020762718,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Fondos participables,2517769334,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Impuestos participables,192555410,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Otras participaciones,43743409,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Participaciones estatales,266694565,Cifras Definitivas
+2022,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,1620341449,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,1036712124,Cifras Definitivas
+2022,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,583629325,Cifras Definitivas
+2022,19048,19,048,Egresos,Tema,Total de egresos,1724136970,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,Servicios personales,557584933,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Remuneraciones al personal,362840875,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Remuneraciones adicionales y especiales,104527938,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Seguridad social,702014,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Otras prestaciones sociales y económicas,89514106,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,Materiales y suministros,169990357,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",44806582,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Alimentos y utensilios,622349,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",31708299,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Materiales y artículos de construcción y de reparación,35108002,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",1543117,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Combustibles, lubricantes y aditivos",42469708,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",11300337,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Materiales y suministros para seguridad,2431963,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,Servicios generales,613434442,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Servicios básicos,82258166,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Servicios de arrendamiento,59518986,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",71838520,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",4823646,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",241335360,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Servicios de comunicación social y publicidad,42124749,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Servicios de traslado y viáticos,291331,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Servicios oficiales,70084193,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Otros servicios generales,41159491,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",15712166,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Ayudas sociales,15712166,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",60931886,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Mobiliario y equipo de administración,6204878,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Vehículos y equipo de transporte,4569300,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,40330971,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",2722994,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Activos intangibles,7103743,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,Inversión pública,163637366,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,58444216,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Obra pública en bienes propios,105193150,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,Deuda pública,65269947,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Amortización de la deuda pública,11345252,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Intereses de la deuda pública,13421301,Cifras Definitivas
+2022,19048,19,048,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),40503394,Cifras Definitivas
+2022,19048,19,048,Egresos,Capítulo,Disponibilidad final,77575873,Cifras Definitivas
+2022,19048,19,048,Ingresos,Tema,Total de ingresos,1724136970,Cifras Definitivas
+2022,19048,19,048,Ingresos,Capítulo,Impuestos,419993845,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Impuestos sobre el Patrimonio,419979304,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",14300,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Otros Impuestos,241,Cifras Definitivas
+2022,19048,19,048,Ingresos,Capítulo,Contribuciones de Mejoras,4234363,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Contribución de mejoras por obras públicas,4234363,Cifras Definitivas
+2022,19048,19,048,Ingresos,Capítulo,Derechos,67463525,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",36092531,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Derechos por prestación de servicios,27158941,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Otros Derechos,4212053,Cifras Definitivas
+2022,19048,19,048,Ingresos,Capítulo,Productos,3405381,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Productos de tipo corriente,3304908,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Otros productos,100473,Cifras Definitivas
+2022,19048,19,048,Ingresos,Capítulo,Aprovechamientos,34405220,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Aprovechamientos de tipo corriente,22271289,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,12133931,Cifras Definitivas
+2022,19048,19,048,Ingresos,Capítulo,Participaciones federales,535192895,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Fondos participables,461531078,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Impuestos participables,30530443,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Otras participaciones,8491587,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Participaciones estatales,34639787,Cifras Definitivas
+2022,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,659441741,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,268124006,Cifras Definitivas
+2022,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,391317735,Cifras Definitivas
+2023,19019,19,019,Egresos,Tema,Total de egresos,4439805892,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,Servicios personales,1524889439,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Remuneraciones al personal,737204281,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,250791386,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Seguridad social,246754870,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,285370612,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,4768290,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,Materiales y suministros,314967245,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",9777680,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Alimentos y utensilios,19533337,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",25727546,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,84594669,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",70315300,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",75791733,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",27109244,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Materiales y suministros para seguridad,2117736,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,Servicios generales,842380348,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Servicios básicos,111453778,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,175619732,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",129880893,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",33468811,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",307664148,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,16406767,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,1692048,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Servicios oficiales,12891851,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Otros servicios generales,53302320,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",433567198,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,157658963,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Ayudas sociales,48990627,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Subsidios y subvenciones,18360000,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Pensiones y jubilaciones,208557608,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",121408639,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,28278502,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,16058609,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,6090973,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",34754357,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Bienes inmuebles,9100000,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Activos intangibles,27126198,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,Inversión pública,741537673,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,668604821,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Obra pública en bienes propios,72932852,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,Deuda pública,9552852,Cifras Definitivas
+2023,19019,19,019,Egresos,Concepto,Amortización de la deuda pública,9552852,Cifras Definitivas
+2023,19019,19,019,Egresos,Capítulo,Disponibilidad final,451502498,Cifras Definitivas
+2023,19019,19,019,Ingresos,Tema,Total de ingresos,4439805892,Cifras Definitivas
+2023,19019,19,019,Ingresos,Capítulo,Impuestos,1487919534,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1467406793,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",2656230,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Otros Impuestos,17856511,Cifras Definitivas
+2023,19019,19,019,Ingresos,Capítulo,Contribuciones de Mejoras,26517674,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Contribución de mejoras por obras públicas,26517674,Cifras Definitivas
+2023,19019,19,019,Ingresos,Capítulo,Derechos,116449870,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",59210243,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Otros Derechos,57239627,Cifras Definitivas
+2023,19019,19,019,Ingresos,Capítulo,Productos,324700207,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,311400022,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Productos de tipo capital,1499408,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Otros productos,11800777,Cifras Definitivas
+2023,19019,19,019,Ingresos,Capítulo,Aprovechamientos,126966883,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,80925005,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,46041878,Cifras Definitivas
+2023,19019,19,019,Ingresos,Capítulo,Participaciones federales,1948912712,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Fondos participables,1574188529,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Impuestos participables,110217999,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Otras participaciones,149869780,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Participaciones estatales,114636404,Cifras Definitivas
+2023,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,408339012,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,127729046,Cifras Definitivas
+2023,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,280609966,Cifras Definitivas
+2023,19039,19,039,Egresos,Tema,Total de egresos,9488524236,Cifras Definitivas
+2023,19039,19,039,Egresos,Capítulo,Servicios personales,2271682091,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Remuneraciones al personal,1309875055,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Remuneraciones adicionales y especiales,361500301,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Seguridad social,51148336,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Otras prestaciones sociales y económicas,533237614,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Pago de estímulos a servidores públicos,15920785,Cifras Definitivas
+2023,19039,19,039,Egresos,Capítulo,Materiales y suministros,993888614,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",39620019,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Alimentos y utensilios,46355953,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",117245056,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Materiales y artículos de construcción y de reparación,268305105,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",278595978,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Combustibles, lubricantes y aditivos",204258408,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",35834980,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Materiales y suministros para seguridad,3673115,Cifras Definitivas
+2023,19039,19,039,Egresos,Capítulo,Servicios generales,2785228385,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Servicios básicos,549113695,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Servicios de arrendamiento,244933537,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",755049717,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",93327387,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",811829372,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Servicios de comunicación social y publicidad,124294939,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Servicios de traslado y viáticos,1595172,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Servicios oficiales,104113960,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Otros servicios generales,100970606,Cifras Definitivas
+2023,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",818308584,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,170815251,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Ayudas sociales,130304929,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Subsidios y subvenciones,13000000,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Pensiones y jubilaciones,504188404,Cifras Definitivas
+2023,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",373552121,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Mobiliario y equipo de administración,103242918,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Vehículos y equipo de transporte,117500075,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,18000345,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",29565731,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Activos intangibles,28823252,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",76419800,Cifras Definitivas
+2023,19039,19,039,Egresos,Capítulo,Inversión pública,1886608035,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,1857797151,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Obra pública en bienes propios,1418930,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Proyectos productivos y acciones de fomento,27391954,Cifras Definitivas
+2023,19039,19,039,Egresos,Capítulo,Deuda pública,359256406,Cifras Definitivas
+2023,19039,19,039,Egresos,Concepto,Intereses de la deuda pública,359256406,Cifras Definitivas
+2023,19039,19,039,Ingresos,Tema,Total de ingresos,9488524236,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Impuestos,2476978899,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Impuestos sobre el Patrimonio,2388746083,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",54023731,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Accesorios,34209085,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Derechos,313146103,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",185292364,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Derechos por prestación de servicios,71083915,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Accesorios,4235070,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Otros Derechos,52534754,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Productos,400491135,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Productos de tipo corriente,254823838,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Productos de tipo capital,13504,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Otros productos,145653793,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Aprovechamientos,526035190,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Aprovechamientos de tipo corriente,518281052,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,7754138,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Participaciones federales,3631459526,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Fondos participables,2821138617,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Impuestos participables,238851649,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Otras participaciones,268394614,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Participaciones estatales,303074646,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,2128736056,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,1235193066,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,893542990,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Otros ingresos,87184,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Otros ingresos extraordinarios,87184,Cifras Definitivas
+2023,19039,19,039,Ingresos,Capítulo,Financiamiento,11590143,Cifras Definitivas
+2023,19039,19,039,Ingresos,Concepto,Déficit,11590143,Cifras Definitivas
+2023,19048,19,048,Egresos,Tema,Total de egresos,2657030611,Cifras Definitivas
+2023,19048,19,048,Egresos,Capítulo,Servicios personales,751054142,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Remuneraciones al personal,511700308,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Remuneraciones adicionales y especiales,145463839,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Seguridad social,923873,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Otras prestaciones sociales y económicas,91603677,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Pago de estímulos a servidores públicos,1362445,Cifras Definitivas
+2023,19048,19,048,Egresos,Capítulo,Materiales y suministros,256907060,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",50990154,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Alimentos y utensilios,4552846,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",75147171,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Materiales y artículos de construcción y de reparación,51560537,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",4497430,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Combustibles, lubricantes y aditivos",38499927,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",22222738,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Materiales y suministros para seguridad,9436257,Cifras Definitivas
+2023,19048,19,048,Egresos,Capítulo,Servicios generales,1045569649,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Servicios básicos,100700895,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Servicios de arrendamiento,108179767,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",272228525,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",6110211,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",254907556,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Servicios de comunicación social y publicidad,98906573,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Servicios de traslado y viáticos,852593,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Servicios oficiales,158821392,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Otros servicios generales,44862137,Cifras Definitivas
+2023,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",32806061,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Transferencias internas y asignaciones al sector público,3138161,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Ayudas sociales,29667900,Cifras Definitivas
+2023,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",163613942,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Mobiliario y equipo de administración,30284118,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Vehículos y equipo de transporte,274990,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,48410234,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",5824930,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Activos intangibles,76743521,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",2076149,Cifras Definitivas
+2023,19048,19,048,Egresos,Capítulo,Inversión pública,376863298,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,84188446,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Obra pública en bienes propios,292674852,Cifras Definitivas
+2023,19048,19,048,Egresos,Capítulo,Deuda pública,30216459,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Amortización de la deuda pública,28714749,Cifras Definitivas
+2023,19048,19,048,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),1501710,Cifras Definitivas
+2023,19048,19,048,Ingresos,Tema,Total de ingresos,2657030611,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Impuestos,599011193,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Impuestos sobre el Patrimonio,584774420,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",100327,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Accesorios,12884628,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Otros Impuestos,1251818,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Contribuciones de Mejoras,35437,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Contribución de mejoras por obras públicas,35437,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Derechos,144070531,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",108377810,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Derechos por prestación de servicios,1889190,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Accesorios,333592,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Otros Derechos,33469939,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Productos,16541918,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Productos de tipo corriente,14381656,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Productos de tipo capital,2160262,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Aprovechamientos,51608639,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Aprovechamientos de tipo corriente,46550812,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,5057827,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Participaciones federales,634024432,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Fondos participables,502311871,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Impuestos participables,42139017,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Otras participaciones,46534288,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Participaciones estatales,43039256,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,1083336398,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,316961318,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,766375080,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Otros ingresos,3740501,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Otros ingresos extraordinarios,3740501,Cifras Definitivas
+2023,19048,19,048,Ingresos,Capítulo,Financiamiento,124661562,Cifras Definitivas
+2023,19048,19,048,Ingresos,Concepto,Déficit,124661562,Cifras Definitivas
+2024,19019,19,019,Egresos,Tema,Total de egresos,4919771592,Cifras Definitivas
+2024,19019,19,019,Egresos,Capítulo,Servicios personales,1633410134,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Remuneraciones al personal,826291649,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,280273077,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Seguridad social,125063508,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,396994150,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,4787750,Cifras Definitivas
+2024,19019,19,019,Egresos,Capítulo,Materiales y suministros,374225150,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",11116228,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Alimentos y utensilios,23265680,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",40474964,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,90113803,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",102507154,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",71279420,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",33037213,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Materiales y suministros para seguridad,2430688,Cifras Definitivas
+2024,19019,19,019,Egresos,Capítulo,Servicios generales,1254548084,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Servicios básicos,107737324,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,215461118,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",377893046,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",33207571,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",367079772,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,20676789,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,1258009,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Servicios oficiales,12736976,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Otros servicios generales,118497479,Cifras Definitivas
+2024,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",538478451,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,251648286,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Ayudas sociales,53421553,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Pensiones y jubilaciones,233408612,Cifras Definitivas
+2024,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",538668624,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,47367547,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,164182186,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,7706206,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",69491447,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Bienes inmuebles,222653129,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Activos intangibles,27268109,Cifras Definitivas
+2024,19019,19,019,Egresos,Capítulo,Inversión pública,570888297,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,402066792,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Obra pública en bienes propios,168821505,Cifras Definitivas
+2024,19019,19,019,Egresos,Capítulo,Deuda pública,9552852,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Amortización de la deuda pública,8021799,Cifras Definitivas
+2024,19019,19,019,Egresos,Concepto,Intereses de la deuda pública,1531053,Cifras Definitivas
+2024,19019,19,019,Ingresos,Tema,Total de ingresos,4919771592,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Impuestos,1639132073,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1608466825,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",3923020,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Otros Impuestos,26742228,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Contribuciones de Mejoras,33466540,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Contribución de mejoras por obras públicas,33466540,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Derechos,165696754,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",106171621,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Derechos por prestación de servicios,29094841,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Otros Derechos,30430292,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Productos,392527884,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,350955503,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Productos de tipo capital,26014044,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Otros productos,15558337,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Aprovechamientos,151826719,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,92903176,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,58923543,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Participaciones federales,2004583376,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Fondos participables,1721990097,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Impuestos participables,117082905,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Otras participaciones,34186246,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Participaciones estatales,131324128,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,252938922,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,132869098,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,120069824,Cifras Definitivas
+2024,19019,19,019,Ingresos,Capítulo,Financiamiento,279599324,Cifras Definitivas
+2024,19019,19,019,Ingresos,Concepto,Déficit,279599324,Cifras Definitivas
+2024,19039,19,039,Egresos,Tema,Total de egresos,10286997010,Cifras Definitivas
+2024,19039,19,039,Egresos,Capítulo,Servicios personales,2346780198,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Remuneraciones al personal,1379852840,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Remuneraciones adicionales y especiales,357827686,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Seguridad social,59662752,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Otras prestaciones sociales y económicas,534340949,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Pago de estímulos a servidores públicos,15095971,Cifras Definitivas
+2024,19039,19,039,Egresos,Capítulo,Materiales y suministros,1448193127,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",31598275,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Alimentos y utensilios,50512298,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",273632572,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Materiales y artículos de construcción y de reparación,457381638,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",276067850,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Combustibles, lubricantes y aditivos",265567184,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",81806165,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Materiales y suministros para seguridad,11627145,Cifras Definitivas
+2024,19039,19,039,Egresos,Capítulo,Servicios generales,2935760025,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Servicios básicos,493272559,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Servicios de arrendamiento,507031530,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",557308271,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",93413380,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",805131727,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Servicios de comunicación social y publicidad,140419640,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Servicios de traslado y viáticos,936824,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Servicios oficiales,45370508,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Otros servicios generales,292875586,Cifras Definitivas
+2024,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",893392987,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,258047789,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Ayudas sociales,95220134,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Subsidios y subvenciones,4000000,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Pensiones y jubilaciones,536125064,Cifras Definitivas
+2024,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",232010609,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Mobiliario y equipo de administración,39693755,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Mobiliario y equipo educacional y recreativo,10429265,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Vehículos y equipo de transporte,26624493,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,23618427,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",110356513,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Activos intangibles,21288156,Cifras Definitivas
+2024,19039,19,039,Egresos,Capítulo,Inversión pública,1936390756,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,1903892755,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Obra pública en bienes propios,3704831,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Proyectos productivos y acciones de fomento,28793170,Cifras Definitivas
+2024,19039,19,039,Egresos,Capítulo,Deuda pública,494469308,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Amortización de la deuda pública,40431371,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Intereses de la deuda pública,184820062,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Gastos de la deuda pública,2049752,Cifras Definitivas
+2024,19039,19,039,Egresos,Concepto,Adeudos de ejercicios fiscales anteriores (ADEFAS),267168123,Cifras Definitivas
+2024,19039,19,039,Ingresos,Tema,Total de ingresos,10286997010,Cifras Definitivas
+2024,19039,19,039,Ingresos,Capítulo,Impuestos,2575289502,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Impuestos sobre el Patrimonio,2458508246,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",58302098,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Accesorios,58479158,Cifras Definitivas
+2024,19039,19,039,Ingresos,Capítulo,Derechos,336791756,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",231379619,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Derechos por prestación de servicios,70025257,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Accesorios,3531530,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Otros Derechos,31855350,Cifras Definitivas
+2024,19039,19,039,Ingresos,Capítulo,Productos,336235163,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Productos de tipo corriente,195478764,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Productos de tipo capital,134694486,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Otros productos,6061913,Cifras Definitivas
+2024,19039,19,039,Ingresos,Capítulo,Aprovechamientos,432607732,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Aprovechamientos de tipo corriente,427069772,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,5537960,Cifras Definitivas
+2024,19039,19,039,Ingresos,Capítulo,Participaciones federales,3714249014,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Fondos participables,3070838585,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Impuestos participables,260545049,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Otras participaciones,48954653,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Participaciones estatales,333910727,Cifras Definitivas
+2024,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,2240583299,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,1304725300,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,935857999,Cifras Definitivas
+2024,19039,19,039,Ingresos,Capítulo,Financiamiento,651240544,Cifras Definitivas
+2024,19039,19,039,Ingresos,Concepto,Déficit,651240544,Cifras Definitivas
+2024,19048,19,048,Egresos,Tema,Total de egresos,2597924026,Cifras Definitivas
+2024,19048,19,048,Egresos,Capítulo,Servicios personales,814682989,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Remuneraciones al personal,538737307,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Remuneraciones adicionales y especiales,158728251,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Seguridad social,290972,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Otras prestaciones sociales y económicas,116926459,Cifras Definitivas
+2024,19048,19,048,Egresos,Capítulo,Materiales y suministros,322095059,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",37345998,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Alimentos y utensilios,2598045,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",144186198,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Materiales y artículos de construcción y de reparación,60718586,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",4728141,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Combustibles, lubricantes y aditivos",45016082,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",20338158,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Materiales y suministros para seguridad,7163851,Cifras Definitivas
+2024,19048,19,048,Egresos,Capítulo,Servicios generales,979542409,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Servicios básicos,69943861,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Servicios de arrendamiento,87480130,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",239135310,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",4544006,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",338510300,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Servicios de comunicación social y publicidad,142796313,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Servicios de traslado y viáticos,951458,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Servicios oficiales,58213376,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Otros servicios generales,37967655,Cifras Definitivas
+2024,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",101059329,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Ayudas sociales,101059329,Cifras Definitivas
+2024,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",86555784,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Mobiliario y equipo de administración,26690804,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Mobiliario y equipo educacional y recreativo,85979,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Vehículos y equipo de transporte,9048468,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",7136246,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Activos intangibles,43594287,Cifras Definitivas
+2024,19048,19,048,Egresos,Capítulo,Inversión pública,266274064,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,212872244,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Obra pública en bienes propios,53401820,Cifras Definitivas
+2024,19048,19,048,Egresos,Capítulo,Deuda pública,27714392,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Amortización de la deuda pública,11345253,Cifras Definitivas
+2024,19048,19,048,Egresos,Concepto,Intereses de la deuda pública,16369139,Cifras Definitivas
+2024,19048,19,048,Ingresos,Tema,Total de ingresos,2597924026,Cifras Definitivas
+2024,19048,19,048,Ingresos,Capítulo,Impuestos,425954061,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Impuestos sobre el Patrimonio,425953538,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",523,Cifras Definitivas
+2024,19048,19,048,Ingresos,Capítulo,Derechos,141262225,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",133753019,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Derechos por prestación de servicios,7509206,Cifras Definitivas
+2024,19048,19,048,Ingresos,Capítulo,Productos,5275988,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Productos de tipo corriente,5275988,Cifras Definitivas
+2024,19048,19,048,Ingresos,Capítulo,Aprovechamientos,54857682,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Aprovechamientos de tipo corriente,36871481,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,17986201,Cifras Definitivas
+2024,19048,19,048,Ingresos,Capítulo,Participaciones federales,662674430,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Fondos participables,547355114,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Impuestos participables,45856571,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Otras participaciones,21117961,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Participaciones estatales,48344784,Cifras Definitivas
+2024,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,1007330825,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,331503483,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,675827342,Cifras Definitivas
+2024,19048,19,048,Ingresos,Capítulo,Financiamiento,300568815,Cifras Definitivas
+2024,19048,19,048,Ingresos,Concepto,Déficit,300568815,Cifras Definitivas
+2025,19019,19,019,Egresos,Tema,Total de egresos,6147596920,Cifras Preliminares
+2025,19019,19,019,Egresos,Capítulo,Servicios personales,1697884042,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Remuneraciones al personal,902018836,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Remuneraciones adicionales y especiales,299969538,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Seguridad social,135473954,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Otras prestaciones sociales y económicas,354980674,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Pago de estímulos a servidores públicos,5441040,Cifras Preliminares
+2025,19019,19,019,Egresos,Capítulo,Materiales y suministros,419240509,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",12751908,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Alimentos y utensilios,28640522,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",20079645,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Materiales y artículos de construcción y de reparación,137955568,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",112246151,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Combustibles, lubricantes y aditivos",88124094,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",19139148,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Materiales y suministros para seguridad,303473,Cifras Preliminares
+2025,19019,19,019,Egresos,Capítulo,Servicios generales,1376760386,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Servicios básicos,101488649,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Servicios de arrendamiento,217327059,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",389413642,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",41536473,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",512394617,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Servicios de comunicación social y publicidad,24703683,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Servicios de traslado y viáticos,1625539,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Servicios oficiales,17074816,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Otros servicios generales,71195908,Cifras Preliminares
+2025,19019,19,019,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",636832051,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Transferencias internas y asignaciones al sector público,294474669,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Ayudas sociales,92780462,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Pensiones y jubilaciones,249576920,Cifras Preliminares
+2025,19019,19,019,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",1350023314,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Mobiliario y equipo de administración,19408321,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Vehículos y equipo de transporte,67694168,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,40355245,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",34827856,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Bienes inmuebles,1156032000,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Activos intangibles,15811543,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",15894181,Cifras Preliminares
+2025,19019,19,019,Egresos,Capítulo,Inversión pública,657303766,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Obra pública en bienes de dominio público,586220912,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Obra pública en bienes propios,71082854,Cifras Preliminares
+2025,19019,19,019,Egresos,Capítulo,Deuda pública,9552852,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Amortización de la deuda pública,8593146,Cifras Preliminares
+2025,19019,19,019,Egresos,Concepto,Intereses de la deuda pública,959706,Cifras Preliminares
+2025,19019,19,019,Ingresos,Tema,Total de ingresos,6147596920,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Impuestos,1857094113,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Impuestos sobre el Patrimonio,1828784424,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,"Impuesto sobre la producción, el consumo y las transacciones",3240256,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Otros Impuestos,25069433,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Contribuciones de Mejoras,11836935,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Contribución de mejoras por obras públicas,11836935,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Derechos,200595322,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",110366708,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Derechos por prestación de servicios,41152285,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Otros Derechos,49076329,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Productos,219757631,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Productos de tipo corriente,203933790,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Productos de tipo capital,286626,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Otros productos,15537215,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Aprovechamientos,146154321,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Aprovechamientos de tipo corriente,96764367,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Otros aprovechamientos,49389954,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Participaciones federales,2173186067,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Fondos participables,1869790389,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Impuestos participables,110854536,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Otras participaciones,48500380,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Participaciones estatales,144040762,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Aportaciones federales y estatales,321884009,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Aportaciones del ramo general 33,141086748,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Recursos federales y estatales reasignados,180797261,Cifras Preliminares
+2025,19019,19,019,Ingresos,Capítulo,Financiamiento,1217088522,Cifras Preliminares
+2025,19019,19,019,Ingresos,Concepto,Déficit,1217088522,Cifras Preliminares
+2025,19039,19,039,Egresos,Tema,Total de egresos,11407172955,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,Servicios personales,2635836621,Cifras Preliminares
+2025,19039,19,039,Egresos,Concepto,Remuneraciones al personal,2635836621,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,Materiales y suministros,1328766728,Cifras Preliminares
+2025,19039,19,039,Egresos,Concepto,Materiales y suministros diversos,1328766728,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,Servicios generales,4017051216,Cifras Preliminares
+2025,19039,19,039,Egresos,Concepto,Otros servicios generales,4017051216,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",971740208,Cifras Preliminares
+2025,19039,19,039,Egresos,Concepto,Transferencias internas y asignaciones al sector público,971740208,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",239721204,Cifras Preliminares
+2025,19039,19,039,Egresos,Concepto,"Bienes muebles, inmuebles e intangibles diversos",239721204,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,Inversión pública,1548701488,Cifras Preliminares
+2025,19039,19,039,Egresos,Concepto,Obra pública en bienes de dominio público,1548701488,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,Deuda pública,566770458,Cifras Preliminares
+2025,19039,19,039,Egresos,Concepto,Amortización de la deuda pública,566770458,Cifras Preliminares
+2025,19039,19,039,Egresos,Capítulo,Disponibilidad final,98585032,Cifras Preliminares
+2025,19039,19,039,Ingresos,Tema,Total de ingresos,11407172955,Cifras Preliminares
+2025,19039,19,039,Ingresos,Capítulo,Impuestos,2865046124,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Otros Impuestos,2865046124,Cifras Preliminares
+2025,19039,19,039,Ingresos,Capítulo,Derechos,327078790,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Otros Derechos,327078790,Cifras Preliminares
+2025,19039,19,039,Ingresos,Capítulo,Productos,611160264,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Otros productos,611160264,Cifras Preliminares
+2025,19039,19,039,Ingresos,Capítulo,Aprovechamientos,487411779,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Otros aprovechamientos,487411779,Cifras Preliminares
+2025,19039,19,039,Ingresos,Capítulo,Participaciones federales,3881049492,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Fondos participables,3207401024,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Impuestos participables,236626652,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Otras participaciones,68626416,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Participaciones estatales,368395400,Cifras Preliminares
+2025,19039,19,039,Ingresos,Capítulo,Aportaciones federales y estatales,3235426506,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Aportaciones del ramo general 33,1369834596,Cifras Preliminares
+2025,19039,19,039,Ingresos,Concepto,Recursos federales y estatales reasignados,1865591910,Cifras Preliminares
+2025,19048,19,048,Egresos,Tema,Total de egresos,2173505832,Cifras Preliminares
+2025,19048,19,048,Egresos,Capítulo,Servicios personales,795713739,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Remuneraciones al personal,625116989,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Remuneraciones adicionales y especiales,78885259,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Otras prestaciones sociales y económicas,90251311,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Pago de estímulos a servidores públicos,1460180,Cifras Preliminares
+2025,19048,19,048,Egresos,Capítulo,Materiales y suministros,315715998,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Materiales de administración, emisión de documentos y artículos oficiales",20918963,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Alimentos y utensilios,3380787,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Herramientas, refacciones y accesorios menores",158255938,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Materiales y artículos de construcción y de reparación,57963433,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Productos químicos, farmacéuticos, laboratorio y materias primas de producción y comercialización",4303702,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Combustibles, lubricantes y aditivos",43390122,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Vestuario, blancos, prendas de protección y artículos deportivos",27212995,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Materiales y suministros para seguridad,290058,Cifras Preliminares
+2025,19048,19,048,Egresos,Capítulo,Servicios generales,752560133,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Servicios básicos,75507754,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Servicios de arrendamiento,160047814,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Servicios profesionales, científicos, técnicos y otros servicios",129824816,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Servicios financieros, bancarios y comerciales",7723894,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Servicios de instalación, reparación, mantenimiento y conservación",233474761,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Servicios de comunicación social y publicidad,90295199,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Servicios de traslado y viáticos,1028648,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Servicios oficiales,22540607,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Otros servicios generales,32116640,Cifras Preliminares
+2025,19048,19,048,Egresos,Capítulo,"Transferencias, asignaciones, subsidios y otras ayudas",74713746,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Ayudas sociales,67343746,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Subsidios y subvenciones,7370000,Cifras Preliminares
+2025,19048,19,048,Egresos,Capítulo,"Bienes muebles, inmuebles e intangibles",32615196,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Mobiliario y equipo de administración,3845700,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Vehículos y equipo de transporte,9053925,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Equipo de defensa y seguridad y equipo e instrumental médico y laboratorio,8828008,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,"Maquinaria, otros equipos y herramientas",1201285,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Activos intangibles,9686278,Cifras Preliminares
+2025,19048,19,048,Egresos,Capítulo,Inversión pública,177273853,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Obra pública en bienes de dominio público,151923699,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Obra pública en bienes propios,25350154,Cifras Preliminares
+2025,19048,19,048,Egresos,Capítulo,Deuda pública,24913167,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Amortización de la deuda pública,11345253,Cifras Preliminares
+2025,19048,19,048,Egresos,Concepto,Intereses de la deuda pública,13567914,Cifras Preliminares
+2025,19048,19,048,Ingresos,Tema,Total de ingresos,2173505832,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Impuestos,527895203,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Impuestos sobre el Patrimonio,517178099,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Adicionales,10713962,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Otros Impuestos,3142,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Contribuciones de Mejoras,44031689,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Contribución de mejoras por obras públicas,44031689,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Derechos,65850914,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,"Derechos por el uso, goce, aprovechamiento o explotación de bienes de dominio público",49005913,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Derechos por prestación de servicios,14908064,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Otros Derechos,1936937,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Productos,13743643,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Productos de tipo corriente,3670425,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Productos de tipo capital,9887500,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Otros productos,185718,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Aprovechamientos,40659587,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Aprovechamientos de tipo corriente,38409587,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Otros aprovechamientos,2250000,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Participaciones federales,647207375,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Fondos participables,537919864,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Impuestos participables,39613392,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Otras participaciones,15098510,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Participaciones estatales,54575609,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Aportaciones federales y estatales,689454135,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Aportaciones del ramo general 33,349924699,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Recursos federales y estatales reasignados,339529436,Cifras Preliminares
+2025,19048,19,048,Ingresos,Capítulo,Financiamiento,144663286,Cifras Preliminares
+2025,19048,19,048,Ingresos,Concepto,Déficit,144663286,Cifras Preliminares

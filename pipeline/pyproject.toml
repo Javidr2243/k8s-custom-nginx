@@ -36,10 +36,18 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF"]
-ignore = ["S101"]  # assert is fine in tests
+ignore = [
+  "S101",   # assert is fine in tests
+  "E501",   # line length is handled by ruff format
+  "RUF001", "RUF002", "RUF003",  # typographic dashes and NBSP are intentional in Spanish text
+]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+filterwarnings = [
+  "ignore:Cannot parse header or footer:UserWarning",
+  "ignore:Workbook contains no default style:UserWarning",
+]
