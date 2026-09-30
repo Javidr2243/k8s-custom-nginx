@@ -1,6 +1,6 @@
 <script lang="ts">
   import { api, NOMBRE, type Egresos, type Ingresos } from '../lib/data';
-  import { acumulado, pesos } from '../lib/format';
+  import { acumulado, pesos, porcentaje } from '../lib/format';
   import { route, setQuery } from '../lib/router.svelte';
   import { CAPITULOS } from '../lib/capitulos';
   import Filtros from '../components/Filtros.svelte';
@@ -147,9 +147,14 @@
   function elegir(id: string) {
     setQuery({ n: selId === id ? null : id });
   }
+  const mayor = $derived(
+    [...unidades].filter((u) => u.montos?.[medida] != null).sort((a, b) => (b.montos?.[medida] ?? 0) - (a.montos?.[medida] ?? 0))[0],
+  );
+  const totalMedida = $derived(p ? p.total[medida] : null);
 </script>
 
 <section aria-labelledby="h-mapa">
+  <p class="eyebrow">Quién maneja el dinero</p>
   <h1 id="h-mapa">Mapa del gobierno de {NOMBRE[m]}</h1>
   <p class="muted lead">
     De dónde viene el dinero, quién lo gasta y en qué. El tamaño de cada círculo es el monto. Toca un círculo para ver
@@ -170,11 +175,25 @@
   <Estado {error} cargando={!datos && !error} />
 
   {#if datos && p}
+    <p class="titular">
+      <span>
+        {unidades.length} {p.dependencias ? 'dependencias' : 'tipos de gasto'}
+        {medida === 'aprobado' ? 'tenían un presupuesto aprobado de' : 'gastaron'}
+        <strong class="num">{pesos(totalMedida)}</strong> {medida === 'aprobado' ? `para ${p.periodo.slice(0, 4)}` : `de ${acumulado(p.periodo)}`}.
+      </span>
+      {#if mayor && totalMedida}
+        <span class="suave">
+          {p.dependencias ? 'La que más' : 'El más grande'}: {mayor.etiqueta}, {pesos(mayor.montos?.[medida])}
+          ({porcentaje((mayor.montos?.[medida] ?? 0) / totalMedida)} del total).
+        </span>
+      {/if}
+    </p>
     {#if !p.dependencias}
       <p class="notice small">{p.motivo_sin_dependencias} Por eso el mapa muestra en qué se gasta (tipo de gasto).</p>
     {/if}
+    <div class="banda">
     <div class="layout" class:con-panel={!!seleccion}>
-      <div class="card grafo">
+      <div class="grafo">
         <p class="small muted cap">
           {ingresos.etiqueta ? `Izquierda: ${ingresos.etiqueta}. ` : ''}Derecha: gasto {medida === 'aprobado' ? 'aprobado' : 'devengado'},
           {acumulado(p.periodo)}.
@@ -222,6 +241,7 @@
         />
       {/if}
     </div>
+    </div>
   {/if}
 </section>
 
@@ -245,8 +265,8 @@
       grid-template-columns: minmax(0, 1fr) 380px;
     }
   }
-  .grafo {
-    padding: 0.75rem;
+  .banda {
+    padding-block: 1.5rem 2rem;
   }
   .cap {
     margin: 0 0 0.5rem;

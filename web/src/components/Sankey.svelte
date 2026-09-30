@@ -47,6 +47,23 @@
     } as SankeyGraph<N, L>);
     return g;
   });
+  /** Label positions: node centres, spread apart on each side so two-line labels of small nodes never overlap. */
+  const etiquetaY = $derived.by(() => {
+    const MIN = 34;
+    const out = new Map<string, number>();
+    for (const lado of ['fuente', 'destino'] as const) {
+      const ns = grafo.nodes.filter((n) => n.lado === lado).sort((a, b) => (a.y0 ?? 0) - (b.y0 ?? 0));
+      const ys = ns.map((n) => ((n.y0 ?? 0) + (n.y1 ?? 0)) / 2);
+      for (let i = 1; i < ys.length; i++) ys[i] = Math.max(ys[i]!, ys[i - 1]! + MIN);
+      const exceso = (ys.at(-1) ?? 0) - (H - 12);
+      if (exceso > 0) {
+        ys[ys.length - 1]! -= exceso;
+        for (let i = ys.length - 2; i >= 0; i--) ys[i] = Math.min(ys[i]!, ys[i + 1]! - MIN);
+      }
+      ns.forEach((n, i) => out.set(n.id, ys[i]!));
+    }
+    return out;
+  });
   const camino = sankeyLinkHorizontal<N, L>();
   let hover = $state<string | null>(null);
 
@@ -102,12 +119,12 @@
               <tspan class="v" x={((n.x0 ?? 0) + (n.x1 ?? 0)) / 2} dy="1.2em">{formato(n.value ?? null)}</tspan>
             </text>
           {:else if n.lado === 'fuente'}
-            <text x={(n.x0 ?? 0) - 8} y={((n.y0 ?? 0) + (n.y1 ?? 0)) / 2} text-anchor="end">
+            <text x={(n.x0 ?? 0) - 8} y={etiquetaY.get(n.id)} text-anchor="end">
               <tspan class="n" dy="-0.2em">{n.etiqueta}</tspan>
               <tspan class="v" x={(n.x0 ?? 0) - 8} dy="1.2em">{formato(n.value ?? null)}</tspan>
             </text>
           {:else}
-            <text x={(n.x1 ?? 0) + 8} y={((n.y0 ?? 0) + (n.y1 ?? 0)) / 2}>
+            <text x={(n.x1 ?? 0) + 8} y={etiquetaY.get(n.id)}>
               <tspan class="n" dy="-0.2em">{n.etiqueta}</tspan>
               <tspan class="v" x={(n.x1 ?? 0) + 8} dy="1.2em">{formato(n.value ?? null)}</tspan>
             </text>

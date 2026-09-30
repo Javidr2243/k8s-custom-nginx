@@ -301,40 +301,7 @@
     margin-bottom: 1.25rem;
   }
 
-  /* The headline statement (Stripe/Nubank-style two tones). */
-  .titular {
-    font-size: clamp(1.3rem, 2.8vw, 1.75rem);
-    line-height: 1.35;
-    letter-spacing: -0.015em;
-    font-weight: 600;
-    max-width: 34ch;
-    margin: 1.25rem 0 1.75rem;
-  }
-  .titular strong {
-    font-weight: 750;
-  }
-  @media (min-width: 900px) {
-    .titular {
-      max-width: 44ch;
-    }
-  }
 
-  /* Key figures: open row separated by thin rules. */
-  .cifras {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: 0;
-    border-top: 1px solid var(--grid);
-    border-bottom: 1px solid var(--grid);
-  }
-  .cifras > div {
-    padding: 1.15rem 1.25rem 1.15rem 0;
-    min-width: 0;
-  }
-  .cifras > div + div {
-    padding-left: 1.25rem;
-    border-left: 1px solid var(--grid);
-  }
   dd {
     margin: 0;
   }
@@ -372,15 +339,6 @@
     max-width: 80ch;
   }
 
-  /* Chart sections: question label, finding as headline, one-line detail, chart, quiet source. */
-  .dos {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem 3.5rem;
-  }
-  .dos > section {
-    min-width: 0;
-  }
   .detalle {
     font-size: 1.05rem;
     color: var(--ink-2);
@@ -444,22 +402,4 @@
     margin-top: 2rem;
   }
 
-  @media (max-width: 900px) {
-    .dos {
-      grid-template-columns: minmax(0, 1fr);
-    }
-  }
-  @media (max-width: 640px) {
-    .cifras {
-      grid-template-columns: minmax(0, 1fr);
-    }
-    .cifras > div,
-    .cifras > div + div {
-      padding: 0.9rem 0;
-      border-left: 0;
-    }
-    .cifras > div + div {
-      border-top: 1px solid var(--grid);
-    }
-  }
 </style>

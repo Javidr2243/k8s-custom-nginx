@@ -1,12 +1,13 @@
 <script lang="ts">
   import { api, NOMBRE, type Ingresos } from '../lib/data';
-  import { pesos } from '../lib/format';
+  import { pesos, porcentaje } from '../lib/format';
   import { route } from '../lib/router.svelte';
   import Filtros from '../components/Filtros.svelte';
   import Sankey, { type SLink, type SNodo } from '../components/Sankey.svelte';
   import Fuente from '../components/Fuente.svelte';
   import Termino from '../components/Termino.svelte';
   import Estado from '../components/Estado.svelte';
+  import Seccion from '../components/Seccion.svelte';
 
   let ing = $state<Ingresos | null>(null);
   let error = $state<string | null>(null);
@@ -69,17 +70,33 @@
     }
     return { nodos, links };
   });
+  // Finding for the headline: largest source and largest destination (from the same links the diagram draws).
+  const lectura = $derived.by(() => {
+    const et = new Map(g.nodos.map((n) => [n.id, n.etiqueta]));
+    const ent = g.links.filter((l) => l.a === 'mun').sort((x, y) => y.valor - x.valor);
+    const sal = g.links.filter((l) => l.de === 'mun' && l.a !== 'caja-final').sort((x, y) => y.valor - x.valor);
+    const totalEnt = ent.reduce((t, l) => t + l.valor, 0);
+    const totalSal = g.links.filter((l) => l.de === 'mun').reduce((t, l) => t + l.valor, 0);
+    if (!ent[0] || !sal[0] || !totalEnt) return null;
+    return {
+      titular: `${et.get(ent[0].de)}: ${porcentaje(ent[0].valor / totalEnt)} de lo que entró`,
+      detalle: `El destino más grande fue ${et.get(sal[0].a)?.toLowerCase()}: ${pesos(sal[0].valor)}, ${porcentaje(sal[0].valor / (totalSal || 1))} de lo que salió.`,
+    };
+  });
 </script>
 
 <section aria-labelledby="h-flujo">
-  <h1 id="h-flujo">Flujo del dinero</h1>
-  <p class="muted lead">
-    Cómo entra el dinero al gobierno de {NOMBRE[m]} y hacia dónde sale en todo un año. A la izquierda, de dónde viene:
-    <Termino id="impuestos">impuestos</Termino>, <Termino id="participaciones">participaciones</Termino> y
-    <Termino id="aportaciones">aportaciones</Termino> federales o <Termino id="financiamiento">préstamos</Termino>. A la
-    derecha, en qué se gasta.
-  </p>
-  <Filtros mostrarPeriodo={false} />
+  <header>
+    <p class="eyebrow">Ingresos y gastos de todo un año</p>
+    <h1 id="h-flujo">Flujo del dinero</h1>
+    <p class="muted lead">
+      Cómo entra el dinero al gobierno de {NOMBRE[m]} y hacia dónde sale en todo un año. A la izquierda, de dónde viene:
+      <Termino id="impuestos">impuestos</Termino>, <Termino id="participaciones">participaciones</Termino> y
+      <Termino id="aportaciones">aportaciones</Termino> federales o <Termino id="financiamiento">préstamos</Termino>. A la
+      derecha, en qué se gasta.
+    </p>
+    <Filtros mostrarPeriodo={false} />
+  </header>
   <Estado {error} cargando={!ing && !error} />
 
   {#if ing}
@@ -92,20 +109,30 @@
       </select>
     </label>
     {#if a}
-      <article class="card">
-        <h2>{NOMBRE[m]}, {a.anio}</h2>
-        <p class="small muted">
-          Total que pasó por la tesorería: <strong>{pesos(a.ingresos_total)}</strong>.
-          {#if a.estatus.includes('Preliminar')}Cifras preliminares del INEGI.{/if}
-          Pasa el cursor sobre una franja para ver el monto.
-        </p>
+      <p class="titular">
+        <span>
+          En {a.anio} pasaron <strong class="num">{pesos(a.ingresos_total)}</strong> por la tesorería de {NOMBRE[m]}.
+        </span>
+        <span class="suave">
+          {a.estatus.includes('Preliminar') ? 'Cifras preliminares del INEGI. ' : ''}A la izquierda, de dónde vino; a la derecha, en qué se fue.
+        </span>
+      </p>
+
+      <Seccion
+        id="h-sankey"
+        banda
+        pregunta={`${NOMBRE[m]}, ${a.anio}`}
+        titular={lectura?.titular ?? `${NOMBRE[m]}, ${a.anio}`}
+        detalle={lectura?.detalle}
+      >
+        <p class="small muted">Pasa el cursor o toca una franja para ver el monto.</p>
         <Sankey nodos={g.nodos} links={g.links} formato={pesos} titulo={`Flujo del dinero del gobierno de ${NOMBRE[m]} en ${a.anio}`} />
         <p class="small muted">
           Datos anuales del INEGI (<Termino id="efipem">EFIPEM</Termino>) para que ingresos y gastos cuadren en el mismo
           periodo. «Queda en caja» es la <Termino id="disponibilidad-final">disponibilidad final</Termino>: no es gasto.
         </p>
-        <Fuente ids={[ing.fuente_anual]} />
-      </article>
+        <Fuente ids={[ing.fuente_anual]} compacto />
+      </Seccion>
     {/if}
   {/if}
 </section>
@@ -118,7 +145,7 @@
     display: inline-flex;
     gap: 0.5rem;
     align-items: center;
-    margin-bottom: 1rem;
+    margin: 0.25rem 0 0;
     color: var(--ink-2);
   }
   select {
