@@ -15,6 +15,7 @@
   import { line } from 'd3-shape';
   import { mostrar, ocultar } from './Tooltip.svelte';
   import TablaAlterna from './TablaAlterna.svelte';
+  import { cambio } from '../lib/format';
 
   let {
     series,
@@ -120,9 +121,16 @@
   {/if}
   <TablaAlterna
     {titulo}
-    columnas={['Periodo', ...series.map((s) => s.etiqueta)]}
-    filas={xs.map((v) => [etiquetaX(v), ...series.map((s) => formato(s.puntos.find((p) => p.x === v)?.v ?? null))])}
-    alinearDerecha={series.map((_, i) => i + 1)}
+    columnas={series.length === 1 ? ['Periodo', series[0]!.etiqueta, 'Cambio vs. periodo anterior'] : ['Periodo', ...series.map((s) => s.etiqueta)]}
+    filas={xs.map((v, i) => {
+      const valores = series.map((s) => s.puntos.find((p) => p.x === v)?.v ?? null);
+      if (series.length !== 1) return [etiquetaX(v), ...valores.map((x) => formato(x))];
+      // One series: the table adds what the line only suggests, the change from the previous point.
+      const previo = i > 0 ? (series[0]!.puntos.find((p) => p.x === xs[i - 1])?.v ?? null) : null;
+      const actual = valores[0] ?? null;
+      return [etiquetaX(v), formato(actual), actual != null && previo ? cambio((actual - previo) / previo) : '—'];
+    })}
+    alinearDerecha={series.length === 1 ? [1, 2] : series.map((_, i) => i + 1)}
   />
 </figure>
 

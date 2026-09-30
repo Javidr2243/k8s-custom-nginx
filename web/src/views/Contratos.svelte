@@ -175,6 +175,7 @@
             barras={cats.map(([k, v]) => ({ id: k, etiqueta: v.nombre, valor: v.monto, detalle: `${entero(v.n)} contratos` }))}
             formato={pesos}
             titulo="Monto contratado por tipo de procedimiento"
+            total={r.monto_total}
             valorEtiqueta="Monto"
             seleccionado={cat === 'todas' ? null : cat}
             onelegir={(id) => {
@@ -203,6 +204,7 @@
             }))}
             formato={pesos}
             titulo="Diez proveedores con mayor monto contratado"
+            total={r.monto_total}
             valorEtiqueta="Monto"
           />
           {#if r.reservados}
@@ -229,6 +231,7 @@
         barras={areas}
         formato={pesos}
         titulo={`Monto contratado por ${porDependencia ? 'dependencia' : 'área'}`}
+        total={r.monto_total}
         valorEtiqueta="Monto contratado"
         seleccionado={porDependencia && depInfo ? dep : null}
         onelegir={porDependencia

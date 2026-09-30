@@ -124,3 +124,11 @@ test('el panel de una dependencia muestra sus contratos', async ({ page }) => {
   await expect(bloque).toContainText('Contratos de esta dependencia');
   await expect(bloque.locator('a[href*="dep=secretaria-de-servicios-publicos"]')).toHaveCount(1);
 });
+
+test('flujo compara con el año anterior y muestra la dependencia federal', async ({ page }) => {
+  await page.goto('/flujo?m=monterrey');
+  await page.waitForLoadState('networkidle');
+  await expect(page.locator('#h-cambios')).toContainText(/más|menos/);
+  await expect(page.locator('table.comparacion tbody tr').first()).toBeVisible();
+  await expect(page.locator('#h-autonomia')).toContainText('De cada $100');
+});

@@ -242,6 +242,7 @@
             {barras}
             formato={pesos}
             titulo={`Gasto de ${NOMBRE[m]} por ${p.dependencias ? 'dependencia' : 'tipo de gasto'}`}
+            total={p.total.devengado}
             valorEtiqueta="Gastado (devengado)"
             referenciaEtiqueta="Presupuesto modificado"
           />

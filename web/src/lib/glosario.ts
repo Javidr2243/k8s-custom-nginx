@@ -97,6 +97,12 @@ export const GLOSARIO: Record<string, Entrada> = {
   },
   productos: { termino: 'Productos', corto: 'Ingresos por usar o vender bienes del municipio: rentas de locales, intereses bancarios.' },
   aprovechamientos: { termino: 'Aprovechamientos', corto: 'Otros ingresos no fiscales, como multas de tránsito, recargos e indemnizaciones.' },
+  'ingresos-propios': {
+    termino: 'Ingresos propios',
+    corto: 'Lo que el municipio cobra por su cuenta: impuestos como el predial, derechos (licencias, permisos), productos y aprovechamientos (multas, recargos).',
+    largo: 'Frente a ellos están las participaciones y aportaciones que envía la federación. Cuanto mayor la parte propia, menos depende el municipio de esas transferencias.',
+    ver: ['participaciones', 'aportaciones'],
+  },
   participaciones: {
     termino: 'Participaciones',
     corto: 'La parte de los impuestos federales (IVA, ISR, etc.) que le toca al municipio por ley. Llegan a través del estado y se pueden gastar libremente.',

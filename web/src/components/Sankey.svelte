@@ -23,7 +23,15 @@
     links,
     formato,
     titulo,
-  }: { nodos: SNodo[]; links: SLink[]; formato: (n: number | null) => string; titulo: string } = $props();
+    tabla = true,
+  }: {
+    nodos: SNodo[];
+    links: SLink[];
+    formato: (n: number | null) => string;
+    titulo: string;
+    /** Built-in «Ver como tabla». Turn off only when the page shows a table with these amounts (and more). */
+    tabla?: boolean;
+  } = $props();
 
   const W = 1040;
   const H = 540;
@@ -133,12 +141,14 @@
       {/each}
     </svg>
   </div>
+  {#if tabla}
   <TablaAlterna
     {titulo}
     columnas={['De', 'A', 'Monto']}
     filas={grafo.links.map((l) => [(l.source as N).etiqueta, (l.target as N).etiqueta, formato(l.value)])}
     alinearDerecha={[2]}
   />
+  {/if}
 </figure>
 
 <style>

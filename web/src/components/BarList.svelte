@@ -16,6 +16,7 @@
   // Thin bars (≤ 24px), rounded end, value at the tip, whole row is the hover/focus target.
   import { mostrar, ocultar, desde } from './Tooltip.svelte';
   import TablaAlterna from './TablaAlterna.svelte';
+  import { porcentaje } from '../lib/format';
 
   let {
     barras,
@@ -25,6 +26,7 @@
     valorEtiqueta = 'Valor',
     onelegir,
     seleccionado = null,
+    total,
   }: {
     barras: Barra[];
     formato: (n: number | null) => string;
@@ -33,7 +35,26 @@
     valorEtiqueta?: string;
     onelegir?: (id: string) => void;
     seleccionado?: string | null;
+    /** The real whole these bars belong to (e.g. total spending). When given, the table adds «% del total». */
+    total?: number | null;
   } = $props();
+
+  // «Ver como tabla» adds what the bars don't show: the share of the whole, or value ÷ reference.
+  const pct = (a: number | null | undefined, b: number | null | undefined) => (a != null && b ? porcentaje(a / b) : '—');
+  const columnasTabla = $derived([
+    'Concepto',
+    valorEtiqueta,
+    ...(referenciaEtiqueta ? [referenciaEtiqueta, `% de ${referenciaEtiqueta.toLowerCase()}`] : []),
+    ...(total ? ['% del total'] : []),
+  ]);
+  const filasTabla = $derived(
+    barras.map((b) => [
+      b.etiqueta,
+      formato(b.valor),
+      ...(referenciaEtiqueta ? [formato(b.referencia ?? null), pct(b.valor, b.referencia)] : []),
+      ...(total ? [pct(b.valor, total)] : []),
+    ]),
+  );
 
   const max = $derived(Math.max(1, ...barras.map((b) => Math.max(b.valor ?? 0, b.referencia ?? 0))));
 
@@ -88,11 +109,9 @@
   {/if}
   <TablaAlterna
     {titulo}
-    columnas={referenciaEtiqueta ? ['Concepto', valorEtiqueta, referenciaEtiqueta] : ['Concepto', valorEtiqueta]}
-    filas={barras.map((b) =>
-      referenciaEtiqueta ? [b.etiqueta, formato(b.valor), formato(b.referencia ?? null)] : [b.etiqueta, formato(b.valor)],
-    )}
-    alinearDerecha={[1, 2]}
+    columnas={columnasTabla}
+    filas={filasTabla}
+    alinearDerecha={columnasTabla.map((_, i) => i).slice(1)}
   />
 </figure>
 

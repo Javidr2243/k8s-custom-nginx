@@ -47,5 +47,8 @@ layout, color, gráficas, escritura y accesibilidad).
 - Ninguna información crítica depende de pasar el cursor: lo que muestra un tooltip también está en la leyenda o en
   «Ver como tabla».
 - Objetivos táctiles de 44 px; áreas de toque más grandes que la marca en las gráficas.
-- Cada gráfica tiene descripción para lectores de pantalla y tabla alternativa.
+- Cada gráfica tiene descripción para lectores de pantalla y tabla alternativa. La tabla no repite la gráfica: trae
+  los mismos datos **más al menos una columna que la gráfica no muestra** (% del total, % de su presupuesto, cambio
+  respecto al periodo anterior). Donde la gráfica ya rotula cada monto (Sankey), se reemplaza por una comparación con
+  el año anterior.
 - Se prueba a 390 px de ancho, en claro y oscuro, sin desplazamiento horizontal.

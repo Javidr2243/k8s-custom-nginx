@@ -215,6 +215,7 @@
               .sort((a, b) => (b.valor ?? 0) - (a.valor ?? 0))}
             formato={pesos}
             titulo="Gasto por unidad"
+            total={totalMedida}
             valorEtiqueta={medida === 'aprobado' ? 'Aprobado' : 'Gastado'}
             seleccionado={selId}
             onelegir={elegir}
