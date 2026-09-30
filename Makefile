@@ -1,5 +1,5 @@
 # ¿A dónde va tu dinero? MTY — common tasks. Run `make help`.
-.PHONY: help install data fetch build-data test lint dev build image run check-headers clean
+.PHONY: help install data discover fetch build-data test e2e lint dev build image run check-headers clean
 
 IMAGE ?= gdmty:dev
 
@@ -10,17 +10,23 @@ install: ## Install pipeline and web dependencies (from lockfiles)
 	cd pipeline && uv sync --locked
 	cd web && npm ci --ignore-scripts
 
+discover: ## Look for new quarters and add them to pipeline/sources.yaml
+	cd pipeline && uv run python -m gdmty discover
+
 fetch: ## Download new source files (data/raw/)
 	cd pipeline && uv run python -m gdmty fetch
 
 build-data: ## Validate originals and generate data/public/v1/
 	cd pipeline && uv run python -m gdmty build
 
-data: fetch build-data ## fetch + build-data
+data: discover fetch build-data ## discover + fetch + build-data
 
 test: ## Pipeline and web tests
 	cd pipeline && uv run pytest -q
 	cd web && npm test
+
+e2e: ## Browser tests against a running container (make image run in another terminal)
+	cd web && npx playwright test
 
 lint: ## Linters and type checks
 	cd pipeline && uv run ruff check . && uv run ruff format --check .

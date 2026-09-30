@@ -698,8 +698,11 @@ def _movimientos(egresos, deuda_dir: Path, contratos: dict[str, list[dict]], rep
             continue
         ultima = max(fechas)
         desde = f"{int(ultima[:4]) - (1 if int(ultima[5:7]) <= 3 else 0)}-{(int(ultima[5:7]) - 4) % 12 + 1:02d}-01"
-        recientes = sorted((c for c in cs if c["fecha"] and c["fecha"] >= desde and c["monto"]),
-                           key=lambda c: c["monto"], reverse=True)[:3]  # fmt: skip
+        recientes = sorted(
+            (c for c in cs if c["fecha"] and c["fecha"] >= desde and c["monto"]),
+            key=lambda c: c["monto"],
+            reverse=True,
+        )[:3]
         for c in recientes:
             items.append(
                 {
@@ -717,8 +720,20 @@ def _movimientos(egresos, deuda_dir: Path, contratos: dict[str, list[dict]], rep
     _write(out_dir / "movimientos.json", {"movimientos": items}, report, out_dir)
 
 
-_MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
-          "noviembre", "diciembre"]  # fmt: skip
+_MESES = [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre",
+]
 
 
 def _mes(iso: str) -> str:

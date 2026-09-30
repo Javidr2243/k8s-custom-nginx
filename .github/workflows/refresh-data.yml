@@ -1,0 +1,103 @@
+name: Actualizar datos
+
+# Weekly (and on demand): discover new quarters, download the official files, validate and rebuild the
+# JSON, and open a PR for a person to review. Nothing is published without merging that PR (and then
+# approving the production deploy).
+on:
+  schedule:
+    - cron: "17 13 * * 1" # Mondays 13:17 UTC (07:17 in Monterrey)
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Descargar, validar y reconstruir (sin secretos, solo lectura)
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      cambios: ${{ steps.diff.outputs.cambios }}
+    steps:
+      - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          python-version: "3.12"
+          enable-cache: false
+      - name: Descubrir, descargar y reconstruir
+        working-directory: pipeline
+        run: |
+          uv sync --locked
+          uv run python -m gdmty discover
+          uv run python -m gdmty fetch
+          uv run python -m gdmty build
+          uv run pytest -q
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: El sitio compila con los datos nuevos
+        working-directory: web
+        run: |
+          npm ci --ignore-scripts --no-fund
+          npm test
+          npm run build
+      - name: ¿Hubo cambios?
+        id: diff
+        run: |
+          git add -A data pipeline/sources.yaml
+          if git diff --cached --quiet; then
+            echo "cambios=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "cambios=true" >> "$GITHUB_OUTPUT"
+            git diff --cached --binary > datos.patch
+            (cd pipeline && uv run python -m gdmty resumen) > pr-body.md
+          fi
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: steps.diff.outputs.cambios == 'true'
+        with:
+          name: datos
+          path: |
+            datos.patch
+            pr-body.md
+          retention-days: 7
+
+  pr:
+    name: Abrir PR para revisión humana
+    needs: refresh
+    if: needs.refresh.outputs.cambios == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: datos
+          path: /tmp/datos
+      # Only a patch is applied here; nothing from the downloads is executed in this job.
+      - run: git apply --binary /tmp/datos/datos.patch
+      - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ github.token }}
+          branch: datos/actualizacion
+          delete-branch: true
+          commit-message: "Datos: actualización automática de fuentes oficiales"
+          title: "Datos: actualización automática de fuentes oficiales"
+          body-path: /tmp/datos/pr-body.md
+          add-paths: |
+            data
+            pipeline/sources.yaml
+          labels: datos
