@@ -42,7 +42,7 @@
   --radius: 12px;
   --radius-sm: 8px;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.05);
-  --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --maxw: 1200px;
 }
 
@@ -131,6 +131,8 @@ body {
   font-family: var(--font);
   font-size: 1rem;
   line-height: 1.55;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -138,12 +140,17 @@ h2,
 h3 {
   line-height: 1.2;
   margin: 0 0 0.5rem;
+  font-weight: 700;
+  text-wrap: balance;
 }
 h1 {
-  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  font-size: clamp(1.75rem, 4.2vw, 2.6rem);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 h2 {
-  font-size: clamp(1.25rem, 3vw, 1.55rem);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  letter-spacing: -0.015em;
 }
 h3 {
   font-size: 1.1rem;
@@ -216,6 +223,33 @@ button {
 }
 .num {
   font-variant-numeric: tabular-nums;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Small uppercase label above a heading or a figure (question, category or date). */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+/* Two-tone statement: the key fact in ink, the context right after it in muted ink. */
+.suave {
+  color: var(--ink-3);
+}
+/* Full-width tinted band that separates sections without boxes (no horizontal overflow). */
+.banda {
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
+  padding-block: clamp(2rem, 5vw, 3.25rem);
 }
 
 .grid {
